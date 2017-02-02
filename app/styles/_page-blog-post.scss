@@ -1,0 +1,46 @@
+.blog-post-breadcrumbs {
+    color: $gray3;
+
+    a {
+        color: $gray3;
+        position: relative;
+
+        &::after {
+            background: $gray3;
+            bottom: 3px;
+            content: '';
+            height: 4px;
+            left: 0px;
+            opacity: 0.2;
+            position: absolute;
+            transition: bottom 0.3s linear;
+            width: 100%;
+        }
+
+        &:hover::after {
+            bottom: -2px;
+        }
+    }
+}
+
+.blog-post-date {
+    color: $gray5;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    text-transform: uppercase;
+}
+
+.blog-post-content p {
+    font-family: HaboroSerif, sans-serif;
+    line-height: 1.8;
+}
+
+.blog-post-wrapper {
+    margin: 0 auto 3rem;
+    max-width: 56rem;
+
+    @media only screen and (min-width: $breakpointDesktopMax) {
+        max-width: 70rem;
+    }
+}

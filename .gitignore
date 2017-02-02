@@ -1,0 +1,9 @@
+.DS_Store
+*.log
+npm-debug.log*
+node_modules
+.npm
+build
+config
+app/constants/config.js
+app/components/resume/sections/Address.jsx

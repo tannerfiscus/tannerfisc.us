@@ -1,0 +1,56 @@
+.logo {
+    cursor: pointer;
+    display: inline-block;
+    height: 1.75em;
+    margin: 0 15px -12px 0;
+    position: relative;
+    width: 1em;
+}
+
+.logo-shape {
+    background: $gray1;
+    border-radius: .25em/.1em;
+    height: 1.75em;
+    position: relative;
+    transform: rotate(90deg);
+    width: 1em;
+
+    .logo-inverted & {
+        background: $gray8;
+    }
+
+    &::before, &::after {
+        border-radius: inherit;
+        background: inherit;
+        content: '';
+        height: inherit;
+        position: absolute;
+        width: inherit;
+    }
+
+    &::before {
+        transform: rotate(60deg);
+    }
+
+    &::after {
+        transform: rotate(-60deg);
+    }
+}
+
+.logo-text {
+    color: $gray8;
+    font-size: 1em;
+    font-weight: 400;
+    height: 100%;
+    left: 0;
+    letter-spacing: -3px;
+    line-height: 1.98em;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+
+    .logo-inverted & {
+        color: $gray1;
+    }
+}

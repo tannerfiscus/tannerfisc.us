@@ -1,0 +1,14 @@
+.contact-form {
+    position: relative;
+    width: 100%;
+
+    .loading {
+        background: $whiteSemiTransparent;
+        height: 100%;
+        left: 0;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
