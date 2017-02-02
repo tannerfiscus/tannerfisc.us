@@ -1,0 +1,94 @@
+.app-page-resume {
+
+    .header-fixed {
+        box-shadow: none;
+    }
+
+    .navigation {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .branding {
+        opacity: 0;
+    }
+
+    & footer {
+        display: none;
+    }
+
+    p {
+        line-height: 1.2;
+    }
+
+    .main {
+        padding: 0 1rem;
+    }
+
+}
+
+.page-resume {
+    position: relative;
+    margin: 0 auto;
+    max-width: 64rem;
+    z-index: 9;
+
+    & .grid-spread-4 + .grid-spread-8 {
+        margin: -3rem 0 0;
+
+        @media only screen and (min-width: $breakpointMobile) {
+            margin: 0;
+            padding-left: 2rem;
+        }
+    }
+}
+
+.resume-contact-form {
+    & h3 {
+        margin: 1rem 0 0;
+    }
+}
+
+.resume-desktop {
+    display: none;
+
+    @media only screen and (min-width: $breakpointMobile) {
+        display: block;
+    }
+}
+
+.resume-logo {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1rem 3rem 0;
+    font-size: 2rem;
+
+    & .logo {
+        cursor: default;
+    }
+}
+
+.resume-mobile {
+    @media only screen and (min-width: $breakpointMobile) {
+        display: none;
+    }
+}
+
+.resume-print {
+    display: none;
+}
+
+.resume-section {
+    margin: 2rem 0;
+}
+
+.resume-section-header {
+    border-bottom: 1px solid $gray7;
+    margin: 0 -1.75rem 1rem;
+    padding: 0 1.75rem 1rem;
+
+    @media only screen and (min-width: $breakpointMobile) {
+        margin: 0 0 1rem;
+        padding: 0 0 1rem;
+    }
+}

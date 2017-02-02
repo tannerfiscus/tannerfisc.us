@@ -1,0 +1,56 @@
+import React 		   from 'react'
+import ReactDOM 	   from 'react-dom'
+import { Link } 	   from 'react-router'
+import { scrollToTop } from '../../utils/scroll'
+
+class Menu extends React.Component {
+
+	render() {
+		return (
+			<menu className='navigation'>
+
+                <ul className='navigation-list'>
+
+                    <li className='navigation-list-title'><h5>Pages</h5></li>
+					{ this.renderMenuItems() }
+
+                </ul>
+
+            </menu>
+		)
+	}
+
+	renderMenuItems() {
+		const pages = [
+			{ url: '/', title: { desktop: 'Home', mobile: '' } },
+			{ url: '/about/', title: { desktop: 'About Me', mobile: 'About' } },
+			{ url: '/portfolio/', title: { desktop: 'My Work', mobile: 'Work' } },
+			{ url: '/contact/', title: { desktop: 'Get In Touch', mobile: 'Contact' } }
+		]
+
+		return pages.map((page) => {
+
+			return (
+				<li key={ page.url }>
+
+					<Link to={ page.url }
+						  onClick={ scrollToTop }>
+
+						  <span className='navigation-list-item--desktop'>
+						  	{ page.title.desktop }
+						  </span>
+
+						  <span className='navigation-list-item--mobile'>
+						  	{ page.title.mobile }
+						  </span>
+
+					</Link>
+
+				</li>
+			)
+
+		})
+	}
+}
+
+export default Menu
