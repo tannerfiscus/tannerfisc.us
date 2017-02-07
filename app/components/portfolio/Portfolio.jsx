@@ -40,12 +40,12 @@ class Portfolio extends React.Component {
 						{ property: 'og:description', content: 'Online portfolio showcasing experiences built and designed by Tanner Fiscus' },
 						{ property: 'og:type', content: 'website' },
 						{ property: 'og:url', content: 'https://tannerfisc.us/portfolio/' },
-						{ property: 'og:image', content: 'https://tannerfisc.us/static/og/portfolio.jpg' }
+						{ property: 'og:image', content: 'https://tannerfisc.us/assets/og/portfolio.jpg' }
 					] }
 					title='My Work – Experiences Built and Designed by Tanner Fiscus' />
 
 				<Cover
-					backgroundImage="/static/portfolio-graphic.jpg"
+					backgroundImage="/assets/portfolio-graphic.jpg"
 					title="My Work" />
 
 				<PageContent>
@@ -71,7 +71,7 @@ class Portfolio extends React.Component {
 			return (
 				<figure className="portfolio-list-item" key={item.url}>
 					<a className="portfolio-list-item-link" href={item.url}>
-						<img src={`https://app.tannerfiscus.com/static/${item.photo}`} className="portfolio-list-item-image" />
+						<img src={`https://app.tannerfiscus.com/static${item.photo}`} className="portfolio-list-item-image" />
 						<figcaption>
 							<h6 className="portfolio-list-item-tagline">
 								{ item.tagline }

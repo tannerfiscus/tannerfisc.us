@@ -4,7 +4,7 @@ import request     from 'superagent';
 module.exports = {
 
     buildBlogImageUrl: (imageUrl) => {
-        return `${API_URL}/static/blog/graphics/${imageUrl}`;
+        return `${API_URL}/assets/blog/graphics/${imageUrl}`;
     },
 
     formatCategoryTitle: (category) => {

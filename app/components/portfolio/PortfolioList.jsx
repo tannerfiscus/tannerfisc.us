@@ -22,7 +22,7 @@ const PortfolioList = ({ onProjectClick, projects }) => {
                            href={ project.url }
                            onClick={ (e) => _handleClick(e, onProjectClick, project.url) }>
 
-    						<img src={`https://app.tannerfiscus.com/static/${project.photo}`} className='portfolio-list-item-image' />
+    						<img src={`https://app.tannerfiscus.com/static${project.photo}`} className='portfolio-list-item-image' />
 
                             <figcaption>
     							<h6 className='portfolio-list-item-tagline'>

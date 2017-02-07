@@ -15,7 +15,7 @@ app.use(compression({
 
 app.use(bodyParser.json());
 
-app.use('/static', express.static(path.join(__dirname, '..', '/static')));
+app.use('/assets', express.static(path.join(__dirname, '..', '/static/assets')));
 app.use('/public', express.static(path.join(__dirname, '..', '/build'), { maxAge: '1y' }));
 
 app.use(render);

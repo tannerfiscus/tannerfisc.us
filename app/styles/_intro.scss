@@ -13,7 +13,7 @@
 }
 
 .intro-image {
-    background-image: url('/static/me-mobile.jpg');
+    background-image: url('/assets/me-mobile.jpg');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -26,7 +26,7 @@
     width: 100%;
 
     @media only screen and (min-width: $breakpointMobileSmall) {
-        background-image: url('/static/me.jpg');
+        background-image: url('/assets/me.jpg');
         background-position: top right;
         height: 30rem;
         width: 24rem;
@@ -48,7 +48,7 @@
     }
 
     @media only screen and (min-width: $breakpointDesktopMax) {
-        background-image: url('/static/me-full.jpg');
+        background-image: url('/assets/me-full.jpg');
         height: 56rem;
         width: 40rem;
     }

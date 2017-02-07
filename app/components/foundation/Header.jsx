@@ -44,7 +44,7 @@ class Header extends React.Component {
 
 	    if (this.header && offset > 0 && !this.header.classList.contains('header-fixed')) {
 	        this.header.classList.add('header-fixed')
-	    } else if (header && offset === 0 && this.header.classList.contains('header-fixed')) {
+	    } else if (this.header && offset === 0 && this.header.classList.contains('header-fixed')) {
 	        this.header.classList.remove('header-fixed')
 	    }
 

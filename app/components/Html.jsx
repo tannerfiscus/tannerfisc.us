@@ -18,23 +18,23 @@ class Html extends React.Component {
                     <meta name='author' content='Tanner Fiscus' />
                     <meta name='keywords' content='Tanner,Tanner Fiscus,Fiscus,Web design,Web Designer,Web developer,Front-end,Front end,Pittsburgh front end, Pittsburgh front-end, Pittsburgh website,Pittsburgh Web Design,Pittsburgh Website,Pittsburgh Web,Pittsburgh Web Designer,Front-end designer,Front-end developer,React.js developer,ReactJS developer' />
                     { head.meta.toComponent() }
-                    <link rel='shortcut icon' href='/static/favicons/favicon.ico' />
-                    <link rel='icon' sizes='16x16 32x32 64x64' href='/static/favicons/favicon.ico' />
-                    <link rel='icon' type='image/png' sizes='196x196' href='/static/favicons/favicon-192.png' />
-                    <link rel='icon' type='image/png' sizes='160x160' href='/static/favicons/favicon-160.png' />
-                    <link rel='icon' type='image/png' sizes='96x96' href='/static/favicons/favicon-96.png' />
-                    <link rel='icon' type='image/png' sizes='64x64' href='/static/favicons/favicon-64.png' />
-                    <link rel='icon' type='image/png' sizes='32x32' href='/static/favicons/favicon-32.png' />
-                    <link rel='icon' type='image/png' sizes='16x16' href='/static/favicons/favicon-16.png' />
-                    <link rel='apple-touch-icon' href='/static/favicons/favicon-57.png' />
-                    <link rel='apple-touch-icon' sizes='60x60' href='/static/favicons/favicon-60.png' />
-                    <link rel='apple-touch-icon' sizes='72x72' href='/static/favicons/favicon-72.png' />
-                    <link rel='apple-touch-icon' sizes='76x76' href='/static/favicons/favicon-76.png' />
-                    <link rel='apple-touch-icon' sizes='114x114' href='/static/favicons/favicon-114.png' />
-                    <link rel='apple-touch-icon' sizes='120x120' href='/static/favicons/favicon-120.png' />
-                    <link rel='apple-touch-icon' sizes='144x144' href='/static/favicons/favicon-144.png' />
-                    <link rel='apple-touch-icon' sizes='152x152' href='/static/favicons/favicon-152.png' />
-                    <link rel='apple-touch-icon' sizes='180x180' href='/static/favicons/favicon-180.png' />
+                    <link rel='shortcut icon' href='/assets/favicons/favicon.ico' />
+                    <link rel='icon' sizes='16x16 32x32 64x64' href='/assets/favicons/favicon.ico' />
+                    <link rel='icon' type='image/png' sizes='196x196' href='/assets/favicons/favicon-192.png' />
+                    <link rel='icon' type='image/png' sizes='160x160' href='/assets/favicons/favicon-160.png' />
+                    <link rel='icon' type='image/png' sizes='96x96' href='/assets/favicons/favicon-96.png' />
+                    <link rel='icon' type='image/png' sizes='64x64' href='/assets/favicons/favicon-64.png' />
+                    <link rel='icon' type='image/png' sizes='32x32' href='/assets/favicons/favicon-32.png' />
+                    <link rel='icon' type='image/png' sizes='16x16' href='/assets/favicons/favicon-16.png' />
+                    <link rel='apple-touch-icon' href='/assets/favicons/favicon-57.png' />
+                    <link rel='apple-touch-icon' sizes='60x60' href='/assets/favicons/favicon-60.png' />
+                    <link rel='apple-touch-icon' sizes='72x72' href='/assets/favicons/favicon-72.png' />
+                    <link rel='apple-touch-icon' sizes='76x76' href='/assets/favicons/favicon-76.png' />
+                    <link rel='apple-touch-icon' sizes='114x114' href='/assets/favicons/favicon-114.png' />
+                    <link rel='apple-touch-icon' sizes='120x120' href='/assets/favicons/favicon-120.png' />
+                    <link rel='apple-touch-icon' sizes='144x144' href='/assets/favicons/favicon-144.png' />
+                    <link rel='apple-touch-icon' sizes='152x152' href='/assets/favicons/favicon-152.png' />
+                    <link rel='apple-touch-icon' sizes='180x180' href='/assets/favicons/favicon-180.png' />
                     <link rel='stylesheet' type='text/css' href={ assets.style.css } />
 
                     <script

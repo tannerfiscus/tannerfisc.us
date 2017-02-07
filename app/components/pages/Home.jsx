@@ -13,7 +13,7 @@ const Home = (props, context) => {
 					{ property: 'og:description', content: 'Front-end developer and designer living in Pittsburgh, PA' },
 					{ property: 'og:type', content: 'website' },
 					{ property: 'og:url', content: 'https://tannerfisc.us' },
-					{ property: 'og:image', content: 'https://tannerfisc.us/static/og/home.jpg' }
+					{ property: 'og:image', content: 'https://tannerfisc.us/assets/og/home.jpg' }
 				] }
 				title='Tanner Fiscus – Front-end Developer and Designer' />
 			<Intro />

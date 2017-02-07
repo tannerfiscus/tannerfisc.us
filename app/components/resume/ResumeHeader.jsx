@@ -4,7 +4,7 @@ import Address from './sections/Address'
 const ResumeHeader = () => (
     <figure className='resume-header'>
 
-        <img className='resume-header-image' src='/static/resume-graphic.jpg' />
+        <img className='resume-header-image' src='/assets/resume-graphic.jpg' />
 
         <figcaption>
             <h1>Hi, I&#39;m Tanner</h1>

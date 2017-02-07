@@ -81,7 +81,7 @@
 
 	app.use(_bodyParser2.default.json());
 
-	app.use('/static', _express2.default.static(_path2.default.join(__dirname, '..', '/static')));
+	app.use('/assets', _express2.default.static(_path2.default.join(__dirname, '..', '/static/assets')));
 	app.use('/public', _express2.default.static(_path2.default.join(__dirname, '..', '/build'), { maxAge: '1y' }));
 
 	app.use(_render2.default);
@@ -161,7 +161,7 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
-	var _reduxThunk = __webpack_require__(80);
+	var _reduxThunk = __webpack_require__(81);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -275,23 +275,23 @@
 	                    _react2.default.createElement('meta', { name: 'author', content: 'Tanner Fiscus' }),
 	                    _react2.default.createElement('meta', { name: 'keywords', content: 'Tanner,Tanner Fiscus,Fiscus,Web design,Web Designer,Web developer,Front-end,Front end,Pittsburgh front end, Pittsburgh front-end, Pittsburgh website,Pittsburgh Web Design,Pittsburgh Website,Pittsburgh Web,Pittsburgh Web Designer,Front-end designer,Front-end developer,React.js developer,ReactJS developer' }),
 	                    head.meta.toComponent(),
-	                    _react2.default.createElement('link', { rel: 'shortcut icon', href: '/static/favicons/favicon.ico' }),
-	                    _react2.default.createElement('link', { rel: 'icon', sizes: '16x16 32x32 64x64', href: '/static/favicons/favicon.ico' }),
-	                    _react2.default.createElement('link', { rel: 'icon', type: 'image/png', sizes: '196x196', href: '/static/favicons/favicon-192.png' }),
-	                    _react2.default.createElement('link', { rel: 'icon', type: 'image/png', sizes: '160x160', href: '/static/favicons/favicon-160.png' }),
-	                    _react2.default.createElement('link', { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/static/favicons/favicon-96.png' }),
-	                    _react2.default.createElement('link', { rel: 'icon', type: 'image/png', sizes: '64x64', href: '/static/favicons/favicon-64.png' }),
-	                    _react2.default.createElement('link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/static/favicons/favicon-32.png' }),
-	                    _react2.default.createElement('link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/static/favicons/favicon-16.png' }),
-	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', href: '/static/favicons/favicon-57.png' }),
-	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '60x60', href: '/static/favicons/favicon-60.png' }),
-	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '72x72', href: '/static/favicons/favicon-72.png' }),
-	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '76x76', href: '/static/favicons/favicon-76.png' }),
-	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '114x114', href: '/static/favicons/favicon-114.png' }),
-	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '120x120', href: '/static/favicons/favicon-120.png' }),
-	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '144x144', href: '/static/favicons/favicon-144.png' }),
-	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '152x152', href: '/static/favicons/favicon-152.png' }),
-	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/static/favicons/favicon-180.png' }),
+	                    _react2.default.createElement('link', { rel: 'shortcut icon', href: '/assets/favicons/favicon.ico' }),
+	                    _react2.default.createElement('link', { rel: 'icon', sizes: '16x16 32x32 64x64', href: '/assets/favicons/favicon.ico' }),
+	                    _react2.default.createElement('link', { rel: 'icon', type: 'image/png', sizes: '196x196', href: '/assets/favicons/favicon-192.png' }),
+	                    _react2.default.createElement('link', { rel: 'icon', type: 'image/png', sizes: '160x160', href: '/assets/favicons/favicon-160.png' }),
+	                    _react2.default.createElement('link', { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/assets/favicons/favicon-96.png' }),
+	                    _react2.default.createElement('link', { rel: 'icon', type: 'image/png', sizes: '64x64', href: '/assets/favicons/favicon-64.png' }),
+	                    _react2.default.createElement('link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/assets/favicons/favicon-32.png' }),
+	                    _react2.default.createElement('link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/assets/favicons/favicon-16.png' }),
+	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', href: '/assets/favicons/favicon-57.png' }),
+	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '60x60', href: '/assets/favicons/favicon-60.png' }),
+	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '72x72', href: '/assets/favicons/favicon-72.png' }),
+	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '76x76', href: '/assets/favicons/favicon-76.png' }),
+	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '114x114', href: '/assets/favicons/favicon-114.png' }),
+	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '120x120', href: '/assets/favicons/favicon-120.png' }),
+	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '144x144', href: '/assets/favicons/favicon-144.png' }),
+	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '152x152', href: '/assets/favicons/favicon-152.png' }),
+	                    _react2.default.createElement('link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/assets/favicons/favicon-180.png' }),
 	                    _react2.default.createElement('link', { rel: 'stylesheet', type: 'text/css', href: assets.style.css }),
 	                    _react2.default.createElement('script', {
 	                        dangerouslySetInnerHTML: { __html: '\n                        (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){\n                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n                        })(window,document,\'script\',\'https://www.google-analytics.com/analytics.js\',\'ga\');\n\n                        ga(\'create\', \'UA-88460716-1\', \'auto\');\n                        ga(\'send\', \'pageview\');\n                        ' } })
@@ -332,11 +332,11 @@
 
 	module.exports = {
 		"client": {
-			"js": "/public/client-30a03ac3b7895dc0bbdd.js"
+			"js": "/public/client-65f3ef81166b1cae6e17.js"
 		},
 		"style": {
-			"js": "/public/style-30a03ac3b7895dc0bbdd.js",
-			"css": "/public/style-30a03ac3b7895dc0bbdd.css"
+			"js": "/public/style-65f3ef81166b1cae6e17.js",
+			"css": "/public/style-65f3ef81166b1cae6e17.css"
 		}
 	};
 
@@ -652,7 +652,7 @@
 	'use strict';
 
 	module.exports = {
-	    API_URL: 'https://app.tannerfiscus.com',
+	    API_URL: 'http://localhost:8888/tf-admin',
 	    PROJECT_STATIC_ASSET_URL: 'https://app.tannerfiscus.com/static/portfolio/graphics'
 	};
 
@@ -994,10 +994,10 @@
 					'section',
 					{ className: 'page-about' },
 					_react2.default.createElement(_reactHelmet2.default, {
-						meta: [{ name: 'description', content: 'View my experience, find out a little bit about me, and see why I have a passion for building a better web.' }, { property: 'og:title', content: 'About Tanner Fiscus' }, { property: 'og:description', content: 'I\'m passionate about building a better web' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us/about/' }, { property: 'og:image', content: 'https://tannerfisc.us/static/og/about-me.jpg' }],
+						meta: [{ name: 'description', content: 'View my experience, find out a little bit about me, and see why I have a passion for building a better web.' }, { property: 'og:title', content: 'About Tanner Fiscus' }, { property: 'og:description', content: 'I\'m passionate about building a better web' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us/about/' }, { property: 'og:image', content: 'https://tannerfisc.us/assets/og/about-me.jpg' }],
 						title: 'About Me \u2013 Tanner Fiscus' }),
 					_react2.default.createElement(_Cover2.default, { title: 'Hi, I\'m Tanner',
-						backgroundImage: '/static/about-graphic.jpg' }),
+						backgroundImage: '/assets/about-graphic.jpg' }),
 					_react2.default.createElement(
 						_PageContent2.default,
 						null,
@@ -1655,7 +1655,7 @@
 
 				if (this.header && offset > 0 && !this.header.classList.contains('header-fixed')) {
 					this.header.classList.add('header-fixed');
-				} else if (header && offset === 0 && this.header.classList.contains('header-fixed')) {
+				} else if (this.header && offset === 0 && this.header.classList.contains('header-fixed')) {
 					this.header.classList.remove('header-fixed');
 				}
 			}
@@ -1893,10 +1893,10 @@
 					'section',
 					{ className: 'page-blog' },
 					_react2.default.createElement(_reactHelmet2.default, {
-						meta: [{ name: 'description', content: 'Thoughts is my online notebook (blog) for sharing what\'s on my mind.' }, { property: 'og:title', content: 'Thoughts' }, { property: 'og:description', content: 'An online notebook by Tanner Fiscus' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us/thoughts/' }, { property: 'og:image', content: 'https://tannerfisc.us/static/og/thoughts.jpg' }],
+						meta: [{ name: 'description', content: 'Thoughts is my online notebook (blog) for sharing what\'s on my mind.' }, { property: 'og:title', content: 'Thoughts' }, { property: 'og:description', content: 'An online notebook by Tanner Fiscus' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us/thoughts/' }, { property: 'og:image', content: 'https://tannerfisc.us/assets/og/thoughts.jpg' }],
 						title: 'Thoughts \u2013 An Online Notebook by Tanner Fiscus' }),
 					_react2.default.createElement(_Cover2.default, {
-						backgroundImage: '/static/blog-graphic.jpg',
+						backgroundImage: '/assets/blog-graphic.jpg',
 						title: 'Thoughts' }),
 					_react2.default.createElement(
 						_PageContent2.default,
@@ -2166,7 +2166,7 @@
 	module.exports = {
 
 	    buildBlogImageUrl: function buildBlogImageUrl(imageUrl) {
-	        return _config.API_URL + '/static/blog/graphics/' + imageUrl;
+	        return _config.API_URL + '/assets/blog/graphics/' + imageUrl;
 	    },
 
 	    formatCategoryTitle: function formatCategoryTitle(category) {
@@ -2373,7 +2373,7 @@
 					'section',
 					{ className: 'page-blog-category' },
 					_react2.default.createElement(_reactHelmet2.default, {
-						meta: [{ name: 'description', content: 'A collection of posts regarding my thoughts on ' + formattedCategory + '.' }, { property: 'og:title', content: 'Thoughts on ' + formattedCategory }, { property: 'og:description', content: 'An online notebook by Tanner Fiscus' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us/thoughts/' + category + '/' }, { property: 'og:image', content: 'https://tannerfisc.us/static/og/thoughts.jpg' }],
+						meta: [{ name: 'description', content: 'A collection of posts regarding my thoughts on ' + formattedCategory + '.' }, { property: 'og:title', content: 'Thoughts on ' + formattedCategory }, { property: 'og:description', content: 'An online notebook by Tanner Fiscus' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us/thoughts/' + category + '/' }, { property: 'og:image', content: 'https://tannerfisc.us/assets/og/thoughts.jpg' }],
 						title: 'Thoughts on ' + formattedCategory + ' \u2013 An Online Notebook by Tanner Fiscus' }),
 					_react2.default.createElement(
 						_PageContent2.default,
@@ -2720,7 +2720,7 @@
 				meta: [{ name: 'description', content: 'An online form for connecting with me.' }],
 				title: 'Get In Touch \u2013 Tanner Fiscus' }),
 			_react2.default.createElement(_Cover2.default, {
-				backgroundImage: '/static/contact-graphic.jpg',
+				backgroundImage: '/assets/contact-graphic.jpg',
 				title: 'Let\'s Connect' }),
 			_react2.default.createElement(
 				_PageContent2.default,
@@ -3022,7 +3022,7 @@
 			'section',
 			{ className: 'page-about' },
 			_react2.default.createElement(_Cover2.default, { title: 'Want to work together?',
-				backgroundImage: '/static/freelance-graphic.jpg' }),
+				backgroundImage: '/assets/freelance-graphic.jpg' }),
 			_react2.default.createElement(
 				_PageContent2.default,
 				null,
@@ -3104,7 +3104,7 @@
 			'section',
 			{ className: 'page-home' },
 			_react2.default.createElement(_reactHelmet2.default, {
-				meta: [{ name: 'description', content: 'Hi, I\'m Tanner. I\'m a front-end developer and designer living in Pittsburgh, PA. I have a passion for building a better web.' }, { property: 'og:title', content: 'Tanner Fiscus' }, { property: 'og:description', content: 'Front-end developer and designer living in Pittsburgh, PA' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us' }, { property: 'og:image', content: 'https://tannerfisc.us/static/og/home.jpg' }],
+				meta: [{ name: 'description', content: 'Hi, I\'m Tanner. I\'m a front-end developer and designer living in Pittsburgh, PA. I have a passion for building a better web.' }, { property: 'og:title', content: 'Tanner Fiscus' }, { property: 'og:description', content: 'Front-end developer and designer living in Pittsburgh, PA' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us' }, { property: 'og:image', content: 'https://tannerfisc.us/assets/og/home.jpg' }],
 				title: 'Tanner Fiscus \u2013 Front-end Developer and Designer' }),
 			_react2.default.createElement(_Intro2.default, null)
 		);
@@ -3262,10 +3262,10 @@
 					'section',
 					{ className: 'page-portfolio' },
 					_react2.default.createElement(_reactHelmet2.default, {
-						meta: [{ name: 'description', content: 'Travel through time and catch a glimpse of the work that I\'ve developed over the years.' },, { property: 'og:title', content: 'My Work' }, { property: 'og:description', content: 'Online portfolio showcasing experiences built and designed by Tanner Fiscus' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us/portfolio/' }, { property: 'og:image', content: 'https://tannerfisc.us/static/og/portfolio.jpg' }],
+						meta: [{ name: 'description', content: 'Travel through time and catch a glimpse of the work that I\'ve developed over the years.' },, { property: 'og:title', content: 'My Work' }, { property: 'og:description', content: 'Online portfolio showcasing experiences built and designed by Tanner Fiscus' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us/portfolio/' }, { property: 'og:image', content: 'https://tannerfisc.us/assets/og/portfolio.jpg' }],
 						title: 'My Work \u2013 Experiences Built and Designed by Tanner Fiscus' }),
 					_react2.default.createElement(_Cover2.default, {
-						backgroundImage: '/static/portfolio-graphic.jpg',
+						backgroundImage: '/assets/portfolio-graphic.jpg',
 						title: 'My Work' }),
 					_react2.default.createElement(
 						_PageContent2.default,
@@ -3290,7 +3290,7 @@
 						_react2.default.createElement(
 							'a',
 							{ className: 'portfolio-list-item-link', href: item.url },
-							_react2.default.createElement('img', { src: 'https://app.tannerfiscus.com/static/' + item.photo, className: 'portfolio-list-item-image' }),
+							_react2.default.createElement('img', { src: 'https://app.tannerfiscus.com/static' + item.photo, className: 'portfolio-list-item-image' }),
 							_react2.default.createElement(
 								'figcaption',
 								null,
@@ -3431,7 +3431,7 @@
 					'section',
 					{ className: 'page-portfolio-item' },
 					_react2.default.createElement(_reactHelmet2.default, {
-						meta: [{ name: 'description', content: 'Discover the details about my design and build process for the ' + data.meta.name + ' project.' }, { property: 'og:title', content: data.meta.name }, { property: 'og:description', content: 'Discover the process behind building and designing the ' + data.meta.name + ' project.' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us/portfolio/' + itemId + '/' }, { property: 'og:image', content: data.photos.cover ? (0, _url.buildProjectImageURL)(data.photos.cover.url) : 'https://tannerfisc.us/static/og/portfolio.jpg' }],
+						meta: [{ name: 'description', content: 'Discover the details about my design and build process for the ' + data.meta.name + ' project.' }, { property: 'og:title', content: data.meta.name }, { property: 'og:description', content: 'Discover the process behind building and designing the ' + data.meta.name + ' project.' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us/portfolio/' + itemId + '/' }, { property: 'og:image', content: data.photos.cover ? (0, _url.buildProjectImageURL)(data.photos.cover.url) : 'https://tannerfisc.us/assets/og/portfolio.jpg' }],
 						title: data.meta.name + ' \u2013 Project Details' }),
 					isLoading && _react2.default.createElement(_Loading2.default, null),
 					!isLoading && _react2.default.createElement(_ProjectContent2.default, {
@@ -3931,7 +3931,7 @@
 			'section',
 			{ className: 'page-resume' },
 			_react2.default.createElement(_reactHelmet2.default, {
-				meta: [{ property: 'og:title', content: 'Resume – Tanner Fiscus' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us/resume/' }, { property: 'og:image', content: 'https://tannerfisc.us/static/og/portfolio.jpg' }],
+				meta: [{ property: 'og:title', content: 'Resume – Tanner Fiscus' }, { property: 'og:type', content: 'website' }, { property: 'og:url', content: 'https://tannerfisc.us/resume/' }, { property: 'og:image', content: 'https://tannerfisc.us/assets/og/portfolio.jpg' }],
 				title: 'Resume \u2013 Tanner Fiscus' }),
 			_react2.default.createElement(
 				_PageContent2.default,
@@ -4851,7 +4851,7 @@
 	                        onClick: function onClick(e) {
 	                            return _handleClick(e, onProjectClick, project.url);
 	                        } },
-	                    _react2.default.createElement('img', { src: 'https://app.tannerfiscus.com/static/' + project.photo, className: 'portfolio-list-item-image' }),
+	                    _react2.default.createElement('img', { src: 'https://app.tannerfiscus.com/static' + project.photo, className: 'portfolio-list-item-image' }),
 	                    _react2.default.createElement(
 	                        'figcaption',
 	                        null,
@@ -5154,13 +5154,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _Address = __webpack_require__(80);
+
+	var _Address2 = _interopRequireDefault(_Address);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var ResumeHeader = function ResumeHeader() {
 	    return _react2.default.createElement(
 	        'figure',
 	        { className: 'resume-header' },
-	        _react2.default.createElement('img', { className: 'resume-header-image', src: '/static/resume-graphic.jpg' }),
+	        _react2.default.createElement('img', { className: 'resume-header-image', src: '/assets/resume-graphic.jpg' }),
 	        _react2.default.createElement(
 	            'figcaption',
 	            null,
@@ -5170,24 +5174,7 @@
 	                'Hi, I\'m Tanner'
 	            )
 	        ),
-	        _react2.default.createElement(
-	            'div',
-	            { className: 'resume-address resume-print' },
-	            '419 Franklin Avenue, Apt. B',
-	            _react2.default.createElement('br', null),
-	            'Pittsburgh, PA 15221',
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement('br', null),
-	            '(724) 664-8643',
-	            _react2.default.createElement('br', null),
-	            'tanner@tannerfiscus.com',
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement('br', null),
-	            'linkedin.com/in/tannerfiscus',
-	            _react2.default.createElement('br', null),
-	            'tannerfiscus.com',
-	            _react2.default.createElement('br', null)
-	        )
+	        _react2.default.createElement(_Address2.default, null)
 	    );
 	};
 
@@ -5195,6 +5182,45 @@
 
 /***/ },
 /* 80 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(10);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Address = function Address() {
+	    return _react2.default.createElement(
+	        'div',
+	        { className: 'resume-address resume-print' },
+	        '419 Franklin Avenue, Apt. B',
+	        _react2.default.createElement('br', null),
+	        'Pittsburgh, PA 15221',
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement('br', null),
+	        '(724) 664-8643',
+	        _react2.default.createElement('br', null),
+	        'tanner@tannerfiscus.com',
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement('br', null),
+	        'linkedin.com/in/tannerfiscus',
+	        _react2.default.createElement('br', null),
+	        'tannerfiscus.com',
+	        _react2.default.createElement('br', null)
+	    );
+	};
+
+	exports.default = Address;
+
+/***/ },
+/* 81 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-thunk");

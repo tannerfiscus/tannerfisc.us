@@ -14,7 +14,7 @@ const Contact = (props, context) => {
 				title='Get In Touch – Tanner Fiscus' />
 
 			<Cover
-				backgroundImage="/static/contact-graphic.jpg"
+				backgroundImage="/assets/contact-graphic.jpg"
 				title="Let's Connect" />
 
 			<PageContent>

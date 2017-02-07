@@ -23,12 +23,12 @@ class About extends React.Component {
 						{ property: 'og:description', content: `I'm passionate about building a better web` },
 						{ property: 'og:type', content: 'website' },
 						{ property: 'og:url', content: 'https://tannerfisc.us/about/' },
-						{ property: 'og:image', content: 'https://tannerfisc.us/static/og/about-me.jpg' }
+						{ property: 'og:image', content: 'https://tannerfisc.us/assets/og/about-me.jpg' }
 					] }
 					title='About Me – Tanner Fiscus' />
 
 				<Cover title={ `Hi, I'm Tanner` }
-					   backgroundImage='/static/about-graphic.jpg' />
+					   backgroundImage='/assets/about-graphic.jpg' />
 
 				<PageContent>
 

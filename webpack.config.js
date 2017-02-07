@@ -14,7 +14,7 @@ module.exports = {
     path: path.join(__dirname, 'build'),
     chunkFilename: '[name].js',
     filename: '[name].js',
-    publicPath: '/static/'
+    publicPath: '/assets/'
   },
 
   plugins: [

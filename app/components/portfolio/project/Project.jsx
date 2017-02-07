@@ -55,7 +55,7 @@ class Project extends React.Component {
 					{ property: 'og:description', content: `Discover the process behind building and designing the ${data.meta.name} project.` },
 					{ property: 'og:type', content: 'website' },
 					{ property: 'og:url', content: `https://tannerfisc.us/portfolio/${itemId}/` },
-					{ property: 'og:image', content: data.photos.cover ? buildProjectImageURL(data.photos.cover.url) : 'https://tannerfisc.us/static/og/portfolio.jpg' }
+					{ property: 'og:image', content: data.photos.cover ? buildProjectImageURL(data.photos.cover.url) : 'https://tannerfisc.us/assets/og/portfolio.jpg' }
 				] }
 				title={ `${data.meta.name} – Project Details` } />
 

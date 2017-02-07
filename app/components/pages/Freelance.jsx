@@ -8,7 +8,7 @@ const Freelance = (props, context) => {
 		<section className="page-about">
 
 			<Cover title="Want to work together?"
-				backgroundImage="/static/freelance-graphic.jpg" />
+				backgroundImage="/assets/freelance-graphic.jpg" />
 
 			<PageContent>
 

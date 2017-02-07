@@ -56,7 +56,7 @@ class BlogCategory extends React.Component {
 						{ property: 'og:description', content: 'An online notebook by Tanner Fiscus' },
 						{ property: 'og:type', content: 'website' },
 						{ property: 'og:url', content: `https://tannerfisc.us/thoughts/${category}/` },
-						{ property: 'og:image', content: 'https://tannerfisc.us/static/og/thoughts.jpg' }
+						{ property: 'og:image', content: 'https://tannerfisc.us/assets/og/thoughts.jpg' }
 					] }
 					title={ `Thoughts on ${formattedCategory} – An Online Notebook by Tanner Fiscus` } />
 

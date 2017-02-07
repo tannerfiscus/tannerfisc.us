@@ -19,7 +19,7 @@ const Resume = () => (
 				{ property: 'og:title', content: 'Resume – Tanner Fiscus' },
 				{ property: 'og:type', content: 'website' },
 				{ property: 'og:url', content: 'https://tannerfisc.us/resume/' },
-				{ property: 'og:image', content: 'https://tannerfisc.us/static/og/portfolio.jpg' }
+				{ property: 'og:image', content: 'https://tannerfisc.us/assets/og/portfolio.jpg' }
 			] }
 			title='Resume – Tanner Fiscus' />
 
