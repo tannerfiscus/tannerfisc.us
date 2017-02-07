@@ -56,8 +56,8 @@
 @media only screen and (min-width: $breakpointMobile) {
     .cover {
         height: 30rem;
-		margin: 0 auto;
-		max-width: calc(100vw - 3rem);
+		margin: 0 0 0 1.5rem;
+		max-width: calc(100vw - 1.5rem);
 
 		&.cover-portfolio {
 			align-items: flex-start;

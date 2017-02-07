@@ -1,4 +1,4 @@
-import Menu			   from './Menu.jsx'
+import Menu			   from './Menu'
 import React 		   from 'react'
 import { Link } 	   from 'react-router'
 import { scrollToTop } from '../../utils/scroll'

@@ -1,15 +1,15 @@
-import APIError				 from '../APIError.jsx';
-import Collection	 		 from '../Collection.jsx';
-import CollectionItem 		 from '../CollectionItem.jsx';
+import APIError				 from '../APIError'
+import Collection	 		 from '../Collection'
+import CollectionItem 		 from '../CollectionItem'
 import { buildBlogImageUrl,
 		 formatCategoryTitle,
-		 getBlogCategory }   from '../../utils/blog';
+		 getBlogCategory }   from '../../utils/blog'
 import Helmet 	     		 from 'react-helmet'
-import Loading		 		 from '../foundation/Loading.jsx';
-import NotFound      		 from '../NotFound.jsx';
-import PageContent 	 		 from '../foundation/PageContent.jsx';
-import React 		 		 from 'react';
-import ReactDOM		 		 from 'react-dom';
+import Loading		 		 from '../foundation/Loading'
+import NotFound      		 from '../NotFound'
+import PageContent 	 		 from '../foundation/PageContent'
+import React 		 		 from 'react'
+import ReactDOM		 		 from 'react-dom'
 
 class BlogCategory extends React.Component {
 
@@ -34,7 +34,7 @@ class BlogCategory extends React.Component {
 						posts: []
 					}
 				})
-			});
+			})
 	 }
 
 	render() {
@@ -42,7 +42,7 @@ class BlogCategory extends React.Component {
 		const { error, notFound, posts } = this.props.category
 		const formattedCategory = formatCategoryTitle(category)
 
-		if (!!notFound) {
+		if (Boolean(notFound)) {
 			return <NotFound />
 		}
 
@@ -70,7 +70,7 @@ class BlogCategory extends React.Component {
 					{ (Object.keys(posts).length < 1 && !error) &&
 							<Loading /> }
 
-					{ !!error && <APIError content={'my blog'} /> }
+					{ Boolean(error) && <APIError content={'my blog'} /> }
 
 					{ Object.keys(posts).length > 0 &&
 							this.renderPosts(posts) }
@@ -78,7 +78,7 @@ class BlogCategory extends React.Component {
 				</PageContent>
 
 			</section>
-		);
+		)
 	}
 
 	renderPosts(posts) {
@@ -86,12 +86,12 @@ class BlogCategory extends React.Component {
 			<Collection>
 				{ this.renderBlogPosts(posts) }
 			</Collection>
-		);
+		)
 	}
 
 	renderBlogPosts(posts) {
 		return posts.map((post, i) => {
-			const tagline = `${post.date} · ${formatCategoryTitle(post.category)}`;
+			const tagline = `${post.date} · ${formatCategoryTitle(post.category)}`
 			return <CollectionItem
 						description={ post.body.substring(0, 500) }
 						image={ buildBlogImageUrl(post.cover) }
@@ -99,9 +99,9 @@ class BlogCategory extends React.Component {
 						tagline={ tagline }
 						title={ post.title }
 						url={ `./${post.url}/` } />
-		});
+		})
 	}
 
 }
 
-export default BlogCategory;
+export default BlogCategory

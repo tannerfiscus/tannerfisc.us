@@ -1,11 +1,13 @@
 import Helmet 	   from 'react-helmet'
-import Intro	   from '../Intro.jsx';
-import React 	   from 'react';
+import Intro	   from '../Intro'
+import React 	   from 'react'
 
 const Home = (props, context) => {
 
 	return (
-		<section className="page-home">
+
+		<section className='page-home'>
+
 			<Helmet
 				meta={ [
 					{ name: 'description', content: 'Hi, I\'m Tanner. I\'m a front-end developer and designer living in Pittsburgh, PA. I have a passion for building a better web.' },
@@ -16,10 +18,12 @@ const Home = (props, context) => {
 					{ property: 'og:image', content: 'https://tannerfisc.us/assets/og/home.jpg' }
 				] }
 				title='Tanner Fiscus – Front-end Developer and Designer' />
+
 			<Intro />
+
 		</section>
-	);
+	)
 
 }
 
-export default Home;
+export default Home

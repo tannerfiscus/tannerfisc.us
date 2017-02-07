@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-const Collection = ({ children }, context) => {
+const Collection = ({ children }, context) => (
 
-    return (
-		<section className="collection">
-			{ children }
-		</section>
-	);
+	<section className='collection'>
 
-};
+		{ children }
 
-export default Collection;
+	</section>
+
+)
+
+export default Collection

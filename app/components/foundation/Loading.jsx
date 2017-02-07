@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Loading = (props, context) => {
+const Loading = () => {
 
 	return (
 		<figure className='loading'>

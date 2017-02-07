@@ -3,54 +3,48 @@ import ReactDOM 	   from 'react-dom'
 import { Link } 	   from 'react-router'
 import { scrollToTop } from '../../utils/scroll'
 
-class Menu extends React.Component {
+const PAGES = [
+	{ url: '/', title: { desktop: 'Home', mobile: '' } },
+	{ url: '/about/', title: { desktop: 'About Me', mobile: 'About' } },
+	{ url: '/portfolio/', title: { desktop: 'My Work', mobile: 'Work' } },
+	{ url: '/contact/', title: { desktop: 'Get In Touch', mobile: 'Contact' } }
+]
 
-	render() {
-		return (
-			<menu className='navigation'>
+const _renderMenuItems = () => PAGES.map(page => (
 
-                <ul className='navigation-list'>
+	<li key={ page.url }>
 
-                    <li className='navigation-list-title'><h5>Pages</h5></li>
-					{ this.renderMenuItems() }
+		<Link to={ page.url }
+			  onClick={ scrollToTop }>
 
-                </ul>
+			  <span className='navigation-list-item--desktop'>
+				{ page.title.desktop }
+			  </span>
 
-            </menu>
-		)
-	}
+			  <span className='navigation-list-item--mobile'>
+				{ page.title.mobile }
+			  </span>
 
-	renderMenuItems() {
-		const pages = [
-			{ url: '/', title: { desktop: 'Home', mobile: '' } },
-			{ url: '/about/', title: { desktop: 'About Me', mobile: 'About' } },
-			{ url: '/portfolio/', title: { desktop: 'My Work', mobile: 'Work' } },
-			{ url: '/contact/', title: { desktop: 'Get In Touch', mobile: 'Contact' } }
-		]
+		</Link>
 
-		return pages.map((page) => {
+	</li>
 
-			return (
-				<li key={ page.url }>
+))
 
-					<Link to={ page.url }
-						  onClick={ scrollToTop }>
+const Menu = () => (
 
-						  <span className='navigation-list-item--desktop'>
-						  	{ page.title.desktop }
-						  </span>
+	<menu className='navigation'>
 
-						  <span className='navigation-list-item--mobile'>
-						  	{ page.title.mobile }
-						  </span>
+		<ul className='navigation-list'>
 
-					</Link>
+			<li className='navigation-list-title'><h5>Pages</h5></li>
 
-				</li>
-			)
+			{ _renderMenuItems() }
 
-		})
-	}
-}
+		</ul>
+
+	</menu>
+
+)
 
 export default Menu

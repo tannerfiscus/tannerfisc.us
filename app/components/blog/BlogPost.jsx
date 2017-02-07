@@ -1,17 +1,17 @@
-import APIError				 from '../APIError.jsx';
-import Collection	 		 from '../Collection.jsx';
-import CollectionItem 		 from '../CollectionItem.jsx';
-import Cover	   	 		 from '../Cover.jsx';
+import APIError				 from '../APIError'
+import Collection	 		 from '../Collection'
+import CollectionItem 		 from '../CollectionItem'
+import Cover	   	 		 from '../Cover'
 import { buildBlogImageUrl,
 	     formatCategoryTitle,
-		 getBlogPost }   	 from '../../utils/blog';
+		 getBlogPost }   	 from '../../utils/blog'
 import Helmet 	     		 from 'react-helmet'
 import { Link } 			 from 'react-router'
-import Loading		 		 from '../foundation/Loading.jsx';
-import NotFound      		 from '../NotFound.jsx';
-import PageContent 	 		 from '../foundation/PageContent.jsx';
-import React 		 		 from 'react';
-import ReactDOM		 		 from 'react-dom';
+import Loading		 		 from '../foundation/Loading'
+import NotFound      		 from '../NotFound'
+import PageContent 	 		 from '../foundation/PageContent'
+import React 		 		 from 'react'
+import ReactDOM		 		 from 'react-dom'
 import { scrollToTop }		 from '../../utils/scroll'
 
 class BlogCategory extends React.Component {
@@ -37,7 +37,7 @@ class BlogCategory extends React.Component {
 						notFound: false
 					}
 				})
-			});
+			})
 	 }
 
 	render() {
@@ -70,7 +70,7 @@ class BlogCategory extends React.Component {
 						this.renderPost(data) }
 
 			</section>
-		);
+		)
 	}
 
 	renderPost(post) {
@@ -100,9 +100,9 @@ class BlogCategory extends React.Component {
 
 				</PageContent>
 			</div>
-		);
+		)
 	}
 
 }
 
-export default BlogCategory;
+export default BlogCategory

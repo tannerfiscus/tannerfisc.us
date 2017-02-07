@@ -7,7 +7,7 @@ const ResumeHeader = () => (
         <img className='resume-header-image' src='/assets/resume-graphic.jpg' />
 
         <figcaption>
-            <h1>Hi, I&#39;m Tanner</h1>
+            <h1>Hi, I'm Tanner</h1>
         </figcaption>
 
         <Address />

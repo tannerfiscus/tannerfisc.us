@@ -1,25 +1,25 @@
-import { API_URL } 			from '../../../config/';
-import { Field, reduxForm } from 'redux-form';
-import Loading		   	    from '../foundation/Loading.jsx';
-import React 		 		from 'react';
-import request     			from 'superagent';
-import { validateForm }	    from '../../utils/contact';
+import { API_URL } 			from '../../../config/'
+import { Field, reduxForm } from 'redux-form'
+import Loading		   	    from '../foundation/Loading'
+import React 		 		from 'react'
+import request     			from 'superagent'
+import { validateForm }	    from '../../utils/contact'
 
 class ContactForm extends React.Component {
 	constructor(props, context) {
-		super(props, context);
+		super(props, context)
 
 		this.state = {
 			submitted: {},
 			submitting: false
-		};
+		}
 
-		this.handleSubmisson = this.handleSubmisson.bind(this);
-		this.renderField = this.renderField.bind(this);
+		this.handleSubmisson = this.handleSubmisson.bind(this)
+		this.renderField = this.renderField.bind(this)
 	}
 
 	render() {
-		const { handleSubmit, pristine, reset } = this.props;
+		const { handleSubmit, pristine, reset } = this.props
 
 		return (
 			<div className="contact-form">
@@ -48,33 +48,33 @@ class ContactForm extends React.Component {
 				{ !!this.state.submitted.success && this.renderSuccessMessage() }
 
 			</div>
-		);
+		)
 	}
 
 	getFixedState(e) {
 		if (e.target.value) {
-			e.target.parentElement.classList.add('fixed');
+			e.target.parentElement.classList.add('fixed')
 		} else {
-			e.target.parentElement.classList.remove('fixed');
+			e.target.parentElement.classList.remove('fixed')
 		}
 	}
 
 	handleSubmisson(formData) {
-		this.setState({ submitting: true });
+		this.setState({ submitting: true })
 
         request
 			.get(`${API_URL}/api/contact/?name=${formData.name}&email=${formData.email}&message=${formData.message}`)
 			.end((err, res) => {
 
-				this.setState({ submitting: false });
+				this.setState({ submitting: false })
 
 				if (err || res.error) {
-					this.setState({ submitted: { error: true } });
+					this.setState({ submitted: { error: true } })
 				} else {
-					this.setState({ submitted: { success: true } });
+					this.setState({ submitted: { success: true } })
 				}
 
-			});
+			})
 	}
 
 	renderField({ name, input, label, type, meta: { touched, error } }) {
@@ -89,7 +89,7 @@ class ContactForm extends React.Component {
 				{ touched && error && <span className="input-error">{error}</span> }
 
 			</div>
-		);
+		)
 	}
 
 	renderSubmitError() {
@@ -97,7 +97,7 @@ class ContactForm extends React.Component {
 			<h6 className="input-submit-error">
 				<i className="twa twa-disappointed"></i> <strong>An error occurred</strong> during submission. Please ensure you have filled out the entire form and try again.
 			</h6>
-		);
+		)
 	}
 
 	renderSuccessMessage() {
@@ -111,13 +111,13 @@ class ContactForm extends React.Component {
 					<h5>I will get back to you as soon as possible.</h5>
 				</div>
 			</div>
-		);
+		)
 	}
 }
 
 ContactForm = reduxForm({
   form: 'contact',
   validate: validateForm
-})(ContactForm);
+})(ContactForm)
 
-export default ContactForm;
+export default ContactForm

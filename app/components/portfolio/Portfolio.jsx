@@ -1,12 +1,13 @@
-import APIError		 	from '../APIError.jsx';
-import Cover	   	    from '../Cover.jsx';
-import { getPortfolio } from '../../utils/portfolio';
+import APIError		 	from '../APIError'
+import Cover	   	    from '../Cover'
+import { getPortfolio } from '../../utils/portfolio'
 import Helmet 	        from 'react-helmet'
-import Loading		    from '../foundation/Loading.jsx';
-import PageContent 	    from '../foundation/PageContent.jsx';
-import React 		    from 'react';
+import Loading		    from '../foundation/Loading'
+import PageContent 	    from '../foundation/PageContent'
+import React 		    from 'react'
 
 class Portfolio extends React.Component {
+
 	static loadProps(params, cb) {
 		getPortfolio()
 			.then((items) => {
@@ -24,7 +25,7 @@ class Portfolio extends React.Component {
 						items: []
 					}
 				})
-			});
+			})
 	 }
 
 	render() {
@@ -63,7 +64,7 @@ class Portfolio extends React.Component {
 				</PageContent>
 
 			</section>
-		);
+		)
 	}
 
 	renderItems(items) {
@@ -91,10 +92,10 @@ class Portfolio extends React.Component {
 					<div className="border-box-right"></div>
 					<div className="border-box-bottom"></div>
 				</figure>
-			);
-		});
+			)
+		})
 	}
 
 }
 
-export default Portfolio;
+export default Portfolio

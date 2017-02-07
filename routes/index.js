@@ -1,4 +1,4 @@
-import About              from '../app/components/pages/About'
+import About              from '../app/components/about/About'
 import App                from '../app/components/App'
 import Blog				  from '../app/components/blog/Blog'
 import BlogCategory		  from '../app/components/blog/BlogCategory'

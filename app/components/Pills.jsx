@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Pills = ({ items }, context) => {
+const Pills = ({ items }) => {
 
 	const renderPills = (items) => {
 		return items.map((item) => {

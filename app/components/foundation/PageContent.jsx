@@ -1,6 +1,6 @@
 import React 	from 'react'
 
-const PageContent = ({ children }, context) => {
+const PageContent = ({ children }) => {
 
 	return (
 		<div className='contain main'>
