@@ -118,6 +118,14 @@ pre {
 	color: $gray8;
 }
 
+.app {
+	opacity: 0;
+}
+
+.app-mounted {
+	opacity: 1;
+}
+
 .main {
 	min-height: calc(100vh - 31.7rem);
 }

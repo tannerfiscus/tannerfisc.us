@@ -1,0 +1,48 @@
+a.resume-back-link {
+    border-top: 1px solid $gray7;
+    color: $gray4;
+    display: block;
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: border-top 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        border-top: 1px solid $gray6;
+        color: $gray2;
+    }
+
+    @media only screen and (min-width: $breakpointMobile) {
+        text-align: left;
+    }
+}
+
+a.resume-back-link-fixed {
+    background: $gray8;
+    border: 0;
+    box-shadow: 0 0 8px rgba(24, 24, 24, 0.15);
+    color: $gray3;
+    left: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    transform: translateY(0);
+    transition: background 0.3s ease, color 0.3s ease, transform 0.4s ease;
+    width: 100%;
+    z-index: 10;
+
+    &:hover {
+        background: $gray1;
+        border: 0;
+        color: $gray8;
+    }
+
+    .page-appear & {
+        transform: translateY(-3rem);
+    }
+}
+
+.resume-back-link-contain {
+    margin: 0 auto;
+    max-width: 62rem;
+    padding: 0.5rem 1rem;
+}

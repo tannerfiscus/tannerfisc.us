@@ -7,3 +7,4 @@ build
 config
 app/constants/config.js
 app/components/resume/sections/Address.jsx
+server.bundle.js

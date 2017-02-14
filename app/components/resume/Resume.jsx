@@ -8,6 +8,7 @@ import PageContent 	   from '../foundation/PageContent'
 import Portfolio 	   from './sections/Portfolio'
 import React 	   	   from 'react'
 import References      from './sections/References'
+import ResumeBackLink  from './ResumeBackLink'
 import ResumeHeader    from './ResumeHeader'
 
 const Resume = () => (
@@ -23,6 +24,7 @@ const Resume = () => (
 			] }
 			title='Resume – Tanner Fiscus' />
 
+		<ResumeBackLink isFixed />
 
 			<PageContent>
 
@@ -72,6 +74,8 @@ const Resume = () => (
 				</div>
 
 			</PageContent>
+
+			<ResumeBackLink />
 
 			<Modals />
 

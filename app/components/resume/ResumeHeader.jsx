@@ -1,5 +1,4 @@
 import React   from 'react'
-import Address from './sections/Address'
 
 const ResumeHeader = () => (
     <figure className='resume-header'>
@@ -9,8 +8,6 @@ const ResumeHeader = () => (
         <figcaption>
             <h1>Hi, I'm Tanner</h1>
         </figcaption>
-
-        <Address />
 
     </figure>
 )

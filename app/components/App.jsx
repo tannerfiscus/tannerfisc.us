@@ -8,18 +8,38 @@ import { mapDispatchToProps,
 import React                   from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
+const _getClasses = (pageName, mounted) => {
+
+	const classes = [ 'app' ]
+
+	if (pageName) { classes.push(`app-page${pageName}`) }
+	if (mounted) { classes.push('app-mounted') }
+
+	return classes.join(' ')
+
+}
+
 class App extends React.Component {
 	constructor(props, context) {
 		super(props, context);
+
 		this.app = null;
+
+		this.state = {
+			mounted: false
+		}
 	}
 
 	componentDidMount() {
 		const touch = window !== 'undefined' && 'ontouchstart' in document.documentElement;
+
 		if (touch) {
 			this.app.classList.remove('app');
 			this.app.classList.add('app-touch');
 		}
+
+		this.setState({ mounted: true })
+
 	}
 
 	render() {
@@ -30,7 +50,7 @@ class App extends React.Component {
 		const pageName = path ? path.replace(/\//g, '-') : '-home'
 
 		return (
-			<div className={ `app app-page${pageName}` } ref={ (app) => this.app = app }>
+			<div className={ _getClasses(pageName, this.state.mounted) } ref={ (app) => this.app = app }>
 
 				<ReactCSSTransitionGroup
 					className={ 'page' + pageHomeModifier }
