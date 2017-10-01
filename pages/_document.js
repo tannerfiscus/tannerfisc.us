@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
         <Head>
             <meta charSet='utf-8' />
             <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-            <link rel='stylesheet' type='text/css' href='/static/font.css' />
+            <link rel='stylesheet' type='text/css' href='/static/styles.css' />
             {styleTags}
         </Head>
 

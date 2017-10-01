@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
+    "dev:styles": "node-sass --watch --output-style compressed styles/styles.scss static/styles.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
