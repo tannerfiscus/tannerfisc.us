@@ -1,38 +1,7 @@
 import Link from 'next/link'
-import styled, { keyframes } from 'styled-components'
-
-const animation = keyframes`
-    0% {
-        color: red;
-    }
-    16.67% {
-        color: orange;
-    }
-    33.33% {
-        color: yellow;
-    }
-    50% {
-        color: green;
-    }
-    66.67% {
-        color: blue;
-    }
-    83.33% {
-        color: purple;
-    }
-`;
-
-const StyledLogo = styled.div`
-    margin: 0.75rem 0;
-    width: ${props => props.small ? '3em' : 'auto'};
-
-    &:hover {
-        animation: ${animation} 1.4s ease infinite;
-    }
-`
 
 const Logo = ({ small }) => (
-    <StyledLogo small={small}>
+    <div className='logo'>
         <Link href='/'>
             <a className='logo-link' style={{color:'inherit'}} href="/">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +18,39 @@ const Logo = ({ small }) => (
                 </svg>
             </a>
         </Link>
-    </StyledLogo>
+
+        <style jsx>{`
+            @keyframes logo-color-transition {
+                0% {
+                    color: red;
+                }
+                16.67% {
+                    color: orange;
+                }
+                33.33% {
+                    color: yellow;
+                }
+                50% {
+                    color: green;
+                }
+                66.67% {
+                    color: blue;
+                }
+                83.33% {
+                    color: purple;
+                }
+            }
+
+            .logo {
+                margin: 0.75rem 0;
+                width: ${small ? '3em' : 'auto'};
+            }
+
+            .logo:hover {
+                animation: logo-color-transition 1.4s ease infinite;
+            }
+        `}</style>
+    </div>
 )
 
 export default Logo

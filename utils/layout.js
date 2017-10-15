@@ -1,24 +1,26 @@
-import { injectGlobal } from 'styled-components'
-
+import Footer from '../components/Footer'
 import Header from '../components/Header'
-
-injectGlobal`
-    body {
-        font-family: 'HaboroSans', -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
-    }
-`
 
 export default function(WrappedComponent) {
     return (props) => (
-        <main>
+        <div>
 
             <Header />
 
-            <WrappedComponent {...props} />
+            <main>
 
-            <hr />
-            Footer tbd
+                <WrappedComponent {...props} />
 
-        </main>
+            </main>
+
+            <Footer />
+
+            <style jsx>{`
+                main {
+                    min-height: calc(100vh - 11rem);
+                    padding: 6rem 0 0;
+                }
+            `}</style>
+        </div>
     )
 }

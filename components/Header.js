@@ -1,20 +1,9 @@
+import classnames from 'classnames';
 import React from 'react'
-import styled from 'styled-components'
 
 import Logo from './Logo'
 import Navigation from './Navigation'
 import { transparentBorder } from '../constants/styles/variables'
-
-const StyledHeader = styled.header`
-    background: transparent;
-    box-shadow: ${props => props.isFixed ? `0 0 8px ${transparentBorder}` : 'none'};
-    left: 0;
-    position: fixed;
-    top: 0;
-    transition: box-shadow 0.3s ease;
-    width: 100%;
-    will-change: box-shadow;
-`
 
 class Header extends React.PureComponent {
     constructor(props) {
@@ -44,16 +33,35 @@ class Header extends React.PureComponent {
     }
 
     render() {
-        const position = this.state.isFixed ? 'fixed' : 'static'
-
         return (
-            <StyledHeader isFixed={this.state.isFixed}>
+            <header>
 
-                <Logo small />
+                <div className='header-logo'>
+                    <Logo small />
+                </div>
 
                 <Navigation />
 
-            </StyledHeader>
+                <style jsx>{`
+                    header {
+                        background: #fff;
+                        box-shadow: ${this.state.isFixed ? `0 0 8px ${transparentBorder}` : 'none'};
+                        display: flex;
+                        left: 0;
+                        padding: 0.25rem 2rem;
+                        position: fixed;
+                        top: 0;
+                        transition: box-shadow 0.3s ease;
+                        width: 100%;
+                        will-change: box-shadow;
+                    }
+
+                    .header-logo {
+                        flex: 1 auto;
+                    }
+                `}</style>
+
+            </header>
         )
     }
 }
