@@ -1,102 +1,151 @@
+import 'isomorphic-fetch'
 import Link from 'next/link'
+import React from 'react'
 
 import Contain from '../components/common/Contain'
-import { gray1, gray3, gray4, gray8, transparentBorder } from '../constants/styles/variables';
-import withLayout from '../utils/layout'
+import { breakpointDesktopMaxPadded, gray1, gray2, gray3, gray4, gray7, gray8, transparentBorder } from '../constants/styles/variables';
+import Layout from '../components/common/Layout'
+import Timeline from '../components/timeline/Timeline'
 
-const Home = () => (
-    <div>
+class Home extends React.Component {
 
-        <Contain>
-            <h1>Developer. <span>Designer.</span></h1>
-        </Contain>
+    static async getInitialProps() {
+        try {
+            const res = await fetch('http://localhost:8080/static/json/timeline-items.json')
+            const json = await res.json()
+            return { timeline: json }
+        } catch(err) {
+            return {};
+        }
+    }
 
-        <figure>
-            <Contain>
-                <figcaption>
-                    <h2>Hi, I&#39;m Tanner.</h2>
-                    <p>I&#39;m a front-end developer who is passionate about building a better web with beautiful experiences.</p>
-                    <p>I specialize in Javascript development, particularly React.</p>
-                    <p>I&#39;m currently working at Yelp in San Francisco.</p>
-                    <Link href="/about">
-                      <a>More about me &rarr;</a>
-                    </Link>
-                </figcaption>
-            </Contain>
-        </figure>
+    render() {
+        return (
+            <Layout>
 
-        Add timeline down here!!
+                <Contain>
+                    <h1>
+                        <span className='backdrop'>Front-end</span> <span className='forefront'>Developer. Designer.</span>
+                    </h1>
+                </Contain>
 
-        <style jsx>{`
-            h1 {
-                font-size: 4rem;
-                padding: 14rem 32rem 2rem 0;
-                padding: 30vh 32rem 2rem 0;
-            }
+                <div className='intro'>
+                    <div className='intro-contain'>
+                        <div className='intro-img' />
 
-            h2 {
-                font-size: 1.5rem;
-                font-weight: 700;
-                margin: 0 0 2rem;
-            }
+                        <div className='intro-text'>
+                            <p>I&#39;m a front-end developer who is passionate about building a better web with beautiful experiences.</p>
+                            <p>I specialize in Javascript development, particularly React.</p>
+                            <p>I&#39;m currently working at Yelp in San Francisco.</p>
+                        </div>
 
-            p {
-                color: ${gray4};
-                line-height: 1.25rem;
-            }
+                    </div>
+                </div>
 
-            p + p {
-                margin-top: 1rem;
-            }
+                <div className='timeline'>
+                    <Timeline items={this.props.timeline} />
+                </div>
 
-            a {
-                color: ${gray3};
-                display: inline-block;
-                margin: 2rem 0 0;
-                text-decoration: none;
-            }
+                <style jsx>{`
+                    h1 {
+                        font-size: 4rem;
+                        line-height: 1;
+                        padding: 12rem 0 8rem 4rem;
+                        padding: 16vh 0 12rem 4rem;
+                        position: relative;
+                    }
 
-            a:hover {
-                text-decoration: underline;
-            }
+                    .backdrop {
+                        color: ${gray7};
+                        left: 0;
+                        margin: -7rem 0 0;
+                        position: absolute;
+                        top: 50%;
+                        font-size: 8rem;
+                        font-weight: 600;
+                        z-index: 0;
+                    }
 
-            figure {
-                background-image: url('/static/images/leaves.jpg');
-                background-position: center;
-                background-size: cover;
-                display: flex;
-                height: 20rem;
-                justify-content: flex-end;
-                position: relative;
-                width: 100%;
-            }
+                    .forefront {
+                        position: relative;
+                        z-index: 1;
+                    }
 
-            figure::before {
-                background: ${gray8};
-                bottom: 0;
-                content: '';
-                left: 0;
-                opacity: 0.1;
-                position: absolute;
-                right: 0;
-                top: 0;
-                z-index: 1;
-            }
+                    h2 {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        margin: 0 0 2rem;
+                    }
 
-            figcaption {
-                background: ${gray1};
-                border-radius: 3px;
-                box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-                color: ${gray8};
-                display: inline-block;
-                max-width: 30rem;
-                padding: 3rem;
-                position: relative;
-                top: -4rem;
-                z-index: 1;
-            }
-        `}</style>
-    </div>
-)
+                    p {
+                        color: ${gray8};
+                        line-height: 1.25rem;
+                        font-size: 1.25rem;
+                    }
 
-export default withLayout(Home)
+                    p + p {
+                        margin-top: 1rem;
+                    }
+
+                    .intro {
+                        background: ${gray1};
+                        height: 24rem;
+                        margin: 0 0 0 2rem;
+                        position: relative;
+                    }
+
+                    .intro-contain {
+                        align-items: center;
+                        display: flex;
+                        height: 100%;
+                        margin: 0 auto 0 0;
+                        max-width: 86rem;
+                        position: static;
+                    }
+
+                    .intro-img {
+                        align-self: flex-start;
+                        background-image: url('/static/images/me.jpg');
+                        background-position: center;
+                        background-size: cover;
+                        border-radius: 3px;
+                        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+                        height: 24rem;
+                        position: absolute;
+                        right: 2rem;
+                        top: -4rem;
+                        z-index: 1;
+                        width: 24rem;
+                    }
+
+                    .intro-text {
+                        padding: 0 30rem 0 2rem;
+                    }
+
+                    .timeline {
+                        padding: 4rem 0 6rem;
+                    }
+
+                    @media (min-width: ${breakpointDesktopMaxPadded}) {
+                        .intro {
+                            margin: 0 0 0 auto;
+                            width: calc(100vw - ((100vw - ${breakpointDesktopMaxPadded}) / 2) - 2rem);
+                        }
+
+                        .intro-contain {
+                            position: relative;
+                        }
+
+                        .intro-img {
+                            right: 0;
+                        }
+                    }
+                `}</style>
+
+            </Layout>
+        )
+    }
+
+};
+
+export default Home;

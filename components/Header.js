@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import React from 'react'
 
+import Contain from './common/Contain';
 import Logo from './Logo'
 import Navigation from './Navigation'
 import { transparentBorder } from '../constants/styles/variables'
@@ -36,28 +37,36 @@ class Header extends React.PureComponent {
         return (
             <header>
 
-                <div className='header-logo'>
-                    <Logo small />
-                </div>
+                <Contain>
+                    <div className='header-flex'>
+                        <div className='header-logo'>
+                            <Logo small />
+                        </div>
 
-                <Navigation />
+                        <Navigation />
+                    </div>
+                </Contain>
 
                 <style jsx>{`
                     header {
                         background: #fff;
                         box-shadow: ${this.state.isFixed ? `0 0 8px ${transparentBorder}` : 'none'};
-                        display: flex;
                         left: 0;
-                        padding: 0.25rem 2rem;
                         position: fixed;
                         top: 0;
                         transition: box-shadow 0.3s ease;
                         width: 100%;
                         will-change: box-shadow;
+                        z-index: 10;
+                    }
+
+                    .header-flex {
+                        display: flex;
                     }
 
                     .header-logo {
                         flex: 1 auto;
+                        padding: 1rem 0;
                     }
                 `}</style>
 

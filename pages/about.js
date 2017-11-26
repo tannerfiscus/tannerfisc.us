@@ -1,9 +1,11 @@
-import withLayout from '../utils/layout'
+import Layout from '../components/common/Layout'
 
 const About = () => (
-  <div style={ { height: '2000px' } }>
-    <h1>About Me</h1>
-  </div>
+    <Layout>
+        <div style={ { height: '2000px' } }>
+        <h1>About Me</h1>
+        </div>
+    </Layout>
 )
 
-export default withLayout(About)
+export default About;

@@ -50,7 +50,9 @@ export default class MyDocument extends Document {
                             display: block;
                         }
                         body {
-                            line-height: 1;
+                            line-height: 1.3;
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
                         }
                         ol, ul {
                             list-style: none;

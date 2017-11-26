@@ -6,6 +6,8 @@ const Contain = ({ children }) => (
 
         <style jsx>{`
             padding: 0 2rem;
+            margin: 0 auto;
+            max-width: 90rem;
         `}</style>
     </div>
 )
