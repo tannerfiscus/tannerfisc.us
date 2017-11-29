@@ -1,9 +1,10 @@
-import withLayout from '../utils/layout'
+import Layout from '../components/common/Layout'
+import Resume from '../components/resume/Resume';
 
-const Resume = () => (
-  <div>
-    <h1>Resume</h1>
-  </div>
+const ResumePage = () => (
+  <Layout>
+    <Resume />
+  </Layout>
 )
 
-export default withLayout(Resume)
+export default ResumePage;
