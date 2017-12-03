@@ -1,6 +1,8 @@
 // import { connect }     from 'react-redux'
 // import { openModal }   from '../../../actions/modal'
 import React           from 'react'
+
+import Button from '../../common/Button'
 import ResumeSection   from '../ResumeSection'
 
 const Portfolio = ({ dispatch }) => {
@@ -12,13 +14,13 @@ const Portfolio = ({ dispatch }) => {
 
     return (
         <p>
-            <a className='button button-block'
-               href='/portfolio/'
-               onClick={ () => alert('need to implement') }>
+            <Button
+                block
+                onClick={ () => alert('need to implement') }>
 
                View My Work &rarr;
 
-            </a>
+            </Button>
         </p>
     )
 }

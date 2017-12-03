@@ -69,6 +69,9 @@ export default class MyDocument extends Document {
                             border-collapse: collapse;
                             border-spacing: 0;
                         }
+                        p + p {
+                            margin-top: 1rem;
+                        }
                     `}</style>
                 </body>
             </html>

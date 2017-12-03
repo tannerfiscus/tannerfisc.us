@@ -8,7 +8,7 @@ export const breakpointDesktopMaxPadded = '90rem';
 export const breakpointHeight = '40rem';
 export const breakpointHeightTall = '60rem';
 
-export const fontFamily = `HaboroSans', Avenir, Helvetica, sans-serif`;
+export const fontFamily = 'HaboroSans, Avenir, Helvetica, sans-serif';
 
 export const transparentBorder = 'rgba(24,24,24,0.15)';
 

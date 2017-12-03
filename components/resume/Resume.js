@@ -7,7 +7,6 @@ import OnlinePortfolio from './sections/OnlinePortfolio'
 import Portfolio 	   from './sections/Portfolio'
 import React 	   	   from 'react'
 import References      from './sections/References'
-import ResumeBackLink  from './ResumeBackLink'
 import ResumeHeader    from './ResumeHeader'
 
 import Grid from '../common/grid/Grid'
@@ -16,8 +15,6 @@ import GridSection from '../common/grid/GridSection'
 const Resume = () => (
 
 	<section>
-
-		<ResumeBackLink isFixed />
 
 			<Contain>
 
@@ -74,9 +71,14 @@ const Resume = () => (
 
 			</Contain>
 
-			<ResumeBackLink />
-
 			<Modals />
+
+            <style jsx>{`
+                section {
+                    margin: 4rem auto;
+                    max-width: 68rem;
+                }
+            `}</style>
 
 	</section>
 

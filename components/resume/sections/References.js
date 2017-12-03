@@ -1,7 +1,9 @@
 // import { connect }     from 'react-redux'
 // import { openModal }   from '../../../actions/modal'
-import React           from 'react'
-import ResumeSection   from '../ResumeSection'
+import Button from '../../common/Button'
+
+import React from 'react'
+import ResumeSection from '../ResumeSection'
 
 const References = ({ dispatch }) => {
 
@@ -17,10 +19,9 @@ const References = ({ dispatch }) => {
             <p>References are available upon request.</p>
 
             <p>
-                <a className='button button-inverted'
-                   href='/contact/'>
+                <Button inverted>
                    Contact Me
-                </a>
+                </Button>
             </p>
 
         </ResumeSection>

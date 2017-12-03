@@ -1,4 +1,7 @@
-import React         from 'react'
+import React from 'react'
+import ResumeList from '../list/ResumeList'
+import ResumeListContent from '../list/ResumeListContent'
+import ResumeListItem from '../list/ResumeListItem'
 import ResumeSection from '../ResumeSection'
 
 const Education = () => (
@@ -6,43 +9,43 @@ const Education = () => (
     <ResumeSection
         title='Education'>
 
-        <ul className='resume-list'>
+        <ResumeList>
 
-            <li className='resume-list-item'>
+            <ResumeListItem>
 
                 <div>
 
-                    <p className='resume-list-item-small'>2015</p>
+                    <ResumeListContent small>2015</ResumeListContent>
 
-                    <h4 className='resume-list-item-title'>Internet Information Systems</h4>
+                    <ResumeListContent title>Internet Information Systems</ResumeListContent>
 
-                    <p className='resume-list-item-description'>
+                    <ResumeListContent description>
                         Master of Science (M.S.)<br/>
                         Robert Morris University
-                    </p>
+                    </ResumeListContent>
 
                 </div>
 
-            </li>
+            </ResumeListItem>
 
-            <li className='resume-list-item'>
+            <ResumeListItem>
 
                 <div>
 
-                    <p className='resume-list-item-small'>2015</p>
+                    <ResumeListContent small>2015</ResumeListContent>
 
-                    <h4 className='resume-list-item-title'>Computer Information Systems</h4>
+                    <ResumeListContent title>Computer Information Systems</ResumeListContent>
 
-                    <p className='resume-list-item-description'>
+                    <ResumeListContent description>
                         Bachelor of Science (B.S.)<br/>
                         Robert Morris University
-                    </p>
+                    </ResumeListContent>
 
                 </div>
 
-            </li>
+            </ResumeListItem>
 
-        </ul>
+        </ResumeList>
 
     </ResumeSection>
 
