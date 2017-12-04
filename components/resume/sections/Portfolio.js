@@ -13,7 +13,7 @@ const Portfolio = ({ dispatch }) => {
     // }
 
     return (
-        <p>
+        <p className='screen-only'>
             <Button
                 block
                 onClick={ () => alert('need to implement') }>

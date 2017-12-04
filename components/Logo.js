@@ -1,7 +1,12 @@
+import classnames from 'classnames'
 import Link from 'next/link'
 
-const Logo = ({ small }) => (
-    <div className='logo'>
+const Logo = ({ footer, small }) => (
+    <div className={classnames({
+        logo: true,
+        'logo-footer': footer,
+        'logo-small': small,
+    })}>
         <Link href='/'>
             <a className='logo-link' style={{color:'inherit'}} href="/">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -43,11 +48,19 @@ const Logo = ({ small }) => (
 
             .logo {
                 margin: 0.75rem 0;
-                width: ${small ? '3em' : 'auto'};
             }
 
             .logo:hover {
                 animation: logo-color-transition 1.4s ease infinite;
+            }
+
+            .logo-footer {
+                margin: 0;
+                width: 3em;
+            }
+
+            .logo-small {
+                width: 3em;
             }
         `}</style>
     </div>
