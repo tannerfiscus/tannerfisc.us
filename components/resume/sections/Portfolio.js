@@ -14,7 +14,7 @@ const Portfolio = ({ dispatch }) => {
     // }
 
     return (
-        <p>
+        <p className='screen-only'>
             <ModalTrigger
                 content={<div>The modal content!</div>}
             >

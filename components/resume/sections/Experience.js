@@ -21,6 +21,51 @@ const Experience = () => (
                 <ResumeListContent left>
 
                     <ResumeEmployer
+                        employer='yelp'
+                        timeframe='June 2017 - Present'
+                    />
+
+                </ResumeListContent>
+
+
+                <ResumeListContent right>
+
+                    <ResumeListContent title>
+                        Software Engineer (Javascript)
+                    </ResumeListContent>
+
+                    {/*<ResumeBullets
+                        points={[]}
+                    />*/}
+
+                    <ResumeSkills
+                        skills={[
+                            'Javascript (ES6)',
+                            'React',
+                            'Redux',
+                            'Jest',
+                            'Enzyme',
+                            'Eslint',
+                            'Webpack',
+                            'CSS Modules',
+                            'SASS',
+                            'HTML',
+                            'npm',
+                            'Yarn',
+                            'Git',
+                            'Jira',
+                        ]}
+                    />
+
+                </ResumeListContent>
+
+            </ResumeListItem>
+
+            <ResumeListItem>
+
+                <ResumeListContent left>
+
+                    <ResumeEmployer
                         employer='niche'
                         timeframe='Aug 2015 - May 2017'
                     />
@@ -38,7 +83,7 @@ const Experience = () => (
                         points={[
                             'Collaborated with other front end engineers to forge a modern, scalable, cross-browser, mobile-first platform for niche.com, which went from prototype to production in 15 months.',
                             'Implemented a set of Javascript standards with other front end developers to create code uniformity.',
-                            'Delivered reliable code quality by writing unit tests with Mocha and enzyme, covering over 40% of the codebase.',
+                            'Delivered reliable code quality by writing unit tests with Mocha and enzyme.',
                             'Efficiently implemented changes during QA and design review to ensure a timely completion of deliverables.',
                             'Worked with back-end developers to shape API responses to best fit front end implementation.',
                             'Researched best practices to independently design and build an internal web application for managing data.',
@@ -49,8 +94,8 @@ const Experience = () => (
                         skills={[
                             'Javascript (ES6)',
                             'React',
-                            'fluxible',
-                            'redux',
+                            'Fluxible',
+                            'Redux',
                             'Mocha',
                             'Enzyme',
                             'Eslint',

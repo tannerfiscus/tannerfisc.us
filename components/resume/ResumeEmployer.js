@@ -6,6 +6,7 @@ import ResumeListContent from './list/ResumeListContent'
 const EmployerNames = {
     niche: 'Niche.com',
     rmu: 'Robert Morris University',
+    yelp: 'Yelp',
 };
 
 const ResumeListEmployer = ({ employer, timeframe }) => (
@@ -48,6 +49,13 @@ const ResumeListEmployer = ({ employer, timeframe }) => (
                 background: url('/static/images/employers/rmu.png');
                 background-size: cover;
                 height: 2rem;
+                width: 4.2rem;
+            }
+
+            .resume-employer-yelp::after {
+                background: url('/static/images/employers/yelp.png');
+                background-size: cover;
+                height: 2.2rem;
                 width: 4.2rem;
             }
 

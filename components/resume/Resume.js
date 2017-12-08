@@ -2,6 +2,7 @@ import About	       from './sections/About'
 import Contain         from '../common/Contain'
 import Education       from './sections/Education'
 import Experience      from './sections/Experience'
+import Logo from '../Logo'
 import Modals          from './sections/Modals'
 import OnlinePortfolio from './sections/OnlinePortfolio'
 import Portfolio 	   from './sections/Portfolio'
@@ -29,19 +30,13 @@ const Resume = () => (
 
 						<About />
 
-						<div className='resume-screen'>
-							<Portfolio />
-						</div>
+						<Portfolio />
 
 						<Education />
 
-						<div className='resume-print'>
-							<OnlinePortfolio />
-						</div>
+						<OnlinePortfolio />
 
-						<div className='resume-desktop'>
-							<References />
-						</div>
+						<References desktop />
 
 					</GridSection>
 
@@ -52,21 +47,16 @@ const Resume = () => (
 
 						<Experience />
 
-						<div className='resume-mobile'>
-							<References />
-						</div>
+						<References mobile />
 
 					</GridSection>
 
 				</Grid>
 
-				<div className='resume-logo'>
-
-					  <div className="logo">
-						  <div className="logo-shape"></div>
-						  <div className="logo-text">TF</div>
-					  </div>
-
+				<div className='print-only'>
+					<div className='resume-logo'>
+						 <Logo small />
+					</div>
 				</div>
 
 			</Contain>
@@ -78,6 +68,11 @@ const Resume = () => (
                     margin: 4rem auto;
                     max-width: 68rem;
                 }
+
+				.resume-logo {
+					display: flex;
+					justify-content: flex-end;
+				}
             `}</style>
 
 	</section>

@@ -1,11 +1,13 @@
 // import { connect }     from 'react-redux'
 // import { openModal }   from '../../../actions/modal'
-import Button from '../../common/Button'
-
+import classnames from 'classnames'
 import React from 'react'
+
+import Button from '../../common/Button'
+import { breakpointMobile } from '../../../constants/styles/variables'
 import ResumeSection from '../ResumeSection'
 
-const References = ({ dispatch }) => {
+const References = ({ dispatch, desktop, mobile }) => {
 
     // const _handleClick = e => {
 	// 	e.preventDefault()
@@ -13,18 +15,39 @@ const References = ({ dispatch }) => {
     // }
 
     return (
-        <ResumeSection
-            title='References'>
+        <div className={classnames({
+            desktop: desktop,
+            mobile: mobile,
+        })}>
+            <ResumeSection
+                title='References'>
 
-            <p>References are available upon request.</p>
+                <p>References are available upon request.</p>
 
-            <p>
-                <Button inverted>
-                   Contact Me
-                </Button>
-            </p>
+                <p>
+                    <Button inverted>
+                       Contact Me
+                    </Button>
+                </p>
 
-        </ResumeSection>
+            </ResumeSection>
+
+            <style jsx>{`
+                .desktop {
+                    display: none;
+                }
+
+                @media only screen and (min-width: ${breakpointMobile}) {
+                    .desktop {
+                        display: block;
+                    }
+
+                    .mobile {
+                        display: none;
+                    }
+                }
+            `}</style>
+        </div>
     )
 
 }

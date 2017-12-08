@@ -13,6 +13,7 @@ export default class MyDocument extends Document {
                 <body>
                     <div className="root">
                         <Main />
+                        <div id="modal-root"></div>
                     </div>
                     <div id="modal-root"></div>
 
@@ -72,6 +73,12 @@ export default class MyDocument extends Document {
                         }
                         p + p {
                             margin-top: 1rem;
+                        }
+                        .print-only {
+                            display: none;
+                        }
+                        .screen-only {
+                            display: block;
                         }
                     `}</style>
                 </body>
