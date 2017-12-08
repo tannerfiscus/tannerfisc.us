@@ -3,6 +3,7 @@
 import React           from 'react'
 
 import Button from '../../common/Button'
+import ModalTrigger from '../../common/modal/ModalTrigger'
 import ResumeSection   from '../ResumeSection'
 
 const Portfolio = ({ dispatch }) => {
@@ -14,13 +15,15 @@ const Portfolio = ({ dispatch }) => {
 
     return (
         <p>
-            <Button
-                block
-                onClick={ () => alert('need to implement') }>
+            <ModalTrigger
+                content={<div>The modal content!</div>}
+            >
+                <Button block>
 
-               View My Work &rarr;
+                   View My Work &rarr;
 
-            </Button>
+                </Button>
+            </ModalTrigger>
         </p>
     )
 }
