@@ -1,7 +1,7 @@
 import classnames from 'classnames'
 import React from 'react'
 
-import { gray2, gray4, gray6 } from '../../../constants/styles/variables'
+import { gray2, gray4, gray6, transparentBorder } from '../../../constants/styles/variables'
 
 class ModalContent extends React.PureComponent {
     constructor(props) {
@@ -73,9 +73,9 @@ class ModalContent extends React.PureComponent {
                     }
 
                     .modal-header {
-                        border-bottom: 1px solid ${gray6};
+                        box-shadow: 0 0 8px ${transparentBorder};
                         display: flex;
-                        height: 2.5rem;
+                        height: 3rem;
                         justify-content: flex-end;
                         overflow: hidden;
                     }
@@ -92,24 +92,24 @@ class ModalContent extends React.PureComponent {
                         background: ${gray4};
                         content: '';
                         height: 1.5rem;
-                        left: 1.2rem;
+                        left: 0.5rem;
                         position: absolute;
                         transform: rotate(45deg);
                         transition: all 0.3s ease;
-                        top: 0.5rem;
-                        width: 1px;
+                        top: 0.75rem;
+                        width: 2px;
                     }
 
                     .modal-header-button::before {
                         background: ${gray4};
                         content: '';
                         height: 1.5rem;
-                        left: 1.2rem;
+                        left: 0.5rem;
                         position: absolute;
                         transform: rotate(-45deg);
                         transition: all 0.3s ease;
-                        top: 0.5rem;
-                        width: 1px;
+                        top: 0.75rem;
+                        width: 2px;
                     }
 
                     .modal-header-button:hover {
@@ -123,14 +123,14 @@ class ModalContent extends React.PureComponent {
 
                     .modal-header-button:hover::after {
                         height: .75rem;
-                        left: 1.5rem;
-                        top: 0.9rem
+                        left: .8rem;
+                        top: 1.15rem
                     }
 
                     .modal-header-button:hover::before {
                         height: .75rem;
-                        left: 1rem;
-                        top: 0.9rem
+                        left: .3rem;
+                        top: 1.15rem
                     }
 
                     .modal-header-button-text {
@@ -139,20 +139,18 @@ class ModalContent extends React.PureComponent {
                         line-height: 2.5rem;
                         opacity: 0;
                         position: absolute;
-                        right: 2.2rem;
-                        top: 0;
-                        transform: translateY(-.5rem);
-                        transition: transform 0.3s linear, opacity 0.3s ease;
+                        right: 3rem;
+                        top: 0.25rem;
+                        transition: opacity 0.3s ease;
                     }
 
                     .modal-header-button:hover .modal-header-button-text {
                         opacity: 1;
-                        transform: translateY(0);
                     }
 
                     .modal-content {
                         -webkit-overflow-scrolling: touch;
-                        height: calc(100vh - 2.5rem);
+                        height: calc(100vh - 3rem);
                         overflow: auto;
                         padding: 1.5rem;
                     }

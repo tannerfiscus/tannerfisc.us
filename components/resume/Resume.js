@@ -3,7 +3,6 @@ import Contain         from '../common/Contain'
 import Education       from './sections/Education'
 import Experience      from './sections/Experience'
 import Logo from '../Logo'
-import Modals          from './sections/Modals'
 import OnlinePortfolio from './sections/OnlinePortfolio'
 import Portfolio 	   from './sections/Portfolio'
 import React 	   	   from 'react'
@@ -60,8 +59,6 @@ const Resume = () => (
 				</div>
 
 			</Contain>
-
-			<Modals />
 
             <style jsx>{`
                 section {
