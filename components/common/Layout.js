@@ -16,7 +16,7 @@ export default ({ children }) => (
 
         <style jsx>{`
             main {
-                padding: 6rem 0 0;
+                padding: 7.5rem 0 0;
             }
         `}</style>
     </div>

@@ -1,6 +1,8 @@
 import classnames from 'classnames'
 import Link from 'next/link'
 
+import { gray2, gray5 } from '../constants/styles/variables'
+
 const Logo = ({ footer, small }) => (
     <div className={classnames({
         logo: true,
@@ -27,22 +29,13 @@ const Logo = ({ footer, small }) => (
         <style jsx>{`
             @keyframes logo-color-transition {
                 0% {
-                    color: red;
-                }
-                16.67% {
-                    color: orange;
-                }
-                33.33% {
-                    color: yellow;
+                    color: ${gray2};
                 }
                 50% {
-                    color: green;
+                    color: ${gray5};
                 }
-                66.67% {
-                    color: blue;
-                }
-                83.33% {
-                    color: purple;
+                100% {
+                    color: ${gray2};
                 }
             }
 
@@ -51,7 +44,7 @@ const Logo = ({ footer, small }) => (
             }
 
             .logo:hover {
-                animation: logo-color-transition 1.4s ease infinite;
+                animation: logo-color-transition 2s ease infinite;
             }
 
             .logo-footer {

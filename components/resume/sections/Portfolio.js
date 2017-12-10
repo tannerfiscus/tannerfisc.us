@@ -14,7 +14,7 @@ const Portfolio = ({ dispatch }) => {
     // }
 
     return (
-        <p className='screen-only'>
+        <div className='screen-only'>
             <ModalTrigger
                 content={<div>The modal content!</div>}
             >
@@ -24,7 +24,7 @@ const Portfolio = ({ dispatch }) => {
 
                 </Button>
             </ModalTrigger>
-        </p>
+        </div>
     )
 }
 

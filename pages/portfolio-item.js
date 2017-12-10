@@ -1,10 +1,10 @@
-import withLayout from '../utils/layout'
+import Layout from '../components/common/Layout'
 
 const PortfolioItem = ({ url }) => (
-  <div>
+  <Layout>
       <h1>{url.query.id}</h1>
       <p>This is the portfolio item page for {url.query.id}.</p>
-  </div>
+  </Layout>
 )
 
-export default withLayout(PortfolioItem)
+export default PortfolioItem

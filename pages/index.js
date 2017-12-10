@@ -2,8 +2,11 @@ import 'isomorphic-fetch'
 import Link from 'next/link'
 import React from 'react'
 
+import BackdropTitle from '../components/common/BackdropTitle'
 import Contain from '../components/common/Contain'
 import { breakpointDesktopMaxPadded, gray1, gray2, gray3, gray4, gray7, gray8, transparentBorder } from '../constants/styles/variables';
+import Heading from '../components/common/Heading'
+import HighlightedSection from '../components/common/HighlightedSection'
 import Layout from '../components/common/Layout'
 import Timeline from '../components/timeline/Timeline'
 
@@ -24,51 +27,40 @@ class Home extends React.Component {
             <Layout>
 
                 <Contain>
-                    <h1>
-                        <span className='backdrop'>Front-end</span> <span className='forefront'>Developer. Designer.</span>
-                    </h1>
+                    <div className='title'>
+                        <BackdropTitle
+                            backdrop='Front-end'
+                            title='Developer. Designer.'
+                        />
+                    </div>
                 </Contain>
 
-                <div className='intro'>
-                    <div className='intro-contain'>
+                <HighlightedSection>
+                    <div className='intro'>
                         <div className='intro-img' />
 
                         <div className='intro-text'>
+                            <Heading size={3}>
+                                Hi, I&#39;m Tanner.
+                            </Heading>
                             <p>I&#39;m a front-end developer who is passionate about building a better web with beautiful experiences.</p>
                             <p>I specialize in Javascript development, particularly React.</p>
                             <p>I&#39;m currently working at Yelp in San Francisco.</p>
                         </div>
 
                     </div>
-                </div>
+                </HighlightedSection>
 
                 <div className='timeline'>
-                    <Timeline items={this.props.timeline} />
+                    <HighlightedSection light>
+                        <Timeline items={this.props.timeline} />
+                    </HighlightedSection>
                 </div>
 
                 <style jsx>{`
-                    h1 {
-                        font-size: 4rem;
-                        line-height: 1;
-                        padding: 12rem 0 8rem 4rem;
-                        padding: 16vh 0 12rem 4rem;
-                        position: relative;
-                    }
 
-                    .backdrop {
-                        color: ${gray7};
-                        left: 0;
-                        margin: -7rem 0 0;
-                        position: absolute;
-                        top: 50%;
-                        font-size: 8rem;
-                        font-weight: 600;
-                        z-index: 0;
-                    }
-
-                    .forefront {
-                        position: relative;
-                        z-index: 1;
+                    .title {
+                        padding: 6rem 0 8rem;
                     }
 
                     h2 {
@@ -88,16 +80,10 @@ class Home extends React.Component {
                     }
 
                     .intro {
-                        background: ${gray1};
-                        height: 24rem;
-                        margin: 0 0 0 2rem;
-                        position: relative;
-                    }
-
-                    .intro-contain {
                         align-items: center;
                         display: flex;
-                        height: 100%;
+                        flex-direction: row-reverse;
+                        height: 20.5rem;
                         margin: 0 auto 0 0;
                         max-width: 86rem;
                         position: static;
@@ -110,35 +96,23 @@ class Home extends React.Component {
                         background-size: cover;
                         border-radius: 3px;
                         box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+                        flex: 0 auto;
                         height: 24rem;
-                        position: absolute;
-                        right: 2rem;
+                        min-width: 20rem;
+                        position: relative;
                         top: -4rem;
                         z-index: 1;
                         width: 24rem;
                     }
 
                     .intro-text {
-                        padding: 0 30rem 0 2rem;
+                        padding: 0 2rem 2rem 0;
+                        flex: 1 auto;
                     }
 
                     .timeline {
-                        padding: 4rem 0 6rem;
-                    }
-
-                    @media (min-width: ${breakpointDesktopMaxPadded}) {
-                        .intro {
-                            margin: 0 0 0 auto;
-                            width: calc(100vw - ((100vw - ${breakpointDesktopMaxPadded}) / 2) - 2rem);
-                        }
-
-                        .intro-contain {
-                            position: relative;
-                        }
-
-                        .intro-img {
-                            right: 0;
-                        }
+                        background: ${gray7};
+                        padding: 2rem 0 0;
                     }
                 `}</style>
 
