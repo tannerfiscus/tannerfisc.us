@@ -1,4 +1,5 @@
 import BackdropTitle from '../components/common/BackdropTitle'
+import ContactForm from '../components/contact/ContactForm'
 import Contain from '../components/common/Contain'
 import Heading from '../components/common/Heading'
 import HighlightedSection from '../components/common/HighlightedSection'
@@ -16,9 +17,13 @@ const Contact = () => (
 
         <HighlightedSection>
             <div className='contact-form'>
+
                 <Heading size={5}>
                     Fill out the form below and I&#39;ll be in touch soon
                 </Heading>
+
+                <ContactForm />
+                
             </div>
         </HighlightedSection>
 

@@ -1,5 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 
+import { gray3, gray7, green1, red1, transparentBorder } from '../constants/styles/variables'
+
 export default class MyDocument extends Document {
     render() {
         return (
@@ -79,6 +81,81 @@ export default class MyDocument extends Document {
                         }
                         .screen-only {
                             display: block;
+                        }
+
+                        input[type='text'],
+                        input[type='email'],
+                        input[type='password'],
+                        textarea {
+                            -webkit-appearance: none;
+                            background: transparent;
+                            border: 2px solid ${gray3};
+                            border-radius: 5px;
+                            box-shadow: none;
+                            box-sizing: border-box;
+                            color: ${gray7};
+                            display: block;
+                            font-weight: 500;
+                            font-size: 1rem;
+                            height: 2.75rem;
+                            padding: .9rem .75rem .75rem;
+                            position: relative;
+                            transition: border 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+                            width: 100%;
+                            z-index: 1;
+                        }
+
+                        input[type='text']:focus,
+                        input[type='email']:focus,
+                        input[type='password']:focus,
+                        textarea:focus {
+                            border: 2px solid ${gray7};
+                            box-shadow: 0 0 8px ${transparentBorder};
+                            color: $gray3;
+                            outline: none;
+                        }
+
+                        input[type='text']:focus + label,
+                        input[type='email']:focus + label,
+                        input[type='password']:focus + label,
+                        textarea:focus + label {
+                            color: ${gray7};
+                            left: 0;
+                            top: -0.1rem;
+                        }
+
+                        .input-valid {
+                            border-color: ${green1};
+                            color: ${green1};
+                        }
+
+                        .input-valid + label {
+                            color: ${green1};
+                        }
+
+                        .input-invalid {
+                            border-color: ${red1};
+                            color: ${red1};
+                        }
+
+                        .input-invalid + label {
+                            color: ${red1};
+                        }
+
+                        label {
+                            color: ${gray3};
+                            font-size: 1rem;
+                            left: 0.75rem;
+                            line-height: 2.75rem;
+                            position: absolute;
+                            top: 2.05rem;
+                            transition: all 0.3s ease;
+                            z-index: 0;
+                        }
+
+                        .has-value label {
+                            left: 0;
+                            top: -0.1rem;
                         }
                     `}</style>
                 </body>
