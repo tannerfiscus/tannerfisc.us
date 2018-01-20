@@ -1,10 +1,19 @@
-import Layout from '../components/common/Layout'
+import 'isomorphic-fetch'
 
-const PortfolioItem = ({ url }) => (
-  <Layout>
-      <h1>{url.query.id}</h1>
-      <p>This is the portfolio item page for {url.query.id}.</p>
-  </Layout>
-)
+import { buildAPIUrl } from '../utils/url'
+import Project from '../components/project/Project'
+
+class PortfolioItem extends React.PureComponent {
+
+    static async getInitialProps({ query }) {
+        const res = await fetch(buildAPIUrl(`/portfolio/item/${query.id}`))
+        const json = await res.json()
+        return { item: json }
+    }
+
+    render() {
+        return <Project item={this.props.item} />
+    }
+}
 
 export default PortfolioItem

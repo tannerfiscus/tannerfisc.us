@@ -1,6 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 
-import { gray3, gray7, green1, red1, transparentBorder } from '../constants/styles/variables'
+import { blue1, blue2, gray3, gray7, green1, red1, transparentBorder } from '../constants/styles/variables'
 
 export default class MyDocument extends Document {
     render() {
@@ -124,21 +124,33 @@ export default class MyDocument extends Document {
                             top: -0.1rem;
                         }
 
-                        .input-valid {
+                        input[type='text']:valid,
+                        input[type='email']:valid,
+                        input[type='password']:valid,
+                        textarea:valid {
                             border-color: ${green1};
                             color: ${green1};
                         }
 
-                        .input-valid + label {
+                        input[type='text']:valid + label,
+                        input[type='email']:valid + label,
+                        input[type='password']:valid + label,
+                        textarea:valid + label {
                             color: ${green1};
                         }
 
-                        .input-invalid {
+                        .is-dirty input[type='text']:invalid,
+                        .is-dirty input[type='email']:invalid,
+                        .is-dirty input[type='password']:invalid,
+                        .is-dirty textarea:invalid {
                             border-color: ${red1};
                             color: ${red1};
                         }
 
-                        .input-invalid + label {
+                        .is-dirty input[type='text']:invalid + label,
+                        .is-dirty input[type='email']:invalid + label,
+                        .is-dirty input[type='password']:invalid + label,
+                        .is-dirty textarea:invalid + label {
                             color: ${red1};
                         }
 
@@ -156,6 +168,18 @@ export default class MyDocument extends Document {
                         .has-value label {
                             left: 0;
                             top: -0.1rem;
+                        }
+
+                        a {
+                            border-bottom: 1px dashed transparent;
+                            color: ${blue1};
+                            text-decoration: none;
+                            transition: border-color 0.2s ease, color 0.2s ease;
+                        }
+
+                        a:hover {
+                            border-color: ${blue2};
+                            color: ${blue2};
                         }
                     `}</style>
                 </body>

@@ -3,16 +3,20 @@ import React from 'react'
 
 import { withFormFieldBehavior } from './form-field'
 
-const Textarea = ({ isEmpty, label, name, onBlur }) => {
+const Textarea = ({ isDirty, isEmpty, label, name, onBlur, onKeyUp, pattern }) => {
     return (
         <div className={classnames('textarea', {
             'has-value': !isEmpty,
+            'is-dirty': isDirty,
         })}>
 
             <textarea
                 id={name}
                 name={name}
                 onBlur={onBlur}
+                onKeyUp={onKeyUp}
+                pattern={pattern}
+                required
             />
 
             <label htmlFor={name}>

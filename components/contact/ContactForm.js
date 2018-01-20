@@ -11,17 +11,20 @@ const ContactForm = () => {
             <Input
                 label='Name'
                 name='contact-name'
+                pattern='.{2,}'
             />
 
             <Input
                 label='Email'
                 name='contact-email'
-                text='email'
+                pattern='.{3,}'
+                type='email'
             />
 
             <Textarea
                 label='Message'
                 name='contact-message'
+                pattern='.{20,}'
             />
 
             <div className='button'>

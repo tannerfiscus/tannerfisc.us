@@ -3,16 +3,20 @@ import React from 'react'
 
 import { withFormFieldBehavior } from './form-field'
 
-const Input = ({ isEmpty, label, name, onBlur, type }) => {\
+const Input = ({ isDirty, isEmpty, label, name, onBlur, onKeyUp, pattern, type }) => {
     return (
         <div className={classnames('input', {
             'has-value': !isEmpty,
+            'is-dirty': isDirty,
         })}>
 
             <input
                 id={name}
                 name={name}
                 onBlur={onBlur}
+                onKeyUp={onKeyUp}
+                pattern={pattern}
+                required
                 type={type}
             />
 

@@ -73,6 +73,7 @@ const Heading = ({ children, size }) => {
                     {children}
                     <style jsx>{`
                         h1 {
+                            font-family: Butler, sans-serif;
                         	font-size: 3em;
                         	font-weight: 300;
                         	letter-spacing: -0.04em;

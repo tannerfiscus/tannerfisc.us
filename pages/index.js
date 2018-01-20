@@ -4,7 +4,7 @@ import React from 'react'
 
 import BackdropTitle from '../components/common/BackdropTitle'
 import Contain from '../components/common/Contain'
-import { breakpointDesktopMaxPadded, gray1, gray2, gray3, gray4, gray7, gray8, transparentBorder } from '../constants/styles/variables';
+import { breakpointDesktopMaxPadded, breakpointMobile, gray1, gray2, gray3, gray4, gray7, gray8, transparentBorder } from '../constants/styles/variables';
 import Heading from '../components/common/Heading'
 import HighlightedSection from '../components/common/HighlightedSection'
 import Layout from '../components/common/Layout'
@@ -60,7 +60,13 @@ class Home extends React.Component {
                 <style jsx>{`
 
                     .title {
-                        padding: 6rem 0 8rem;
+                        padding: 2rem 0 3rem;
+                    }
+
+                    @media only screen and (min-width: ${breakpointMobile}) {
+                        .title {
+                            padding: 6rem 0 8rem;
+                        }
                     }
 
                     h2 {
@@ -71,8 +77,13 @@ class Home extends React.Component {
 
                     p {
                         color: ${gray8};
-                        line-height: 1.25rem;
-                        font-size: 1.25rem;
+                    }
+
+                    @media only screen and (min-width: ${breakpointMobile}) {
+                        p {
+                            line-height: 1.25rem;
+                            font-size: 1.25rem;
+                        }
                     }
 
                     p + p {
@@ -80,39 +91,66 @@ class Home extends React.Component {
                     }
 
                     .intro {
-                        align-items: center;
-                        display: flex;
-                        flex-direction: row-reverse;
-                        height: 20.5rem;
                         margin: 0 auto 0 0;
                         max-width: 86rem;
                         position: static;
+                        text-align: center;
+                    }
+
+                    @media only screen and (min-width: ${breakpointMobile}) {
+                        .intro {
+                            align-items: center;
+                            display: flex;
+                            flex-direction: row-reverse;
+                            height: 20.5rem;
+                        }
                     }
 
                     .intro-img {
-                        align-self: flex-start;
                         background-image: url('/static/images/me.jpg');
                         background-position: center;
                         background-size: cover;
                         border-radius: 3px;
                         box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-                        flex: 0 auto;
-                        height: 24rem;
-                        min-width: 20rem;
+                        height: 18rem;
+                        margin: -4rem auto 0;
+                        max-width: 18rem;
                         position: relative;
-                        top: -4rem;
+                        width: 80%;
+                        width: calc(100vw - 2rem);
                         z-index: 1;
-                        width: 24rem;
+                    }
+
+                    @supports (height: calc(100vw - 2rem)) and (width: calc(100vw - 2rem)) {
+                        .intro-img {
+                            height: calc(100vw - 2rem);
+                            width: calc(100vw - 2rem);
+                        }
+                    }
+
+                    @media only screen and (min-width: ${breakpointMobile}) {
+                        .intro-img {
+                            align-self: flex-start;
+                            flex: 0 auto;
+                            height: 24rem;
+                            min-width: 20rem;
+                            width: 24rem;
+                        }
                     }
 
                     .intro-text {
-                        padding: 0 2rem 2rem 0;
-                        flex: 1 auto;
+                        padding: 0 1rem 2rem;
+                    }
+
+                    @media only screen and (min-width: ${breakpointMobile}) {
+                        .intro-text {
+                            flex: 1 auto;
+                            padding: 0 2rem 2rem 0;
+                        }
                     }
 
                     .timeline {
-                        background: ${gray7};
-                        padding: 2rem 0 0;
+                        padding: 2rem 0 4rem;
                     }
                 `}</style>
 

@@ -10,6 +10,7 @@ app.prepare()
   const server = express()
 
   server.get('/portfolio/:id', (req, res) => {
+    // Should verify that the id exists and throw a 404 if not
     const actualPage = '/portfolio-item'
     const queryParams = { id: req.params.id }
     app.render(req, res, actualPage, queryParams)

@@ -4,7 +4,7 @@ import React from 'react'
 import Contain from './common/Contain';
 import Logo from './Logo'
 import Navigation from './Navigation'
-import { transparentBorder } from '../constants/styles/variables'
+import { breakpointMobile, transparentBorder } from '../constants/styles/variables'
 
 class Header extends React.PureComponent {
     constructor(props) {
@@ -66,7 +66,13 @@ class Header extends React.PureComponent {
 
                     .header-logo {
                         flex: 1 auto;
-                        padding: 1rem 0;
+                        padding: 0;
+                    }
+
+                    @media only screen and (min-width: ${breakpointMobile}) {
+                        .header-logo {
+                            padding: 1rem 0;
+                        }
                     }
                 `}</style>
 

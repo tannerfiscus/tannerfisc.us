@@ -53,6 +53,7 @@ const Logo = ({ footer, small }) => (
             }
 
             .logo-small {
+                height: 3.25em;
                 width: 3em;
             }
         `}</style>
