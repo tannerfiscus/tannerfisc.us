@@ -6,7 +6,7 @@ import Project from '../components/project/Project'
 class PortfolioItem extends React.PureComponent {
 
     static async getInitialProps({ query }) {
-        const res = await fetch(buildAPIUrl(`/portfolio/item/${query.id}`))
+        const res = await fetch(buildAPIUrl(`/portfolio/item/${query.id}/`))
         const json = await res.json()
         return { item: json }
     }

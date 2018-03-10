@@ -9,7 +9,7 @@ import PortfolioItem from '../components/portfolio/PortfolioItem'
 class Portfolio extends React.PureComponent {
 
     static async getInitialProps() {
-        const res = await fetch(buildAPIUrl('/portfolio'))
+        const res = await fetch(buildAPIUrl('/portfolio/'))
         const json = await res.json()
         return { portfolio: json }
     }

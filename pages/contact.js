@@ -1,7 +1,7 @@
 import BackdropTitle from '../components/common/BackdropTitle'
-import ContactForm from '../components/contact/ContactForm'
+import { breakpointMedium, breakpointMobile } from '../constants/styles/variables'
+import ContactButtons from '../components/contact/ContactButtons'
 import Contain from '../components/common/Contain'
-import Heading from '../components/common/Heading'
 import HighlightedSection from '../components/common/HighlightedSection'
 import Layout from '../components/common/Layout'
 
@@ -10,28 +10,41 @@ const Contact = () => (
         <Contain>
 
             <BackdropTitle
-                backdrop="Let's chat."
-                title="How are you today?"
+                backdrop="Hi there!"
+                title="Let's chat."
             />
         </Contain>
 
         <HighlightedSection>
             <div className='contact-form'>
-
-                <Heading size={5}>
-                    Fill out the form below and I&#39;ll be in touch soon
-                </Heading>
-
-                <ContactForm />
-                
+                <section>
+                    <ContactButtons />
+                </section>
             </div>
         </HighlightedSection>
 
         <style jsx>{`
             .contact-form {
                 text-align: center;
-                min-height: calc(100vh - 38rem);
+                margin: 0 1rem;
+                min-height: calc(100vh - 21rem);
                 padding: 2rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            @media only screen and (min-width: ${breakpointMobile}) {
+                .contact-form {
+                    min-height: calc(100vh - 31rem);
+                }
+            }
+
+            @media only screen and (min-width: ${breakpointMedium}) {
+                .contact-form {
+                    min-height: calc(100vh - 33.5rem);
+                }
             }
         `}</style>
 

@@ -8,7 +8,6 @@ import { breakpointDesktopMaxPadded, breakpointMobile, gray1, gray2, gray3, gray
 import Heading from '../components/common/Heading'
 import HighlightedSection from '../components/common/HighlightedSection'
 import Layout from '../components/common/Layout'
-import Timeline from '../components/timeline/Timeline'
 
 class Home extends React.Component {
 
@@ -30,6 +29,7 @@ class Home extends React.Component {
                     <div className='title'>
                         <BackdropTitle
                             backdrop='Front-end'
+                            noPadding
                             title='Developer. Designer.'
                         />
                     </div>
@@ -51,20 +51,33 @@ class Home extends React.Component {
                     </div>
                 </HighlightedSection>
 
-                <div className='timeline'>
-                    <HighlightedSection light>
-                        <Timeline items={this.props.timeline} />
-                    </HighlightedSection>
-                </div>
-
                 <style jsx>{`
 
                     .title {
-                        padding: 2rem 0 3rem;
+                        align-items: center;
+                        display: flex;
+                        height: 16rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    @supports (height: calc(50vh - 5.75rem)) {
+                        .title {
+                            max-height: 16rem;
+                            min-height: 8rem;
+                            height: calc(50vh - 4.5rem);
+                        }
+
+                        @media only screen and (min-width: ${breakpointMobile}) {
+                            .title {
+                                height: calc(50vh - 5.75rem);
+                            }
+                        }
                     }
 
                     @media only screen and (min-width: ${breakpointMobile}) {
                         .title {
+                            margin-bottom: 0;
+                            max-height: 300rem;
                             padding: 6rem 0 8rem;
                         }
                     }
@@ -91,10 +104,9 @@ class Home extends React.Component {
                     }
 
                     .intro {
-                        margin: 0 auto 0 0;
+                        margin: 0 auto;
                         max-width: 86rem;
                         position: static;
-                        text-align: center;
                     }
 
                     @media only screen and (min-width: ${breakpointMobile}) {
@@ -102,7 +114,9 @@ class Home extends React.Component {
                             align-items: center;
                             display: flex;
                             flex-direction: row-reverse;
-                            height: 20.5rem;
+                            height: 26rem;
+                            height: calc(50vh - 5.75rem);
+                            min-height: 16rem;
                         }
                     }
 
@@ -110,22 +124,10 @@ class Home extends React.Component {
                         background-image: url('/static/images/me.jpg');
                         background-position: center;
                         background-size: cover;
-                        border-radius: 3px;
-                        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-                        height: 18rem;
-                        margin: -4rem auto 0;
-                        max-width: 18rem;
+                        height: 20rem;
+                        margin: -2rem 0 0 1rem;
                         position: relative;
-                        width: 80%;
-                        width: calc(100vw - 2rem);
                         z-index: 1;
-                    }
-
-                    @supports (height: calc(100vw - 2rem)) and (width: calc(100vw - 2rem)) {
-                        .intro-img {
-                            height: calc(100vw - 2rem);
-                            width: calc(100vw - 2rem);
-                        }
                     }
 
                     @media only screen and (min-width: ${breakpointMobile}) {
@@ -133,13 +135,16 @@ class Home extends React.Component {
                             align-self: flex-start;
                             flex: 0 auto;
                             height: 24rem;
-                            min-width: 20rem;
-                            width: 24rem;
+                            height: calc(100% + 4rem);
+                            width: 40rem;
+                            margin-top: -2rem;
+                            -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+                            clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
                         }
                     }
 
                     .intro-text {
-                        padding: 0 1rem 2rem;
+                        padding: 0 2rem 2rem;
                     }
 
                     @media only screen and (min-width: ${breakpointMobile}) {
@@ -147,10 +152,6 @@ class Home extends React.Component {
                             flex: 1 auto;
                             padding: 0 2rem 2rem 0;
                         }
-                    }
-
-                    .timeline {
-                        padding: 2rem 0 4rem;
                     }
                 `}</style>
 

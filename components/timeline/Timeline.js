@@ -1,10 +1,11 @@
+import classnames from 'classnames'
 import React from 'react'
 
 import Contain from '../common/Contain'
 import { breakpointMobile, gray3, gray4, gray6 } from '../../constants/styles/variables';
 import Heading from '../common/Heading'
 
-const Timeline = ({ items }) => {
+const Timeline = ({ items, showHeading, stagger }) => {
 
     if (!items || !items.length) {
         return null;
@@ -13,13 +14,18 @@ const Timeline = ({ items }) => {
     return (
         <Contain>
 
-            <div className='timeline-heading'>
-                <Heading size={3}>
-                    Experience Timeline
-                </Heading>
-            </div>
+            {
+                showHeading && (
+                <div className='timeline-heading'>
+                    <Heading size={3}>
+                        Experience Timeline
+                    </Heading>
+                </div>)
+            }
 
-            <div className='timeline'>
+            <div className={classnames('timeline', {
+                'stagger': stagger,
+            })}>
             {
                 items.map((item, i) => (
                     <div className='timeline-item' key={i}>
@@ -94,6 +100,7 @@ const Timeline = ({ items }) => {
                 	padding: 40px 15px 15px;
                 	position: relative;
                 	text-align: left;
+                    width: 100%;
                 }
 
             	.timeline-content::before {
@@ -124,6 +131,7 @@ const Timeline = ({ items }) => {
                 	text-align: left;
                 	text-transform: uppercase;
                 	top: 15px;
+                    white-space: nowrap;
                 	width: 80%;
                 }
 
@@ -143,55 +151,56 @@ const Timeline = ({ items }) => {
                 }
 
                 @media (min-width: ${breakpointMobile}) {
-                    .timeline::after {
+                    .stagger.timeline::after {
                         left: 50%;
                         margin-left: 0;
                     }
 
-                    .timeline-item {
+                    .stagger .timeline-item {
                     	padding: 15px 25px 15px 0;
                     	width: 50%;
                     }
 
-                	.timeline-item::after {
+                	.stagger .timeline-item::after {
                 		left: auto;
                 		right: -8px;
                 	}
 
-                    .timeline-content {
+                    .stagger .timeline-content {
             			padding: 15px;
+                        width: auto;
             		}
 
-        			.timeline-content::before {
+        			.stagger .timeline-content::before {
         				left: auto;
         				right: -11px;
         				border-left: 10px solid ${gray6};
         				border-right: 0;
         			}
 
-                    .timeline-date {
+                    .stagger .timeline-date {
                     	left: calc(100% + 44px);
                     	top: 7px;
                     }
 
-                    .timeline-item:nth-child(even) {
+                    .stagger .timeline-item:nth-child(even) {
             			margin-left: 50%;
             			padding: 15px 0 15px 25px;
                     }
 
-            		.timeline-item:nth-child(even)::after {
+            		.stagger .timeline-item:nth-child(even)::after {
         				left: -7px;
         				right: 0;
         			}
 
-            		.timeline-item:nth-child(even) .timeline-content::before {
+            		.stagger .timeline-item:nth-child(even) .timeline-content::before {
         				border-left: 0;
         				border-right: 10px solid ${gray6};
         				left: -11px;
         				right: auto;
         			}
 
-            		.timeline-item:nth-child(even) .timeline-date {
+            		.stagger .timeline-item:nth-child(even) .timeline-date {
         				left: auto;
         				right: calc(100% + 44px);
         				text-align: right;
@@ -202,5 +211,10 @@ const Timeline = ({ items }) => {
     )
 
 }
+
+Timeline.defaultProps = {
+    showHeading: true,
+    stagger: true,
+};
 
 export default Timeline

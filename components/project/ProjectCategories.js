@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { breakpointMobile, whiteSemiTransparent, whiteTransparent } from '../../constants/styles/variables'
+import { breakpointMobile, whiteSemiTransparent, whiteTransparent, gray3, gray8 } from '../../constants/styles/variables'
 
 const ProjectCategories = ({ categories }) => {
 
@@ -10,41 +10,33 @@ const ProjectCategories = ({ categories }) => {
     }
 
     return (
-        <div className='project-categories'>
-
-            <div className='project-pane-title'>
-                <h5>Technologies / Skills</h5>
-            </div>
-
-            <ul className='pill-container'>
+        <ul className='categories'>
             {
                 categories.map(category => (
-                    <li className='pill' key={ category }>
+                    <li className='category' key={ category }>
     					{ category }
     				</li>
                 ))
             }
-            </ul>
 
             <style>{`
-                .pill {
-                    background: ${whiteTransparent};
+                .categories {
+                    margin: 2rem 0 0;
+                }
+
+                .category {
+                    background: ${gray3};
                     border-radius: 3rem;
-                    color: $gray8;
+                    color: ${gray8};
                     display: inline-block;
                     font-size: 1.1em;
                     font-weight: 500;
                     margin: 0 0.5rem 0.5rem 0;
                     padding: .5rem 1rem;
-
-                    @media only screen and (min-width: ${breakpointMobile}) {
-                        background: ${whiteSemiTransparent};
-                        color: #fff;
-                    }
                 }
             `}</style>
 
-        </div>
+        </ul>
     )
 
 }

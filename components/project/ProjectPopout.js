@@ -1,38 +1,12 @@
-import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { breakpointMobile, breakpointMedium, gray1 } from '../../constants/styles/variables'
+import { breakpointMobile, breakpointMedium, gray7 } from '../../constants/styles/variables'
 import ProjectCallout from './ProjectCallout'
 import ProjectCategories from './ProjectCategories'
 import ProjectTimeline from './ProjectTimeline'
 
 class ProjectPopout extends React.PureComponent {
-
-    constructor(props) {
-        super(props)
-
-        this.element = null
-        this.handleScroll = this.handleScroll.bind(this)
-        this.state = { isFixed: false }
-    }
-
-    componentDidMount() {
-        window.requestAnimationFrame(this.handleScroll)
-    }
-
-    handleScroll() {
-        console.log('window.scrollY', window.scrollY);
-        const top = window.scrollY
-
-        if (!this.state.isFixed && top > 275) {
-            this.setState({ isFixed: true })
-        } else if (this.state.isFixed && top <= 275) {
-            this.setState({ isFixed: false })
-        }
-
-        window.requestAnimationFrame(this.handleScroll)
-    }
 
     render() {
         const { categories } = this.props;
@@ -42,15 +16,20 @@ class ProjectPopout extends React.PureComponent {
         }
 
         return (
-            <section
-                className={ classnames('popout', {
-                    'fixed': this.state.isFixed,
-                }) }
-                ref={ e => { this.element = e } }
-            >
+            <section className='popout'>
+
+                { Boolean(this.props.timeline && this.props.timeline.length) && (
+                    <div className='popout-title'>
+                        <h5>Project Timeline</h5>
+                    </div>) }
 
                 <ProjectTimeline
                     timeline={ this.props.timeline } />
+
+                { Boolean(this.props.categories && this.props.categories.length) && (
+                    <div className='popout-title'>
+                        <h5>Technologies / Skills</h5>
+                    </div>) }
 
                 <ProjectCategories
                     categories={ this.props.categories } />
@@ -60,20 +39,22 @@ class ProjectPopout extends React.PureComponent {
 
                 <style jsx>{`
                     .popout {
-                        background: ${gray1};
                         padding: 1rem;
                     }
 
-                    .popout.fixed {
-                        position: fixed;
-                        right: 0;
-                        top: 172px;
+                    .popout-title {
+                        border-bottom: 4px solid ${gray7};
+                        display: inline-block;
+                        margin: 0 0 0 -2rem;
+                        padding: 0 2rem 0.5rem 2rem;
+                        font-size: 1.25rem;
                     }
 
                     @media only screen and (min-width: ${breakpointMobile}) {
                         .popout {
-                            border-radius: 4px 0 0 4px;
-                            margin: -3rem -1.25rem 0 0;
+                            border-left: 4px solid ${gray7};
+                            margin: 0 0 0 1rem;
+                            padding: 1rem 1rem 1rem 2rem;
                             position: relative;
                             z-index: 2;
                         }

@@ -1,18 +1,10 @@
-// import { connect }     from 'react-redux'
-// import { openModal }   from '../../../actions/modal'
 import classnames from 'classnames'
 import React from 'react'
 
-import Button from '../../common/Button'
 import { breakpointMobile } from '../../../constants/styles/variables'
 import ResumeSection from '../ResumeSection'
 
 const References = ({ dispatch, desktop, mobile }) => {
-
-    // const _handleClick = e => {
-	// 	e.preventDefault()
-	// 	dispatch(openModal('contact'))
-    // }
 
     return (
         <div className={classnames({
@@ -23,12 +15,6 @@ const References = ({ dispatch, desktop, mobile }) => {
                 title='References'>
 
                 <p>References are available upon request.</p>
-
-                <p>
-                    <Button inverted>
-                       Contact Me
-                    </Button>
-                </p>
 
             </ResumeSection>
 

@@ -3,7 +3,7 @@ import React from 'react'
 import Contain from './common/Contain'
 import Grid from './common/grid/Grid'
 import GridSection from './common/grid/GridSection'
-import { gray7, transparentBorder } from '../constants/styles/variables'
+import { gray3, gray7, transparentBorder } from '../constants/styles/variables'
 import Logo from './Logo'
 
 const Footer = () => (
@@ -16,7 +16,9 @@ const Footer = () => (
                 </GridSection>
                 <GridSection spread={3}>
                     Find Me Online<br/>
-                    Twitter · LinkedIn
+                    <a href="https://twitter.com/tannerfiscus" target="_blank">Twitter</a>
+                    &nbsp;&bull;&nbsp;
+                    <a href="https://www.linkedin.com/in/tannerfiscus" target="_blank">LinkedIn</a>
                 </GridSection>
                 <GridSection spread={3}>
                     Crafted with love in<br/>
@@ -40,6 +42,10 @@ const Footer = () => (
                 align-items: flex-end;
                 display: flex;
                 justify-content: flex-end;
+            }
+
+            a {
+                color: ${gray3};
             }
         `}</style>
     </footer>

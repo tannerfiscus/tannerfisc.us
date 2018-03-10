@@ -17,7 +17,6 @@ const ProjectCallout = ({ url }) => {
                 <Button
                     block
                     inflate
-                    inverted
                 >
                     Visit Project Website &rarr;
                 </Button>

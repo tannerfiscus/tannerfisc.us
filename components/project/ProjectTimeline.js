@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React    from 'react'
 import Timeline from '../timeline/Timeline'
+import { breakpointMobile } from '../../constants/styles/variables'
 
 const ProjectTimeline = ({ timeline }) => {
 
@@ -14,23 +15,24 @@ const ProjectTimeline = ({ timeline }) => {
     }))
 
     return (
-        <div className='project-timeline'>
-
-            <div className='project-pane-title'>
-                <h5>Project Timeline</h5>
-            </div>
-
+        <div>
             <Timeline
                 items={ timelineItems }
-                minimized={ true }
+                showHeading={false}
+                stagger={false}
             />
 
             <style jsx>{`
-                .project-title {
-                    padding: 0 0 2rem;
+                div {
+                    margin: -1rem 0 2rem -1rem;
+                }
+
+                @media (min-width: ${breakpointMobile}) {
+                    div {
+                        margin-left: -2rem;
+                    }
                 }
             `}</style>
-
         </div>
     )
 

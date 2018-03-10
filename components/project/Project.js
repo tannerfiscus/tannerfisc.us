@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { breakpointMobile, breakpointMedium, gray1 } from '../../constants/styles/variables'
+import { breakpointDesktop, breakpointMedium, gray1 } from '../../constants/styles/variables'
 import { buildProjectImageURL } from '../../utils/url'
+import Contain from '../common/Contain'
 import Cover from '../common/Cover'
 import Grid from '../common/grid/Grid'
 import GridSection from '../common/grid/GridSection'
@@ -17,42 +18,44 @@ const Project = ({ item: { categories, descriptions, meta, photos, timeline } })
             title={ meta.name }
         />
 
-        <section className='project'>
+        <Contain>
+            <section className='project'>
 
-            <Grid>
+                <Grid>
 
-                <GridSection
-                    padded
-                    spread={8}>
+                    <GridSection
+                        padded
+                        spread={8}>
 
-                    <ProjectDescriptions
-                        descriptions={ descriptions } />
+                        <ProjectDescriptions
+                            descriptions={ descriptions } />
 
-                </GridSection>
+                    </GridSection>
 
-                <GridSection spread={4}>
+                    <GridSection spread={4}>
 
-                    <ProjectPopout
-                        categories={categories}
-                        timeline={timeline}
-                        url={ meta && meta.url }
-                    />
+                        <ProjectPopout
+                            categories={categories}
+                            timeline={timeline}
+                            url={ meta && meta.url }
+                        />
 
-                </GridSection>
+                    </GridSection>
 
 
-            </Grid>
+                </Grid>
 
-        </section>
+            </section>
+        </Contain>
 
         <style jsx>{`
             .project {
-                margin: 1.25rem 0.25rem 0;
+                margin: 1.25rem 0 2rem;
             }
 
-            @media only screen and (min-width: ${breakpointMobile}) {
+            @media only screen and (min-width: ${breakpointDesktop}) {
                 .project {
-                    margin: 1.25rem 1.25rem 1.25rem;
+                    margin-bottom: 3rem;
                 }
             }
         `}</style>

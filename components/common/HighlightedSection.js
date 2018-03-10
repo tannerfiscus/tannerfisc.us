@@ -18,12 +18,6 @@ const HighlightedSection = ({ children, light }) => (
                 position: relative;
             }
 
-            @media only screen and (min-width: ${breakpointDesktopMaxPadded}) {
-                section {
-                    margin: 0 0 2rem;
-                }
-            }
-
             .section-contain {
                 background: ${gray1};
                 color: #fff;
@@ -34,13 +28,6 @@ const HighlightedSection = ({ children, light }) => (
             @media only screen and (min-width: ${breakpointMobile}) {
                 .section-contain {
                     padding: 2rem;
-                }
-            }
-
-            @media only screen and (min-width: ${breakpointDesktopMaxPadded}) {
-                section {
-                    border-radius: 5px;
-                    box-shadow: 0 0 8px ${transparentBorder};
                 }
             }
 

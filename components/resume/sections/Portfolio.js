@@ -1,22 +1,16 @@
-// import { connect }     from 'react-redux'
-// import { openModal }   from '../../../actions/modal'
 import React           from 'react'
 
 import Button from '../../common/Button'
 import ModalTrigger from '../../common/modal/ModalTrigger'
-import ResumeSection   from '../ResumeSection'
+import ResumePortfolio from '../ResumePortfolio'
+import ResumeSection from '../ResumeSection'
 
 const Portfolio = ({ dispatch }) => {
-
-    // const _handleClick = e => {
-	// 	e.preventDefault()
-	// 	dispatch(openModal('portfolio'))
-    // }
 
     return (
         <div className='screen-only'>
             <ModalTrigger
-                content={<div>The modal content!</div>}
+                content={<ResumePortfolio />}
             >
                 <Button block>
 
@@ -28,5 +22,4 @@ const Portfolio = ({ dispatch }) => {
     )
 }
 
-//export default connect()(Portfolio)
 export default Portfolio

@@ -2,7 +2,7 @@ import React from 'react'
 
 import BackdropTitle from '../components/common/BackdropTitle'
 import Contain from '../components/common/Contain'
-import { gray7 } from '../constants/styles/variables';
+import { breakpointMedium, gray3, gray7 } from '../constants/styles/variables';
 import Heading from '../components/common/Heading'
 import HighlightedSection from '../components/common/HighlightedSection'
 import Layout from '../components/common/Layout'
@@ -42,9 +42,7 @@ class About extends React.PureComponent {
                 <div className='about-content'>
 
                     <Contain>
-                        <br/><br/><br/><br/>
-                        Chat about myself ...
-                        <br/><br/><br/><br/>
+                        <p className='about-paragraph'>I'm a front-end developer who is working with an extraordinarily talented team building the future of Yelp in beautiful San Francisco, CA<br/><br/>React is my framework of choice. I am always learning something new and code in vanilla Javascript on the daily. I'm fluent in Javascript, CSS, and HTML.</p>
                     </Contain>
 
                     <HighlightedSection light>
@@ -56,6 +54,14 @@ class About extends React.PureComponent {
                 <style jsx>{`
                     .about-content {
                         background: ${gray7};
+                    }
+
+                    .about-paragraph {
+                        margin: 0 auto;
+                        max-width: ${breakpointMedium};
+                        padding: 4rem 2rem;
+                        font-size: 1.2rem;
+                        text-align: center;
                     }
 
                     .passion {

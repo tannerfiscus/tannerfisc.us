@@ -1,13 +1,14 @@
+import classnames from 'classnames'
 import React from 'react'
 
-import { breakpointMobile, breakpointMobileSmall, gray7 } from '../../constants/styles/variables';
+import { breakpointMedium, breakpointMobile, breakpointMobileSmall, gray7 } from '../../constants/styles/variables';
 
 
-const BackdropTitle = ({ backdrop, title }) => (
-    <h1>
+const BackdropTitle = ({ backdrop, noPadding, title }) => (
+    <h1 className={classnames({ 'no-padding': noPadding })}>
         <div className='wrapper'>
             <span className='backdrop'>{ backdrop }</span>
-            &nbsp;
+            <span className='space'>&nbsp;</span>
             <span className='title'>{ title }</span>
         </div>
 
@@ -15,7 +16,13 @@ const BackdropTitle = ({ backdrop, title }) => (
             h1 {
                 font-size: 1.8rem;
                 line-height: 1;
-                padding: 3rem 0 6rem;
+                padding: 4rem 0 6rem;
+                text-align: center;
+                width: 100%;
+            }
+
+            h1.no-padding {
+                padding: 0;
             }
 
             @media only screen and (min-width: ${breakpointMobileSmall}) {
@@ -26,8 +33,17 @@ const BackdropTitle = ({ backdrop, title }) => (
 
             @media only screen and (min-width: ${breakpointMobile}) {
                 h1 {
+                    font-size: 3.5rem;
+                }
+            }
+
+            @media only screen and (min-width: ${breakpointMedium}) {
+                h1 {
                     font-size: 4rem;
                 }
+            }
+            .space {
+                display: none;
             }
 
             .backdrop {
@@ -47,41 +63,44 @@ const BackdropTitle = ({ backdrop, title }) => (
 
             @media only screen and (min-width: ${breakpointMobile}) {
                 .backdrop {
+                    font-size: 6rem;
+                }
+            }
+
+            @media only screen and (min-width: ${breakpointMedium}) {
+                .backdrop {
                     font-size: 8rem;
                 }
             }
 
             .title {
-                position: absolute;
-                left: 2rem;
-                top: 1.75rem;
+                display: block;
+                position: relative;
+                top: -1rem;
                 z-index: 1;
             }
 
             @media only screen and (min-width: ${breakpointMobileSmall}) {
                 .title {
-                    top: 2.5rem;
+                    top: -2rem;
                 }
             }
 
             @media only screen and (min-width: ${breakpointMobile}) {
                 .title {
-                    left: auto;
-                    right: 0;
-                    top: 4rem;
+                    top: -2.75rem;
+                }
+            }
+
+            @media only screen and (min-width: ${breakpointMedium}) {
+                .title {
+                    top: -3.5rem;
                 }
             }
 
             .wrapper {
                 display: block;
                 position: relative;
-            }
-
-            @media only screen and (min-width: ${breakpointMobile}) {
-                .wrapper {
-                    display: inline-block;
-                    padding: 0 4rem 0 0;
-                }
             }
         `}</style>
     </h1>
