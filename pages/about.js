@@ -1,3 +1,4 @@
+import Helmet from 'react-helmet'
 import React from 'react'
 
 import BackdropTitle from '../components/common/BackdropTitle'
@@ -23,6 +24,19 @@ class About extends React.PureComponent {
     render() {
         return (
             <Layout>
+
+                <Helmet
+                    meta={ [
+                        { name: 'description', content: 'View my experience, find out a little bit about me, and see why I have a passion for building a better web.' },
+                        { property: 'og:title', content: 'About Tanner Fiscus' },
+                        { property: 'og:description', content: `I'm passionate about building a better web` },
+                        { property: 'og:type', content: 'website' },
+                        { property: 'og:url', content: 'https://tannerfisc.us/about/' },
+                        { property: 'og:image', content: 'https://tannerfisc.us/static/images/og/about-me.jpg' }
+                    ] }
+                    title='About Me – Tanner Fiscus'
+                />
+
                 <Contain>
 
                     <BackdropTitle

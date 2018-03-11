@@ -1,15 +1,41 @@
 import Document, { Head, Main, NextScript } from 'next/document'
+import Helmet from 'react-helmet'
 
 import { blue1, blue2, gray3, gray7, green1, red1, transparentBorder } from '../constants/styles/variables'
 
 export default class MyDocument extends Document {
     render() {
+
+        const head = Helmet.rewind()
+
         return (
             <html>
                 <Head>
+                    { head.title.toComponent() }
                     <meta charSet='utf-8' />
-                    <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+                    <meta content='IE=edge,chrome=1' httpEquiv='X-UA-Compatible' />
+                    <meta name='viewport' content='width=device-width, initial-scale=1' />
+                    <meta name='author' content='Tanner Fiscus' />
+                    <meta name='keywords' content='Tanner,Tanner Fiscus,Fiscus,Web design,Web Designer,Web developer,Front-end,Front end,Pittsburgh front end, Pittsburgh front-end, Pittsburgh website,Pittsburgh Web Design,Pittsburgh Website,Pittsburgh Web,Pittsburgh Web Designer,Front-end designer,Front-end developer,React.js developer,ReactJS developer' />
+                    { head.meta.toComponent() }
+                    <link rel='shortcut icon' href='/assets/favicons/favicon.ico' />
+                    <link rel='icon' sizes='16x16 32x32 64x64' href='/static/images/favicons/favicon.ico' />
+                    <link rel='icon' type='image/png' sizes='32x32' href='/static/images/favicons/favicon-32x32.png' />
+                    <link rel='icon' type='image/png' sizes='16x16' href='/static/images/favicons/favicon-16x16.png' />
+                    <link rel='apple-touch-icon' href='/static/images/favicons/apple-touch-icon.png' />
                     <link rel='stylesheet' type='text/css' href='/static/styles.css' />
+
+                    <script
+                        dangerouslySetInnerHTML={ { __html: `
+                        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                        ga('create', 'UA-88460716-1', 'auto');
+                        ga('send', 'pageview');
+                        `} }>
+                    </script>
                 </Head>
 
                 <body>
@@ -83,93 +109,6 @@ export default class MyDocument extends Document {
                             display: block;
                         }
 
-                        input[type='text'],
-                        input[type='email'],
-                        input[type='password'],
-                        textarea {
-                            -webkit-appearance: none;
-                            background: transparent;
-                            border: 2px solid ${gray3};
-                            border-radius: 5px;
-                            box-shadow: none;
-                            box-sizing: border-box;
-                            color: ${gray7};
-                            display: block;
-                            font-weight: 500;
-                            font-size: 1rem;
-                            height: 2.75rem;
-                            padding: .9rem .75rem .75rem;
-                            position: relative;
-                            transition: border 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-                            width: 100%;
-                            z-index: 1;
-                        }
-
-                        input[type='text']:focus,
-                        input[type='email']:focus,
-                        input[type='password']:focus,
-                        textarea:focus {
-                            border: 2px solid ${gray7};
-                            box-shadow: 0 0 8px ${transparentBorder};
-                            color: $gray3;
-                            outline: none;
-                        }
-
-                        input[type='text']:focus + label,
-                        input[type='email']:focus + label,
-                        input[type='password']:focus + label,
-                        textarea:focus + label {
-                            color: ${gray7};
-                            left: 0;
-                            top: -0.1rem;
-                        }
-
-                        input[type='text']:valid,
-                        input[type='email']:valid,
-                        input[type='password']:valid,
-                        textarea:valid {
-                            border-color: ${green1};
-                            color: ${green1};
-                        }
-
-                        input[type='text']:valid + label,
-                        input[type='email']:valid + label,
-                        input[type='password']:valid + label,
-                        textarea:valid + label {
-                            color: ${green1};
-                        }
-
-                        .is-dirty input[type='text']:invalid,
-                        .is-dirty input[type='email']:invalid,
-                        .is-dirty input[type='password']:invalid,
-                        .is-dirty textarea:invalid {
-                            border-color: ${red1};
-                            color: ${red1};
-                        }
-
-                        .is-dirty input[type='text']:invalid + label,
-                        .is-dirty input[type='email']:invalid + label,
-                        .is-dirty input[type='password']:invalid + label,
-                        .is-dirty textarea:invalid + label {
-                            color: ${red1};
-                        }
-
-                        label {
-                            color: ${gray3};
-                            font-size: 1rem;
-                            left: 0.75rem;
-                            line-height: 2.75rem;
-                            position: absolute;
-                            top: 2.05rem;
-                            transition: all 0.3s ease;
-                            z-index: 0;
-                        }
-
-                        .has-value label {
-                            left: 0;
-                            top: -0.1rem;
-                        }
-
                         a {
                             border-bottom: 1px dashed transparent;
                             color: ${blue1};
@@ -185,5 +124,7 @@ export default class MyDocument extends Document {
                 </body>
             </html>
         )
+
     }
+
 }

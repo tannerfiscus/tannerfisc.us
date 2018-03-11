@@ -1,4 +1,5 @@
 import 'isomorphic-fetch'
+import Helmet from 'react-helmet'
 import Link from 'next/link'
 import React from 'react'
 
@@ -24,6 +25,18 @@ class Home extends React.Component {
     render() {
         return (
             <Layout>
+
+                <Helmet
+                    meta={ [
+                        { name: 'description', content: 'Hi, I\'m Tanner. I\'m a front-end developer and designer living in Pittsburgh, PA. I have a passion for building a better web.' },
+                        { property: 'og:title', content: 'Tanner Fiscus' },
+                        { property: 'og:description', content: 'Front-end developer and designer living in Pittsburgh, PA' },
+                        { property: 'og:type', content: 'website' },
+                        { property: 'og:url', content: 'https://tannerfisc.us' },
+                        { property: 'og:image', content: 'https://tannerfisc.us/static/images/og/home.jpg' }
+                    ] }
+                    title='Tanner Fiscus – Front-end Developer and Designer'
+                />
 
                 <Contain>
                     <div className='title'>

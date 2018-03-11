@@ -1,3 +1,6 @@
+import Helmet from 'react-helmet'
+import React from 'react'
+
 import BackdropTitle from '../components/common/BackdropTitle'
 import { breakpointMedium, breakpointMobile } from '../constants/styles/variables'
 import ContactButtons from '../components/contact/ContactButtons'
@@ -7,6 +10,19 @@ import Layout from '../components/common/Layout'
 
 const Contact = () => (
     <Layout>
+
+        <Helmet
+            meta={ [
+                { name: 'description', content: 'An online form for connecting with me.' },
+                { property: 'og:title', content: 'About Tanner Fiscus' },
+                { property: 'og:description', content: `Let's connect on social media` },
+                { property: 'og:type', content: 'website' },
+                { property: 'og:url', content: 'https://tannerfisc.us/contact/' },
+                { property: 'og:image', content: 'https://tannerfisc.us/static/images/og/contact.jpg' }
+            ] }
+            title={`Let's Chat – Tanner Fiscus`}
+        />
+
         <Contain>
 
             <BackdropTitle

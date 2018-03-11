@@ -1,4 +1,6 @@
 import 'isomorphic-fetch'
+import Helmet from 'react-helmet'
+import React from 'react'
 
 import { buildAPIUrl } from '../utils/url'
 import BackdropTitle from '../components/common/BackdropTitle'
@@ -17,6 +19,19 @@ class Portfolio extends React.PureComponent {
     render() {
         return (
             <Layout>
+
+                <Helmet
+                    meta={ [
+                        { name: 'description', content: 'Travel through time and catch a glimpse of the work that I\'ve developed over the years.' },,
+                        { property: 'og:title', content: 'My Work' },
+                        { property: 'og:description', content: 'Online portfolio showcasing experiences built and designed by Tanner Fiscus' },
+                        { property: 'og:type', content: 'website' },
+                        { property: 'og:url', content: 'https://tannerfisc.us/portfolio/' },
+                        { property: 'og:image', content: 'https://tannerfisc.us/static/images/og/portfolio.jpg' }
+                    ] }
+                    title='My Work – Experiences Built and Designed by Tanner Fiscus'
+                />
+
                 <Contain>
 
                     <BackdropTitle
