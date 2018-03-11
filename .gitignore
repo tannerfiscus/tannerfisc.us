@@ -2,6 +2,7 @@
 *.log
 npm-debug.log*
 node_modules
+.next
 .npm
 build
 config

@@ -1,0 +1,26 @@
+@import 'variables';
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+.container {
+    padding: 2em;
+    margin: 0 auto;
+    max-width: $breakpoint-desktop-max-padded;
+
+    @media (min-width: $breakpoint-medium) {
+        padding: 2em 4em;
+    }
+}
