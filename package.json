@@ -8,7 +8,7 @@
     "dev": "node server.js",
     "dev:styles": "node-sass --watch --output-style compressed styles/styles.scss static/styles.css",
     "deploy": "now -e NODE_ENV=production --public",
-    "heroku-postbuild": "next build",
+    "heroku-postbuild": "NODE_ENV=production next build",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
