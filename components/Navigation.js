@@ -33,7 +33,7 @@ const Navigation = () => (
                 white-space: nowrap;
             }
 
-            section:hover a:not(:hover) {
+            :global(body:not(.touch-device)) section:hover a:not(:hover) {
                 color: ${gray5};
             }
 
@@ -45,7 +45,7 @@ const Navigation = () => (
                 will-change: color;
             }
 
-            a:hover {
+            :global(body:not(.touch-device)) a:hover {
                 color: ${gray1};
             }
 

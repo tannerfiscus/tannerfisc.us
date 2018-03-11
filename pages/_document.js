@@ -112,11 +112,16 @@ export default class MyDocument extends Document {
                         a {
                             border-bottom: 1px dashed transparent;
                             color: ${blue1};
+                            position: relative;
                             text-decoration: none;
                             transition: border-color 0.2s ease, color 0.2s ease;
                         }
 
-                        a:hover {
+                        a:active {
+                            top: 1px;
+                        }
+
+                        :global(body:not(.touch-device)) a:hover {
                             border-color: ${blue2};
                             color: ${blue2};
                         }

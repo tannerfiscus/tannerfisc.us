@@ -50,7 +50,7 @@ const Button = ({ block, children, deflate, href, inflate, inverted, mobile, onC
                 	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
                 }
 
-                .button:hover {
+                :global(body:not(.touch-device)) .button:hover {
                     background-color: ${gray2};
                     color: ${gray8};
                 }
@@ -72,7 +72,7 @@ const Button = ({ block, children, deflate, href, inflate, inverted, mobile, onC
                 	color: ${gray2};
                 }
 
-                .button-inverted:hover {
+                :global(body:not(.touch-device)) .button-inverted:hover {
                     background-color: ${gray6};
                     color: ${gray2};
                 }

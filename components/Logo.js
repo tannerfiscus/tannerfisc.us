@@ -1,7 +1,7 @@
 import classnames from 'classnames'
 import Link from 'next/link'
 
-import { gray2, gray5 } from '../constants/styles/variables'
+import { gray1, gray3 } from '../constants/styles/variables'
 
 const Logo = ({ footer, small }) => (
     <div className={classnames({
@@ -10,7 +10,7 @@ const Logo = ({ footer, small }) => (
         'logo-small': small,
     })}>
         <Link href='/'>
-            <a className='logo-link' style={{color:'inherit'}} href="/">
+            <a className='logo-link' href="/">
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 114.000000 123.000000"
                     preserveAspectRatio="xMidYMid meet"
@@ -27,24 +27,24 @@ const Logo = ({ footer, small }) => (
         </Link>
 
         <style jsx>{`
-            @keyframes logo-color-transition {
-                0% {
-                    color: ${gray2};
-                }
-                50% {
-                    color: ${gray5};
-                }
-                100% {
-                    color: ${gray2};
-                }
-            }
-
             .logo {
+                color: ${gray1};
                 margin: 0.75rem 0;
             }
 
-            .logo:hover {
-                animation: logo-color-transition 2s ease infinite;
+            :global(body:not(.touch-device)) .logo:hover {
+                border: 0;
+                color: ${gray3};
+            }
+
+            .logo-link {
+                border: 0px;
+                color: inherit;
+                display: block;
+            }
+
+            :global(body:not(.touch-device)) .logo-link:hover {
+                color: ${gray3};
             }
 
             .logo-footer {

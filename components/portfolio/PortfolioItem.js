@@ -74,11 +74,17 @@ const PortfolioItem = ({ id, photo, tagline, text, title }) => (
                 box-shadow: 0;
                 overflow: hidden;
                 padding: 1rem;
+                position: relative;
                 transition: box-shadow 0.3s ease;
                 will-change: box-shadow;
             }
 
-            .portfolio-item-content:hover {
+            .portfolio-item-content:active {
+                top: 1px;
+            }
+
+            .portfolio-item-content:active,
+            :global(body:not(.touch-device)) .portfolio-item-content:hover {
                 box-shadow: 0 0 8px ${transparentBorder};
                 box-shadow: 0 15px 30px ${transparentBorder}, 0 15px 12px ${transparentBorder};
             }
