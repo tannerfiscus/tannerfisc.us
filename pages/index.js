@@ -122,9 +122,10 @@ const Home = () => (
 
             .intro-img {
                 background-image: url('/static/images/me.jpg');
-                background-position: center;
+                background-position: top center;
+                background-position-y: -1rem;
                 background-size: cover;
-                height: 20rem;
+                height: 25rem;
                 margin: -2rem 0 0 1rem;
                 position: relative;
                 z-index: 1;
@@ -133,10 +134,12 @@ const Home = () => (
             @media only screen and (min-width: ${breakpointMobile}) {
                 .intro-img {
                     align-self: flex-start;
+                    background-position: center;
+                    background-position-y: center;
                     flex: 0 auto;
                     height: 24rem;
                     height: calc(100% + 4rem);
-                    width: 40rem;
+                    width: 32rem;
                     margin-top: -2rem;
                     -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
                     clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
