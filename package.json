@@ -7,6 +7,8 @@
     "build": "next build",
     "dev": "node server.js",
     "dev:styles": "node-sass --watch --output-style compressed styles/styles.scss static/styles.css",
+    "deploy": "now -e NODE_ENV=production --public",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

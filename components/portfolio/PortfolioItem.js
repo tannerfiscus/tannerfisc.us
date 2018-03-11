@@ -3,7 +3,7 @@ import React from 'react'
 
 import { buildAPIStaticUrl } from '../../utils/url'
 import Button from '../common/Button'
-import { gray2, gray7, transparentBorder } from '../../constants/styles/variables'
+import { breakpointDesktop, breakpointMedium, breakpointMobile, gray2, gray7, transparentBorder } from '../../constants/styles/variables'
 import Heading from '../common/Heading'
 
 const PortfolioItem = ({ id, photo, tagline, text, title }) => (
@@ -41,10 +41,31 @@ const PortfolioItem = ({ id, photo, tagline, text, title }) => (
         <style jsx>{`
             .portfolio-item {
                 cursor: pointer;
-                display: inline-block;
+                display: block;
                 padding: 0 1rem 2rem;
+                margin: 0 auto;
+                max-width: 24rem;
                 vertical-align: top;
-                width: 25%;
+            }
+
+            @media only screen and (min-width: ${breakpointMobile}) {
+                .portfolio-item {
+                    display: inline-block;
+                    margin: 0;
+                    width: 50%;
+                }
+            }
+
+            @media only screen and (min-width: ${breakpointMedium}) {
+                .portfolio-item {
+                    width: 33.3333333333%;
+                }
+            }
+
+            @media only screen and (min-width: ${breakpointDesktop}) {
+                .portfolio-item {
+                    width: 25%;
+                }
             }
 
             .portfolio-item-content {

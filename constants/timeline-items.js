@@ -1,4 +1,4 @@
-[
+export default [
     {
         "date": "June 2017 - Present",
         "description": "Helping connect people with great local businesses by building front-end tools with React.",
