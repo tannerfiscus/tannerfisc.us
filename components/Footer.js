@@ -11,18 +11,24 @@ const Footer = () => (
         <Contain>
             <Grid>
                 <GridSection spread={3}>
-                    &copy; 2017<br />
-                    Tanner Fiscus
+                    <section>
+                        &copy; 2018<br />
+                        Tanner Fiscus
+                    </section>
                 </GridSection>
                 <GridSection spread={3}>
-                    Find Me Online<br/>
-                    <a href="https://twitter.com/tannerfiscus" target="_blank">Twitter</a>
-                    &nbsp;&bull;&nbsp;
-                    <a href="https://www.linkedin.com/in/tannerfiscus" target="_blank">LinkedIn</a>
+                    <section>
+                        Find Me Online<br/>
+                        <a href="https://twitter.com/tannerfiscus" target="_blank">Twitter</a>
+                        &nbsp;&bull;&nbsp;
+                        <a href="https://www.linkedin.com/in/tannerfiscus" target="_blank">LinkedIn</a>
+                    </section>
                 </GridSection>
                 <GridSection spread={3}>
-                    Crafted with love in<br/>
-                    Oakland, California
+                    <section>
+                        Crafted with love in<br/>
+                        Oakland, California
+                    </section>
                 </GridSection>
                 <GridSection spread={3}>
                     <div className='footer-logo'>
@@ -46,6 +52,10 @@ const Footer = () => (
 
             a {
                 color: ${gray3};
+            }
+
+            section {
+                padding-bottom: 2rem;
             }
         `}</style>
     </footer>
