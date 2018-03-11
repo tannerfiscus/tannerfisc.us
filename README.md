@@ -1,4 +1,4 @@
-<img src="https://github.com/tannerfiscus/tannerfisc.us/raw/master/static/assets/favicons/android-chrome-192x192.png" alt="TF" width="80" height="80" />
+<img src="https://github.com/tannerfiscus/tannerfisc.us/raw/master/static/images/favicons/apple-touch-icon.png" alt="TF" width="80" height="80" />
 
 # tannerfisc.us
 
