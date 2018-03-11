@@ -6,7 +6,7 @@ import Heading from '../common/Heading'
 const ResumeHeader = () => (
     <figure className='resume-header'>
 
-        <img className='resume-header-image' src='/static/images/me.jpg' />
+        <div className='resume-header-image' />
 
         <figcaption>
             <Heading size={1}>
@@ -53,6 +53,10 @@ const ResumeHeader = () => (
             }
 
             .resume-header-image {
+                background-image: url('/static/images/me-coffee-into-code.jpg');
+                background-position: top left;
+                background-position-x: -1.6rem;
+                background-size: 12rem auto;
                 border-radius: 50%;
                 flex: 0 auto;
                 height: 8rem;

@@ -121,7 +121,7 @@ const Home = () => (
             }
 
             .intro-img {
-                background-image: url('/static/images/me.jpg');
+                background-image: url('/static/images/me-coffee-into-code.jpg');
                 background-position: top center;
                 background-position-y: -1rem;
                 background-size: cover;
