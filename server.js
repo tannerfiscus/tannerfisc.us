@@ -1,4 +1,5 @@
 const express = require('express')
+const fs = require('fs');
 const next = require('next')
 
 const dev = process.env.NODE_ENV !== 'production'
@@ -18,11 +19,19 @@ app.prepare()
             }
         })
 
-        server.get('/portfolio/:id', (req, res) => {
+        server.get('/portfolio/:id', (req, res, next) => {
+            // Make sure this is a valid project id
             const projectId = req.params.id.toLowerCase();
-            const actualPage = '/portfolio-item'
-            const queryParams = { id: projectId }
-            app.render(req, res, actualPage, queryParams)
+            const filePath = './projects/' + projectId + '.js';
+
+            if (!fs.existsSync(filePath)) {
+                res.statusCode = 404
+                next()
+            } else {
+                const actualPage = '/portfolio-item'
+                const queryParams = { id: projectId }
+                app.render(req, res, actualPage, queryParams)
+            }
         })
 
         server.get('*', (req, res) => {

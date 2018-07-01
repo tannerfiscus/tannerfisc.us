@@ -1,4 +1,3 @@
-import 'isomorphic-fetch'
 import dynamic from 'next/dynamic'
 import Helmet from 'react-helmet'
 import React from 'react'

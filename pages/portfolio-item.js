@@ -1,57 +1,29 @@
-import 'isomorphic-fetch'
+import dynamic from 'next/dynamic'
 import Helmet from 'react-helmet'
 import React, { Fragment } from 'react'
 
-import { buildProjectImageURL } from '../utils/url'
-import Error from './_error';
-import Project from '../components/project/Project'
+import Loading from '../components/common/Loading'
 
-class PortfolioItem extends React.PureComponent {
+const PortfolioItem = ({ url }) => {
 
-    static async getInitialProps({ query, res }) {
-        try {
-            const projects = await import('../projects/all.js')
-            const item = projects.default.find(project => project.id === query.id);
-
-            if (!item) {
-                res.statusCode = 404;
-            }
-
-            return { item }
-        } catch(error) {
-            console.log('Caught error on /portfolio-item', error);
-            res.statusCode = 500;
-
-            return { item: null };
+    const DynamicProject = dynamic(
+        import('../components/project/DynamicProject'),
+        {
+            loading: Loading,
+            ssr: false,
         }
-    }
+    )
 
-    render() {
+    return (
+        <Fragment>
 
-        if (!this.props.item) {
-            return <Error statusCode={404} />
-        }
+            <Helmet title='Loading...' />
 
-        return (
-            <Fragment>
+            <DynamicProject projectId={url.query.id} />
 
-                <Helmet
-    				meta={ [
-    					{ name: 'description', content: `Discover the details about my design and build process for the ${ this.props.item.title } project.` },
-    					{ property: 'og:title', content: this.props.item.title },
-    					{ property: 'og:description', content: `Discover the process behind building and designing the ${this.props.item.title} project.` },
-    					{ property: 'og:type', content: 'website' },
-    					{ property: 'og:url', content: `https://tannerfisc.us/portfolio/${this.props.url.query.id}/` },
-    					{ property: 'og:image', content: this.props.item.photos.cover ? buildProjectImageURL(this.props.item.photos.cover.url) : 'https://tannerfisc.us/static/images/og/portfolio.jpg' }
-    				] }
-    				title={ `${this.props.item.title} – Project by Tanner Fiscus` }
-                />
+        </Fragment>
+    );
 
-                <Project item={this.props.item} />
-
-            </Fragment>
-        );
-    }
 }
 
 export default PortfolioItem
