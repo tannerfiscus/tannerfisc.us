@@ -2,18 +2,36 @@ import 'isomorphic-fetch'
 import Helmet from 'react-helmet'
 import React, { Fragment } from 'react'
 
-import { buildAPIUrl, buildProjectImageURL } from '../utils/url'
+import { buildProjectImageURL } from '../utils/url'
+import Error from './_error';
 import Project from '../components/project/Project'
 
 class PortfolioItem extends React.PureComponent {
 
-    static async getInitialProps({ query }) {
-        const projects = await import('../projects/all.js')
-        const item = projects.default.find(project => project.id === query.id)
-        return { item }
+    static async getInitialProps({ query, res }) {
+        try {
+            const projects = await import('../projects/all.js')
+            const item = projects.default.find(project => project.id === query.id);
+
+            if (!item) {
+                res.statusCode = 404;
+            }
+
+            return { item }
+        } catch(error) {
+            console.log('Caught error on /portfolio-item', error);
+            res.statusCode = 500;
+
+            return { item: null };
+        }
     }
 
     render() {
+
+        if (!this.props.item) {
+            return <Error statusCode={404} />
+        }
+
         return (
             <Fragment>
 

@@ -19,9 +19,9 @@ app.prepare()
         })
 
         server.get('/portfolio/:id', (req, res) => {
-            // Should verify that the id exists and throw a 404 if not
+            const projectId = req.params.id.toLowerCase();
             const actualPage = '/portfolio-item'
-            const queryParams = { id: req.params.id }
+            const queryParams = { id: projectId }
             app.render(req, res, actualPage, queryParams)
         })
 
