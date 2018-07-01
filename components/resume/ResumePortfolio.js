@@ -1,65 +1,32 @@
-import React 	   		  from 'react'
+import dynamic from 'next/dynamic'
+import React from 'react'
 
 import { breakpointDesktopMax } from '../../constants/styles/variables'
-import { buildAPIUrl } from '../../utils/url'
+import Loading from '../common/Loading';
 import PortfolioItem from '../portfolio/PortfolioItem'
 
-class ResumePortfolio extends React.Component {
+const ResumePortfolio = () => {
 
-	constructor(props) {
-		super(props)
-        this.state = {
-            isLoading: true,
-            portfolio: [],
+	const DynamicPortfolio = dynamic(
+        import('../portfolio/DynamicPortfolio'),
+        {
+            loading: Loading,
         }
-	}
+    )
 
-    componentDidMount() {
-        fetch(buildAPIUrl('/portfolio/'), {
-            headers: {
-                'content-type': 'application/json'
-            },
-        })
-        .then(res => res.json())
-        .then(json => {
-            this.setState({
-                isLoading: false,
-                portfolio: json,
-            })
-        })
-    }
+	return (
+		<div className='resume-portfolio'>
 
-	render() {
-		const { isLoading, portfolio } = this.state
+			<DynamicPortfolio />
 
-        if (isLoading || !portfolio.length) {
-             return (<div>Loading...</div>)
-        }
-
-		return (
-            <ul className='portfolio-items'>
-                {
-                    portfolio.map(item => (
-                        <PortfolioItem
-                            key={item.id}
-                            id={item.id}
-                            photo={item.photo}
-                            tagline={item.tagline}
-                            text={item.text}
-                            title={item.title}
-                        />
-                    ))
-                }
-
-				<style jsx>{`
-					ul {
-						margin: 0 auto;
-						max-width: ${breakpointDesktopMax};
-					}
-				`}</style>
-            </ul>
-		)
-	}
+			<style jsx>{`
+				.resume-portfolio {
+					margin: 0 auto;
+					max-width: ${breakpointDesktopMax};
+				}
+			`}</style>
+		</div>
+	)
 
 }
 

@@ -10,57 +10,64 @@ import Layout from '../common/Layout'
 import ProjectDescriptions from './ProjectDescriptions'
 import ProjectPopout from './ProjectPopout'
 
-const Project = ({ item: { categories, descriptions, meta, photos, timeline } }) => (
-    <Layout>
+const Project = ({ item: { categories, descriptions, photos, timeline, title } }) => {
 
-        <Cover
-            image={ buildProjectImageURL(photos.cover && photos.cover.url) }
-            title={ meta.name }
-        />
+    const hasRightColumn = Boolean(categories.length || timeline.length);
 
-        <Contain>
-            <section className='project'>
+    return (
+        <Layout>
 
-                <Grid>
+            <Cover
+                image={ buildProjectImageURL(photos.cover && photos.cover.url) }
+                title={ title }
+            />
 
-                    <GridSection
-                        padded
-                        spread={8}>
+            <Contain>
+                <section className='project'>
 
-                        <ProjectDescriptions
-                            descriptions={ descriptions } />
+                    <Grid>
 
-                    </GridSection>
+                        <GridSection
+                            padded
+                            spread={hasRightColumn ? 8 : 12}>
 
-                    <GridSection spread={4}>
+                            <ProjectDescriptions
+                                descriptions={ descriptions } />
 
-                        <ProjectPopout
-                            categories={categories}
-                            timeline={timeline}
-                            url={ meta && meta.url }
-                        />
+                        </GridSection>
 
-                    </GridSection>
+                        { hasRightColumn && (
+                            <GridSection spread={4}>
+
+                                <ProjectPopout
+                                    categories={categories}
+                                    timeline={timeline}
+                                    url={ null }
+                                />
+
+                            </GridSection>
+                        )}
 
 
-                </Grid>
+                    </Grid>
 
-            </section>
-        </Contain>
+                </section>
+            </Contain>
 
-        <style jsx>{`
-            .project {
-                margin: 1.25rem 0 2rem;
-            }
-
-            @media only screen and (min-width: ${breakpointDesktop}) {
+            <style jsx>{`
                 .project {
-                    margin-bottom: 3rem;
+                    margin: 1.25rem 0 2rem;
                 }
-            }
-        `}</style>
 
-    </Layout>
-)
+                @media only screen and (min-width: ${breakpointDesktop}) {
+                    .project {
+                        margin-bottom: 3rem;
+                    }
+                }
+            `}</style>
+
+        </Layout>
+    )
+}
 
 export default Project

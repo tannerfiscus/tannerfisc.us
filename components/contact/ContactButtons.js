@@ -30,7 +30,8 @@ const ContactButtons = () => {
                     opacity: 1;
                     padding: 0.5rem 4rem;
                 	text-align: center;
-                	transition: opacity 0.3s ease-in-out;
+                    transform: translateY(0);
+                	transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
                 }
 
                 @media only screen and (min-width: ${breakpointMobile}) {
@@ -39,10 +40,13 @@ const ContactButtons = () => {
                     }
                 }
 
+                :global(body:not(.touch-device)) a:hover,
                 a:hover {
+                    color: #fff;
                     border: none;
                     opacity: 0.9;
                     text-decoration: none;
+                    transform: translateY(-2px);
                 }
 
                 a img {
