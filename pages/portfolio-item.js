@@ -8,10 +8,8 @@ import Project from '../components/project/Project'
 class PortfolioItem extends React.PureComponent {
 
     static async getInitialProps({ query }) {
-        const projects = await import('../projects/all.js');
-        console.log('projects', projects);
-        const item = projects.default.find(project => project.id === query.id);
-        console.log('the item is!', item);
+        const projects = await import('../projects/all.js')
+        const item = projects.default.find(project => project.id === query.id)
         return { item }
     }
 
