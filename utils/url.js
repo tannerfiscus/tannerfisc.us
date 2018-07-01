@@ -18,15 +18,7 @@ export const buildAPIStaticUrl = uri => {
 
 }
 
-export const buildProjectImageURL = uri => {
-
-    if (process.env.NODE_ENV === 'production') {
-        return `https://app.tannerfiscus.com/static/portfolio/graphics/${uri}`
-    }
-
-    return `http://localhost:8888/tf-admin/static/portfolio/graphics/${uri}`
-
-}
+export const buildProjectImageURL = uri => `/static/images/portfolio/${uri}`
 
 export default {
     buildAPIUrl,

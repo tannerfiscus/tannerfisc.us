@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-import { buildAPIStaticUrl } from '../../utils/url'
+import { buildProjectImageURL } from '../../utils/url'
 import Button from '../common/Button'
 import { breakpointDesktop, breakpointMedium, breakpointMobile, gray2, gray7, transparentBorder } from '../../constants/styles/variables'
 import Heading from '../common/Heading'
@@ -18,7 +18,7 @@ const PortfolioItem = ({ id, photo, tagline, text, title }) => (
                 <div className='portfolio-item-image-wrapper'>
                     <img
                         className='portfolio-item-image'
-                        src={buildAPIStaticUrl(photo)}
+                        src={buildProjectImageURL(photo)}
                     />
                 </div>
 
