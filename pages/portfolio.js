@@ -14,6 +14,7 @@ const Portfolio = () => {
         import('../components/portfolio/DynamicPortfolio'),
         {
             loading: Loading,
+            ssr: false,
         }
     )
 

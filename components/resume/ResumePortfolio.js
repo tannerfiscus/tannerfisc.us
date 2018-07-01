@@ -11,6 +11,7 @@ const ResumePortfolio = () => {
         import('../portfolio/DynamicPortfolio'),
         {
             loading: Loading,
+            ssr: false,
         }
     )
 
