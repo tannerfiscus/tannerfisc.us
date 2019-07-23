@@ -1,0 +1,97 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3788065, 2019-07-20T00:44:03-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed /font(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Gilroy-ExtraBold by Radomir Tinkov
+ * URL: https://www.myfonts.com/fonts/radomir-tinkov/gilroy/extra-bold/
+ * Copyright: Copyright &#x00A9; 2016 by Radomir Tinkov. All rights reserved.
+ * Licensed pageviews: 20,000
+ * 
+ * Webfont: Astrup-Medium by Indian Type Foundry
+ * URL: https://www.myfonts.com/fonts/indian-type-foundry/astrup/medium/
+ * Copyright: Copyright (c) 2017 Fontstore Pte Ltd. All rights reserved.
+ * Licensed pageviews: 10,000
+ * 
+ * Webfont: Astrup-Bold by Indian Type Foundry
+ * URL: https://www.myfonts.com/fonts/indian-type-foundry/astrup/bold/
+ * Copyright: Copyright (c) 2017 Fontstore Pte Ltd. All rights reserved.
+ * Licensed pageviews: 10,000
+ * 
+ * 
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3788065
+ * 
+ * © 2019 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+/* @import url("//hello.myfonts.net/count/39cd21"); */
+
+   
+@font-face {font-family: 'Gilroy-ExtraBold';src: url('/font/39CD21_0_0.eot');src: url('/font/39CD21_0_0.eot?#iefix') format('embedded-opentype'),url('/font/39CD21_0_0.woff2') format('woff2'),url('/font/39CD21_0_0.woff') format('woff'),url('/font/39CD21_0_0.ttf') format('truetype');}
+  
+@font-face {font-family: 'Astrup-Medium'; src: url('/font/39CD21_1_0.eot');src: url('/font/39CD21_1_0.eot?#iefix') format('embedded-opentype'),url('/font/39CD21_1_0.woff2') format('woff2'),url('/font/39CD21_1_0.woff') format('woff'),url('/font/39CD21_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Astrup-Bold'; src: url('/font/39CD21_2_0.eot');src: url('/font/39CD21_2_0.eot?#iefix') format('embedded-opentype'),url('/font/39CD21_2_0.woff2') format('woff2'),url('/font/39CD21_2_0.woff') format('woff'),url('/font/39CD21_2_0.ttf') format('truetype');}
+ 
+
+body {
+  font-family: 'Astrup-Medium', serif;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+h1 {
+
+}
+
+th, strong, b {
+  font-family: 'Gilroy-ExtraBold', serif;
+  font-family: 'Astrup-Bold', serif;
+  font-weight: 400;
+}
+
+th {
+  font-size: 48px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

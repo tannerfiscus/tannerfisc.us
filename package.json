@@ -1,28 +1,45 @@
 {
-  "name": "tannerfisc.us",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "next build",
-    "dev": "node server.js",
-    "dev:styles": "node-sass --watch --output-style compressed styles/styles.scss static/styles.css",
-    "deploy": "now -e NODE_ENV=production --public",
-    "heroku-postbuild": "NODE_ENV=production next build",
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "name": "graphql-express-react",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "classnames": "^2.2.5",
-    "express": "^4.15.3",
-    "file-system": "^2.2.2",
-    "isomorphic-fetch": "^2.2.1",
-    "next": "^5.0.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-helmet": "^5.2.0"
+    "apollo-boost": "0.1.16",
+    "cors": "2.8.4",
+    "express": "4.16.3",
+    "express-graphql": "0.6.12",
+    "graphql": "14.0.2",
+    "graphql-tag": "2.9.2",
+    "react": "^16.8.6",
+    "react-apollo": "2.1.11",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
+  },
+  "scripts": {
+    "start": "npm-run-all --parallel watch:server start:web",
+    "start:web": "react-scripts start",
+    "start:server": "node src/server",
+    "watch:server": "nodemon --watch src/server src/server",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4",
+    "npm-run-all": "4.1.3"
   }
 }
