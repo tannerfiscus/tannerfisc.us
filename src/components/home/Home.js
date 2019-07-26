@@ -7,7 +7,9 @@ import styles from './Home.module.scss';
 
 const Home = () => (
     <Page>
-        <div className={styles.wave}>👋</div>
+        <div className={styles['wave']}>
+            <div className={styles['wave-emoji']}>👋</div>
+        </div>
         <h1>Hi, I'm Tanner.</h1>
         <Text>I'm a San Francisco-based front-end developer.</Text>
     </Page>
