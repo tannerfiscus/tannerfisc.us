@@ -38,7 +38,10 @@
     }
 
     .portfolio-content-right {
-        flex: 0 0 300px;
+        flex: 0 0 400px;
+        padding: 36px 0 0;
+        position: sticky;
+        top: 0;
     }
 }
 
@@ -54,4 +57,34 @@
     line-height: 1;
     font-size: 17px;
     margin: 0 6px 12px;
+}
+
+.portfolio-timeline {
+    .portfolio-pill {
+        display: block;
+        position: relative;
+        text-align: center;
+
+        & + .portfolio-pill {
+            margin-top: 36px;
+
+            &::before {
+                content: '';
+                width: 6px;
+                height: 20px;
+                border-right: 6px dotted $color-black;
+                position: absolute;
+                top: -34px;
+                left: 50%;
+                margin-left: -3px;
+            }
+        }
+    }
+
+    .portfolio-timeline-time {
+        color: $color-gray;
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin: 0 0 6px;
+    }
 }

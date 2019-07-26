@@ -7,9 +7,13 @@ import Text from '../text/Text';
 
 const Header = () => (
     <header className={styles['header']}>
-        <Text bold className={styles['header-logo']}>
-            tf
-        </Text>
+        <div className={styles['header-logo']}>
+            <Link to="/">
+                <Text bold className={styles['header-logo-text']}>
+                    tf
+                </Text>
+            </Link>
+        </div>
         <ul className={styles['header-nav']}>
             <li>
                 <Link to="/">Home</Link>
@@ -18,10 +22,10 @@ const Header = () => (
                 <Link to="/about/">About</Link>
             </li>
             <li>
-                <Link to="/contact/">Contact</Link>
+                <Link to="/portfolio/">Portfolio</Link>
             </li>
             <li>
-                <Link to="/portfolio/">Portfolio</Link>
+                <Link to="/contact/">Contact</Link>
             </li>
         </ul>
     </header>

@@ -7,11 +7,15 @@ import styles from './Home.module.scss';
 
 const Home = () => (
     <Page>
-        <div className={styles['wave']}>
-            <div className={styles['wave-emoji']}>👋</div>
-        </div>
-        <h1>Hi, I'm Tanner.</h1>
-        <Text>I'm a San Francisco-based front-end developer.</Text>
+        <main className={styles['home']}>
+            <div>
+                <div className={styles['wave']}>
+                    <div className={styles['wave-emoji']}>👋</div>
+                </div>
+                <h1 className={styles['home-intro-title']}>Hi, I'm Tanner.</h1>
+                <Text className={styles['home-intro-text']}>I'm a San Francisco-based front-end engineer.</Text>
+            </div>
+        </main>
     </Page>
 );
 

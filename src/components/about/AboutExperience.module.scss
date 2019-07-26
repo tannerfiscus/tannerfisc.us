@@ -1,0 +1,104 @@
+@import "../../constants/styles/colors";
+
+.experience {
+    border-left: 6px solid $color-black;
+    color: $color-black;
+    flex: 0 0 30%;
+    padding: 36px 36px 82px;
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+    position: relative;
+
+    &:last-of-type {
+        border-right: 6px solid $color-black;
+    }
+
+    &.experience--expanded {
+        background: $color-black;
+        color: #fff;
+    }
+}
+
+.experience--expanded + .experience--expanded {
+    border-color: #fff;
+}
+
+.experience-toggle {
+    width: 46px;
+    height: 46px;
+    display: block;
+    background: $color-black;
+    color: #fff;
+    margin: 0 auto;
+    font-size: 36px;
+    line-height: 36px;
+    border: 6px solid $color-black;
+    transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    position: relative;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 1;
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    margin-left: -23px;
+
+    &.experience-toggle--expanded {
+        border-color: #fff;
+    }
+
+    &:hover {
+        bottom: 35px;
+    }
+
+    &:active {
+        bottom: 34px;
+    }
+}
+
+.experience-toggle-marker {
+    display: block;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+    position: absolute;
+    left: 5px;
+    top: 1px;
+
+    .experience-toggle--expanded & {
+        transform: rotate(45deg);
+        left: 4px;
+    }
+}
+
+.experience-date {
+    display: block;
+    color: $color-gray;
+}
+
+.experience-description {
+    white-space: normal;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+    margin: 24px 0 0;
+    opacity: 0;
+
+    &.experience-description--expanded {
+        opacity: 1;
+    }
+
+    p {
+        padding: 24px 0 48px;
+    }
+}
+
+.experience-company {
+    display: block;
+    color: $color-gray;
+}
+
+.experience-position {
+    display: block;
+    font-size: 20px;
+    margin: 12px 0 0;
+}

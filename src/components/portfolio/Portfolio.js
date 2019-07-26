@@ -24,8 +24,7 @@ const GET_PROJECTS_QUERY = gql`
 `;
 
 const Portfolio = () => (
-    <Page>
-        <h1>Portfolio</h1>
+    <Page pageTitle="Portfolio">
         <Query query={GET_PROJECTS_QUERY}>
         {({ loading, data }) => loading ? <LoadingSpinner /> : (
             <div className={styles['portfolio-list']}>

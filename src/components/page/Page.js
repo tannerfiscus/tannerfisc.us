@@ -1,25 +1,23 @@
 import React from 'react';
 
-import { CSSTransition } from 'react-transition-group';
-
 import Header from '../navigation/Header';
+import styles from './Page.module.scss';
 
-import './Page.css';
+const Page = ({ children, pageTitle }) => (
+    <div className={styles['page']}>
+        <div className={styles['page-border-top']} />
+        <div className={styles['page-border-right']} />
+        <div className={styles['page-border-bottom']} />
+        <div className={styles['page-border-left']} />
 
-const Page = ({ children }) => (
-    <div className="page">
-        <div className="page-border-top" />
-        <div className="page-border-right" />
-        <div className="page-border-bottom" />
-        <div className="page-border-left" />
-
-        <div className="page-container">
+        <div className={styles['page-container']}>
             <Header />
-            <div className="page-content">
+            <div className={styles['page-content']}>
+                { pageTitle && <h1 className={styles['page-title']}>{pageTitle}</h1> }
                 { children }
             </div>
         </div>
     </div>
-    );
+);
 
 export default Page;

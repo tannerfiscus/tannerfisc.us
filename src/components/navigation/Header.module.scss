@@ -12,6 +12,13 @@
 }
 
 .header-logo {
+    a::before {
+        background: $color-black;
+    }
+}
+
+.header-logo-text {
+    color: $color-black;
     font-size: 36px;
     letter-spacing: -0.1em;
 }
