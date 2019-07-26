@@ -1,0 +1,57 @@
+@keyframes wave-hand {
+    0% {
+        transform: rotate(0.0deg);
+    }
+    10% {
+        transform: rotate(-10.0deg);
+    }
+    20% {
+        transform: rotate(12.0deg);
+    }
+    30% {
+        transform: rotate(-10.0deg);
+    }
+    40% {
+        transform: rotate(9.0deg);
+    }
+    50% {
+        transform: rotate(-7.0deg);
+    }
+    60% {
+        transform: rotate(6.0deg);
+    }
+    80% {
+        transform: rotate(-3.0deg);
+    }
+    90% {
+        transform: rotate(2.0deg);
+    }
+    100% {
+        transform: rotate(0.0deg);
+    }
+}
+
+.wave {
+    animation: wave-hand;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    font-size: 64px;
+    transform-origin: 70% 70%;
+    display: inline-block;
+    position: relative;
+
+    &:hover {
+        animation-iteration-count: infinite;
+
+        &::before {
+            content: 'Hi there!';
+            position: absolute;
+            top: 50%;
+            margin-top: -7px;
+            left: 80px;
+            font-size: 15px;
+            width: 100px;
+        }
+    }
+}

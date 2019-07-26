@@ -1,0 +1,63 @@
+@import "../../constants/styles/colors";
+
+.portfolio-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr) ) ;
+    grid-gap: 40px;
+    list-style: none;
+    overflow: visible;
+    padding: 0;
+}
+
+.project-item {
+    align-items: center;
+    background: #fff;
+    backface-visibility: hidden;
+    border: 6px solid $color-black;
+    display: flex;
+    padding: 24px;
+    transform: scale(1) translateY(0) translateZ(0);
+    transition: transform 0.2s ease, background 0.2s ease;
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    img {
+        border: 6px solid transparent;
+        margin-left: -6px;
+        transform: scale(1) translateY(0);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+        width: calc(100% + 12px);
+    }
+
+    &:hover {
+        background: $color-black;
+        transform: scale(0.98);
+
+        img {
+            border-color: $color-black;
+            transform: translateY(30px) translateX(24px) scale(1.1);
+        }
+
+        .portfolio-item-title {
+            color: #fff;
+        }
+    }
+}
+
+.portfolio-item-tagline {
+    color: $color-gray;   
+    display: block;
+    margin: 0 0 6px;
+}
+
+.portfolio-item-title {
+    color: $color-black;
+    display: block;
+    font-size: 38px;
+    line-height: 36px;
+    margin: 0 0 18px;
+    transition: color 0.2s ease;
+}

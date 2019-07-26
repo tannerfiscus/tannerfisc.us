@@ -1,0 +1,130 @@
+.page {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.page-border-bottom, .page-border-top {
+    background: #1D1F20;
+    height: 12px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.page-border-bottom {
+    bottom: 0;
+}
+
+.page-border-top {
+    top: 0;
+}
+
+.page-border-left, .page-border-right {
+    background: #1D1F20;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 12px;
+}
+
+.page-border-left {
+    left: 0;
+}
+
+.page-border-right {
+    right: 0;
+}
+
+.page-container {
+    -ms-overflow-style: none;
+    bottom: 40px;
+    left: 40px;
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}
+
+.page-container::-webkit-scrollbar {
+    display: none;
+}
+
+.page-transition-enter .page-border-bottom {
+    left: 100%;
+}
+
+.page-transition-enter .page-border-top {
+    left: -100%;
+}
+
+.page-transition-enter .page-border-left {
+    top: 100%;
+}
+
+.page-transition-enter .page-border-right {
+    top: -100%;
+}
+
+.page-transition-enter-active .page-border-bottom, .page-transition-enter-active .page-border-top {
+    left: 0;
+    transition: left 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+.page-transition-enter-active .page-border-left, .page-transition-enter-active .page-border-right {
+    top: 0;
+    transition: top 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+.page-transition-enter .page-content {
+    opacity: 0;
+}
+
+.page-transition-enter-active .page-content {
+    opacity: 1;
+    transition: opacity 0.6s ease-in;
+    transition-delay: 0.2s;
+}
+
+/* --- Exit styles --- */
+
+.page-transition-exit .page-border-bottom, .page-transition-exit .page-border-top {
+    left: 0;
+}
+
+.page-transition-exit .page-border-left, .page-transition-exit .page-border-right {
+    top: 0;
+}
+
+.page-transition-exit-active .page-border-bottom {
+    left: 100%;
+    transition: left 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+.page-transition-exit-active .page-border-top {
+    left: -100%;
+    transition: left 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+.page-transition-exit-active .page-border-left {
+    top: 100%;
+    transition: top 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+.page-transition-exit-active .page-border-right {
+    top: -100%;
+    transition: top 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+.page-transition-exit .page-content {
+    opacity: 1;
+}
+
+.page-transition-exit-active .page-content {
+    opacity: 0;
+    transition: opacity 0.6s ease-in;
+}
