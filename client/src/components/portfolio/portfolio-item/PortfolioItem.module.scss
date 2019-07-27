@@ -1,0 +1,99 @@
+@import "../../../constants/styles/breakpoints";
+@import "../../../constants/styles/colors";
+
+.portfolio-cover {
+    border-bottom: 6px solid $color-black;
+    border-top: 6px solid $color-black;
+    width: 100%;
+}
+
+.portfolio-description {
+    padding: 18px 0;
+
+    h2 {
+        font-size: 24px;
+
+        @include breakpoint-medium() {
+            font-size: 34px;
+        }
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 2;
+    }
+
+    img {
+        border: 12px solid $color-black;
+    }
+}
+
+.portfolio-content {
+    display: block;
+
+    @include breakpoint-large() {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+
+        .portfolio-content-left {
+            flex: 1 auto;
+            padding: 0 36px 0 0;
+        }
+
+        .portfolio-content-right {
+            flex: 0 0 300px;
+            padding: 81px 0 0;
+            position: sticky;
+            top: 0;
+
+            @include breakpoint-extra-large() {
+                flex: 0 0 400px;
+            }
+        }
+    }
+}
+
+.portfolio-pills {
+    position: relative;
+    left: -6px;
+}
+
+.portfolio-pill {
+    border: 6px solid $color-black;
+    display: inline-block;
+    padding: 9px 12px;
+    line-height: 1;
+    font-size: 17px;
+    margin: 0 6px 12px;
+}
+
+.portfolio-timeline {
+    .portfolio-pill {
+        display: block;
+        position: relative;
+        text-align: center;
+
+        & + .portfolio-pill {
+            margin-top: 36px;
+
+            &::before {
+                content: '';
+                width: 6px;
+                height: 20px;
+                border-right: 6px dotted $color-black;
+                position: absolute;
+                top: -34px;
+                left: 50%;
+                margin-left: -3px;
+            }
+        }
+    }
+
+    .portfolio-timeline-time {
+        color: $color-gray;
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin: 0 0 6px;
+    }
+}

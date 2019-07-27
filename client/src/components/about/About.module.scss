@@ -1,0 +1,26 @@
+@import "../../constants/styles/breakpoints";
+@import "../../constants/styles/colors";
+
+.about-tagline {
+    background: $color-black;
+    text-align: center;
+}
+
+.about-tagline-text {
+    display: block;
+    color: #fff;
+    font-size: 24px;
+    margin: 66px 0; 
+    padding: 24px;
+
+    @include breakpoint-medium() {
+        font-size: 28px;
+        margin: 78px 0; 
+        padding: 36px;
+    }
+
+    @include breakpoint-large() {
+        font-size: 36px;
+        padding: 48px;
+    }
+}

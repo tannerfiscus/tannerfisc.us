@@ -1,0 +1,18 @@
+@import "../../constants/styles/breakpoints";
+
+.experiences {
+    display: block;
+
+    @include breakpoint-medium() {
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        flex-direction: row;
+        overflow: -moz-scrollbars-none;
+        overflow-x: scroll;
+        white-space: nowrap;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
