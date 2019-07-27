@@ -1,27 +1,39 @@
 @import "../../constants/styles/colors";
+@import "../../constants/styles/breakpoints";
 
 .portfolio-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr) ) ;
-    grid-gap: 40px;
+    display: block;
     list-style: none;
-    overflow: visible;
     padding: 0;
+
+    @include breakpoint-medium() {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-gap: 40px;
+    }
 }
 
 .project-item {
     align-items: center;
     background: #fff;
     backface-visibility: hidden;
-    border: 6px solid $color-black;
+    border-bottom: 6px solid $color-black;
     display: flex;
-    padding: 24px;
+    padding: 24px 0;
     transform: scale(1) translateY(0) translateZ(0);
     transition: transform 0.2s ease, background 0.2s ease;
+
+    &:first-of-type {
+        border-top: 6px solid $color-black;
+    }
 
     a {
         display: block;
         text-decoration: none;
+
+        &::before {
+            display: none;
+        }
     }
 
     img {
@@ -32,17 +44,24 @@
         width: calc(100% + 12px);
     }
 
-    &:hover {
-        background: $color-black;
-        transform: scale(0.98);
+    @include breakpoint-medium() {
+        border-top: 6px solid $color-black;
+        border-left: 6px solid $color-black;
+        border-right: 6px solid $color-black;
+        padding: 24px;
 
-        img {
-            border-color: $color-black;
-            transform: translateY(30px) translateX(24px) scale(1.1);
-        }
-
-        .portfolio-item-title {
-            color: #fff;
+        &:hover {
+            background: $color-black;
+            transform: scale(0.98);
+    
+            img {
+                border-color: $color-black;
+                transform: translateY(30px) translateX(24px) scale(1.1);
+            }
+    
+            .portfolio-item-title {
+                color: #fff;
+            }
         }
     }
 }
@@ -56,8 +75,13 @@
 .portfolio-item-title {
     color: $color-black;
     display: block;
-    font-size: 38px;
-    line-height: 36px;
+    font-size: 28px;
+    line-height: 24px;
     margin: 0 0 18px;
     transition: color 0.2s ease;
+
+    @include breakpoint-medium() {
+        font-size: 38px;
+        line-height: 36px;
+    }
 }

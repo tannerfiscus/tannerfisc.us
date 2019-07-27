@@ -1,18 +1,47 @@
+@import "../../constants/styles/breakpoints";
+
+body {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 .page {
-    height: 100%;
-    left: 0;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
+    position: relative;
+    
+    &::after, &::before {
+        background: #fff;
+        content: '';
+        height: 20px;
+        left: 12px;
+        position: fixed;
+        right: 12px;
+        z-index: 10;
+
+        @include breakpoint-medium() {
+            height: 28px;
+        }
+    }
+
+    &::after {
+        bottom: 12px;
+    }
+
+    &::before {
+        top: 12px;
+    }
 }
 
 .page-border-bottom, .page-border-top {
     background: #1D1F20;
     height: 12px;
     left: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
+    z-index: 10;
 }
 
 .page-border-bottom {
@@ -26,9 +55,10 @@
 .page-border-left, .page-border-right {
     background: #1D1F20;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 12px;
+    z-index: 10;
 }
 
 .page-border-left {
@@ -40,23 +70,21 @@
 }
 
 .page-container {
-    -ms-overflow-style: none;
-    bottom: 40px;
-    left: 40px;
-    overflow: auto;
-    overflow: -moz-scrollbars-none;
-    position: absolute;
-    right: 40px;
-    top: 40px;
+    padding: 88px 32px 32px;
 
-    &::-webkit-scrollbar {
-        display: none;
+    @include breakpoint-medium() {
+        padding: 96px 40px 40px;
     }
 }
 
 .page-title {
-    font-size: 64px;
-    margin: 36px 0 60px;
+    font-size: 40px;
+    margin: 24px 0 42px;
+
+    @include breakpoint-medium() {
+        font-size: 64px;
+        margin: 36px 0 60px;
+    }
 }
 
 /* --- Enter styles --- */

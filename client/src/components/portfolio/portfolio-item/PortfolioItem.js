@@ -2,7 +2,6 @@ import React from 'react';
 import gql from 'graphql-tag';
 
 import { Query } from 'react-apollo';
-import { Link } from '@reach/router';
 
 import LoadingSpinner from '../../loading/LoadingSpinner';
 import Page from '../../page/Page';
@@ -52,6 +51,7 @@ const Portfolio = ({ projectName }) => {
                             {data.project.title}
                         </h1>
                         <img 
+                            alt=""
                             className={styles['portfolio-cover']}
                             src={`/images/portfolio/${data.project.photos.cover.url}`}
                         />

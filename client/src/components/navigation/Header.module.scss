@@ -1,14 +1,23 @@
+@import "../../constants/styles/breakpoints";
 @import "../../constants/styles/colors";
 
 .header {
     align-items: center;
+    background: #fff;
     display: flex;
     justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: #fff;
+    left: 32px;
     padding-bottom: 20px;
+    position: fixed;
+    right: 32px;
+    top: 32px;
+    z-index: 11;
+
+    @include breakpoint-medium() {
+        left: 40px;
+        right: 40px;
+        top: 40px;
+    }
 }
 
 .header-logo {
@@ -32,6 +41,15 @@
 .header-nav li {
     display: inline-block;
     font-size: 15px;
+
+    &:first-of-type {
+        // Hide "Home" on mobile
+        display: none;
+
+        @include breakpoint-medium() {
+            display: inline-block;
+        }
+    }
 }
 
 .header-nav li + li {

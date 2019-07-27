@@ -10,7 +10,7 @@ const Home = () => (
         <main className={styles['home']}>
             <div>
                 <div className={styles['wave']}>
-                    <div className={styles['wave-emoji']}>👋</div>
+                    <span aria-label="Hand wave" className={styles['wave-emoji']} role="img">👋</span>
                 </div>
                 <h1 className={styles['home-intro-title']}>Hi, I'm Tanner.</h1>
                 <Text className={styles['home-intro-text']}>I'm a San Francisco-based front-end engineer.</Text>

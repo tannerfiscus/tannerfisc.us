@@ -1,3 +1,4 @@
+@import "../../constants/styles/breakpoints";
 @import "../../constants/styles/colors";
 
 .contact {
@@ -12,12 +13,14 @@
 }
 
 .contact-buttons {
-    background: $color-black;
     display: block;
-    padding: 48px;
     margin: 0 auto;
-    max-width: 500px;
     text-align: center;
+
+    @include breakpoint-medium() {
+        background: $color-black;
+        padding: 48px;
+    }
 }
 
 .contact-button {
@@ -27,6 +30,7 @@
     justify-content: space-between;
     width: 300px;
     margin: 0 auto;
+    max-width: 100%;
     padding: 24px;
     position: relative;
     line-height: 24px;

@@ -1,12 +1,17 @@
-.experiences {
-    display: flex;
-    flex-direction: row;
-    //min-height: 450px;
-    overflow: -moz-scrollbars-none;
-    overflow-x: scroll;
-    white-space: nowrap;
+@import "../../constants/styles/breakpoints";
 
-    &::-webkit-scrollbar {
-        display: none;
+.experiences {
+    @include breakpoint-medium() {
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow: -moz-scrollbars-none;
+        overflow-x: scroll;
+        white-space: nowrap;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 }

@@ -1,3 +1,4 @@
+@import "../../constants/styles/breakpoints";
 @import "../../constants/styles/colors";
 
 .about-tagline {
@@ -8,7 +9,13 @@
 .about-tagline-text {
     display: block;
     color: #fff;
-    font-size: 36px;
-    margin: 78px 0; 
-    padding: 48px;
+    font-size: 24px;
+    margin: 66px 0; 
+    padding: 24px;
+
+    @include breakpoint-medium() {
+        font-size: 36px;
+        margin: 78px 0; 
+        padding: 48px;
+    }
 }

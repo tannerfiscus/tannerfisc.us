@@ -1,5 +1,5 @@
 {
-  "name": "graphql-express-react",
+  "name": "tannerfisc.us",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,10 +16,10 @@
     "react-transition-group": "^4.2.1"
   },
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "npm-run-all --parallel start:web watch:server",
     "start:web": "PORT=3001 react-scripts start",
-    "start:server": "node src/server",
-    "watch:server": "nodemon --watch src/server src/server",
+    "start:server": "node ../index.js",
+    "watch:server": "nodemon --watch ../index.js ../index.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
