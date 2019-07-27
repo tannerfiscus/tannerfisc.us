@@ -27,6 +27,10 @@
         @include breakpoint-medium() {
             border-right: 6px solid $color-black;
         }
+
+        @include breakpoint-large() {
+            border-bottom: 0;
+        }
     }
 
     &.experience--expanded {
@@ -47,6 +51,9 @@
     display: none;
 
     @include breakpoint-medium() {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         background: $color-black;
         border: 6px solid $color-black;
         bottom: 36px;
