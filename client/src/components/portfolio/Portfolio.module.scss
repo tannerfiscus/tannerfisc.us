@@ -6,9 +6,9 @@
     list-style: none;
     padding: 0;
 
-    @include breakpoint-medium() {
+    @include breakpoint-large() {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
         grid-gap: 40px;
     }
 }
@@ -38,13 +38,19 @@
 
     img {
         border: 6px solid transparent;
-        margin-left: -6px;
+        margin: 0 auto;
         transform: scale(1) translateY(0);
         transition: transform 0.2s ease, border-color 0.2s ease;
+        max-width: 275px;
         width: calc(100% + 12px);
+
+        @include breakpoint-large() {
+            margin-left: -6px;
+            max-width: calc(100% + 12px);
+        }
     }
 
-    @include breakpoint-medium() {
+    @include breakpoint-large() {
         border-top: 6px solid $color-black;
         border-left: 6px solid $color-black;
         border-right: 6px solid $color-black;

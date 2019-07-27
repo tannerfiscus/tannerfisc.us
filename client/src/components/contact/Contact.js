@@ -1,11 +1,24 @@
 import React from 'react';
 import classNames from 'classnames';
+import Helmet from 'react-helmet';
 
 import Page from '../page/Page';
 import styles from './Contact.module.scss';
 
 const Contact = () => (
     <Page pageTitle="Let's Chat">
+        <Helmet
+            meta={ [
+                { name: 'description', content: 'Find out where I am online and how we can connect with one another.' },
+                { property: 'og:title', content: `Let's Chat` },
+                { property: 'og:description', content: `Ways to connect on social media` },
+                { property: 'og:type', content: 'website' },
+                { property: 'og:url', content: 'https://tannerfisc.us/contact/' },
+                { property: 'og:image', content: 'https://tannerfisc.us/images/og/contact.jpg' }
+            ] }
+            title={`Let's Chat – Tanner Fiscus`}
+        />
+
         <main className={styles['contact']}>
             <div>
                 <h2 className={styles['contact-header']}>What's your preferred channel?</h2>

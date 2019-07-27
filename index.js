@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const graphqlHTTP = require('express-graphql');
 const path = require('path');
+
+const projects = require('./server/data');
 const schema = require('./server/schema/schema');
 
 const app = express();
@@ -15,9 +17,18 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use([
   '/about/',
   '/contact/',
-  '/portfolio/*'
 ], (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build/index.html'));
+});
+
+// For the portfolio section, let's make sure there's a known
+// project included in the url before loading the page.
+app.use('/portfolio/:projectId', (req, res) => {
+  if (!req.params.projectId || projects.find(project => project.id === req.params.projectId)) {
+    res.sendFile(path.join(__dirname, 'client/build/index.html'));
+  } else {
+    res.redirect('/portfolio/');
+  }
 });
 
 app.use('/graphql', graphqlHTTP({

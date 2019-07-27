@@ -1,11 +1,12 @@
 @import "../../constants/styles/breakpoints";
 
 .experiences {
+    display: block;
+
     @include breakpoint-medium() {
         -webkit-overflow-scrolling: touch;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
         overflow: -moz-scrollbars-none;
         overflow-x: scroll;
         white-space: nowrap;

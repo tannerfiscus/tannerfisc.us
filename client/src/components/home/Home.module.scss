@@ -46,10 +46,22 @@
 
 .home-intro-title {
     font-size: 32px;
+    margin: 16px 0;
 
     @include breakpoint-medium() {
+        font-size: 64px;
+        line-height: 60px;
+        margin: 24px 0;
+    }   
+    
+    @include breakpoint-large() {
+        font-size: 84px;
+        line-height: 92px;
+    }
+    
+    @include breakpoint-extra-large() {
         font-size: 108px;
-        line-height: 20px;
+        line-height: 92px;
     }
 }
 
@@ -57,6 +69,14 @@
     font-size: 20px;
 
     @include breakpoint-medium() {
+        font-size: 32px;
+    }
+    
+    @include breakpoint-large() {
+        font-size: 36px;
+    }
+    
+    @include breakpoint-extra-large() {
         font-size: 42px;
     }
 }
@@ -91,8 +111,12 @@
     display: inline-block;
     font-size: 48px;
     transform-origin: 70% 70%;
-
+    
     @include breakpoint-medium() {
+        font-size: 60px;
+    }
+
+    @include breakpoint-large() {
         font-size: 72px;
     }
 }

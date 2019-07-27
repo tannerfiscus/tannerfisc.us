@@ -20,6 +20,7 @@
     @include breakpoint-medium() {
         background: $color-black;
         padding: 48px;
+        max-width: 500px;
     }
 }
 
