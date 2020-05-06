@@ -1,0 +1,86 @@
+@import "../../constants/styles/breakpoints";
+@import "../../constants/styles/colors";
+
+.header {
+    align-items: center;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    left: 32px;
+    padding-bottom: 20px;
+    position: fixed;
+    right: 32px;
+    top: 32px;
+    z-index: 11;
+
+    @media (prefers-color-scheme: dark) {
+        background: $color-black;
+    }
+
+    @include breakpoint-medium() {
+        left: 40px;
+        right: 40px;
+        top: 40px;
+    }
+}
+
+.headerLogo {
+    a::before {
+        background: $color-black;
+
+        @media (prefers-color-scheme: dark) {
+            background: $color-dark-mode-accent-4;
+        }
+    }
+}
+
+.headerLogoText {
+    color: $color-black;
+    font-size: 36px;
+    letter-spacing: -0.1em;
+
+    @media (prefers-color-scheme: dark) {
+        color: $color-dark-mode-accent-4;
+    }
+}
+
+.headerNav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.headerNav li {
+    display: inline-block;
+    font-size: 15px;
+
+    &:first-of-type {
+        // Hide "Home" on mobile
+        display: none;
+
+        @include breakpoint-medium() {
+            display: inline-block;
+        }
+    }
+}
+
+.headerNav li + li {
+    margin: 0 0 0 18px;
+}
+
+.headerNav li a {
+    color: $color-black;
+    text-decoration: none;
+
+    @media (prefers-color-scheme: dark) {
+        color: $color-dark-mode-accent-4;
+    }
+
+    &::before {
+        background: $color-black;
+
+        @media (prefers-color-scheme: dark) {
+            background: $color-dark-mode-accent-4;
+        }
+    }
+}

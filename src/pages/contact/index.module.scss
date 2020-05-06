@@ -1,0 +1,235 @@
+@import "../../constants/styles/breakpoints";
+@import "../../constants/styles/colors";
+
+.contact {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 349px);
+    text-align: center;
+
+    @include breakpoint-extra-large() {
+        flex-wrap: nowrap;
+    }
+
+    & > div {
+        width: 100%;
+    }
+}
+
+.contactBotField {
+    display: none;
+}
+
+.contactButtons {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+
+    @include breakpoint-medium() {
+        background: $color-black;
+        padding: 48px;
+        max-width: 500px;
+    }
+}
+
+.contactButton {
+    border: 0;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 24px;
+    position: relative;
+    line-height: 24px;
+    transform: translateX(0) translateY(0);
+    transition: transform 0.2s ease;
+
+    &:active, &:hover, &:visited {
+        color: #fff;
+        display: flex;
+        line-height: 24px;
+    }
+
+    &:hover {
+        transform: translateX(6px) translateY(-6px);
+
+        &::after, &::before {
+            display: block;
+        }
+    }
+
+    &::after {
+        background: #fff;
+        bottom: -12px;
+        content: '';
+        display: none;
+        height: 6px;
+        left: -6px;
+        position: absolute;
+        width: 100%;
+    }
+
+    &::before {
+        background: #fff;
+        bottom: auto;
+        content: '';
+        display: none;
+        height: calc(100% + 6px);
+        left: -12px;
+        opacity: 1;
+        position: absolute;
+        right: auto;
+        top: 6px;
+        width: 6px;
+    }
+
+    & + .contactButton {
+        margin-top: 36px;
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.contactButtonFB {
+    background: #2998ff;
+}
+
+.contactButtonIN {
+    background: #0077b5;
+}
+
+.contactButtonTW {
+    background: #1da1f2;
+}
+
+.contactForm {
+    form {
+        margin: 0 auto;
+
+        @include breakpoint-medium() {
+            background: $color-black;
+            padding: 28px 48px;
+            max-width: 500px;
+        }
+    }
+
+    label {
+        color: #fff;
+        display: block;
+        margin: 0 0 12px;
+        text-align: left;
+
+        span {
+            display: block;
+            font-size: 12px;
+            padding: 0 0 6px;
+        }
+    }
+
+    input, textarea {
+        -webkit-appearance: none;
+        appearance: none;
+        background: $color-black;
+        border: 2px solid $color-gray;
+        color: $color-gray;
+        display: block;
+        font-size: 15px;
+        padding: 10px 12px;
+        transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+        width: 100%;
+
+        &:focus {
+            background: $color-black;
+            border: 2px solid #fff;
+            color: #fff;
+            outline: none;
+        }
+    }
+
+    button {
+        background: transparent;
+        border: 2px solid transparent;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        padding: 4px;
+        position: relative;
+        text-align: right;
+        top: 0;
+        transition: border 0.2s ease, top 0.2s ease;
+
+        &::after {
+            background: #fff;
+            bottom: -2px;
+            content: '';
+            height: 2px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+
+        &:focus {
+            border: 2px solid #fff;
+            outline: none;
+        }
+
+        &:hover {
+            top: 2px;
+        }
+
+        &:active {
+            top: 3px;
+        }
+    }
+}
+
+.contactFormButton {
+    text-align: right;
+}
+
+.contactForm,
+.contactSocial {
+    flex: 100%;
+
+    @include breakpoint-extra-large() {
+        flex: 50%;
+    }
+}
+
+.contactForm {
+    padding-left: 0;
+    padding-top: 40px;
+
+    @media (prefers-color-scheme: dark) {
+        border-top: 6px solid $color-dark-mode-accent-1;
+    } 
+
+    @include breakpoint-extra-large() {
+        padding-left: 20px;
+        padding-top: 0;
+
+        @media (prefers-color-scheme: dark) {
+            border-top: 0;
+            border-left: 6px solid $color-dark-mode-accent-1;
+        } 
+    }
+}
+
+.contactSocial {
+    padding-right: 0;
+
+    @include breakpoint-extra-large() {
+        padding-right: 20px;
+    }
+}
+
+.contactHeader {
+    text-align: center;
+}

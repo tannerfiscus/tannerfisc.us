@@ -1,0 +1,125 @@
+@import "../../constants/styles/colors";
+@import "../../constants/styles/breakpoints";
+
+.portfolioList {
+    display: block;
+    list-style: none;
+    padding: 0;
+
+    @include breakpoint-large() {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-gap: 40px;
+    }
+}
+
+.projectItem {
+    align-items: center;
+    background: #fff;
+    backface-visibility: hidden;
+    border-bottom: 6px solid $color-black;
+    display: flex;
+    padding: 24px 0;
+    transform: scale(1) translateY(0) translateZ(0);
+    transition: transform 0.2s ease, background 0.2s ease;
+
+    @media (prefers-color-scheme: dark) {
+        background: $color-black;
+        border-bottom: 6px solid $color-dark-mode-accent-1;
+    } 
+
+    &:first-of-type {
+        border-top: 6px solid $color-black;
+
+        @media (prefers-color-scheme: dark) {
+            border-top: 6px solid $color-dark-mode-accent-1;
+        } 
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .portfolioItemImage {
+        border: 6px solid transparent;
+        margin: 0 auto;
+        transform: scale(1) translateY(0);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+        max-width: 275px;
+        width: calc(100% + 12px);
+
+        @include breakpoint-large() {
+            margin-left: -6px;
+            max-width: calc(100% + 12px);
+        }
+    }
+
+    @include breakpoint-large() {
+        border-top: 6px solid $color-black;
+        border-left: 6px solid $color-black;
+        border-right: 6px solid $color-black;
+        padding: 24px;
+
+        @media (prefers-color-scheme: dark) {
+            border-top: 6px solid $color-dark-mode-accent-1;
+            border-left: 6px solid $color-dark-mode-accent-1;
+            border-right: 6px solid $color-dark-mode-accent-1;
+        } 
+
+        &:hover {
+            background: $color-black;
+            transform: scale(0.98);
+
+            @media (prefers-color-scheme: dark) {
+                background: $color-dark-mode-accent-1;
+            } 
+    
+            .portfolioItemImage {
+                border-color: $color-black;
+                transform: translateY(30px) translateX(24px) scale(1.1);
+
+                @media (prefers-color-scheme: dark) {
+                    border-color: $color-dark-mode-accent-1;
+                } 
+            }
+    
+            .portfolioItemTitle {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.portfolioItemTagline {
+    color: $color-gray;   
+    display: block;
+    margin: 0 0 6px;
+
+    @media (prefers-color-scheme: dark) {
+        color: $color-dark-mode-accent-3;
+    } 
+}
+
+.portfolioItemTitle {
+    color: $color-black;
+    display: block;
+    font-size: 28px;
+    line-height: 24px;
+    margin: 0 0 18px;
+    transition: color 0.2s ease;
+
+    @media (prefers-color-scheme: dark) {
+        color: $color-dark-mode-accent-4;
+    } 
+
+    @include breakpoint-medium() {
+        font-size: 38px;
+        line-height: 36px;
+    }
+}

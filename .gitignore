@@ -1,11 +1,12 @@
-.DS_Store
-*.log
-npm-debug.log*
+# Project dependencies
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-.next
-.npm
-build
-config
-app/constants/config.js
-app/components/resume/sections/Address.jsx
-server.bundle.js
+.cache/
+# Build directory
+public/
+static/admin/*.bundle.*
+.DS_Store
+yarn-error.log
+
+# Local Netlify folder
+.netlify

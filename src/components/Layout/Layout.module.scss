@@ -1,0 +1,192 @@
+@import "../../constants/styles/breakpoints";
+@import "../../constants/styles/colors";
+
+.page {
+    position: relative;
+    
+    &::after, &::before {
+        background: #fff;
+        content: '';
+        height: 20px;
+        left: 12px;
+        position: fixed;
+        right: 12px;
+        z-index: 10;
+
+        @media (prefers-color-scheme: dark) {
+            background: $color-black;
+        }
+
+        @include breakpoint-medium() {
+            height: 28px;
+        }
+    }
+
+    &::after {
+        bottom: 12px;
+    }
+
+    &::before {
+        top: 12px;
+    }
+}
+
+.pageBorderBottom, .pageBorderTop {
+    background: #1D1F20;
+    height: 12px;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    @media (prefers-color-scheme: dark) {
+        background: $color-dark-mode-accent-1;
+    }
+}
+
+.pageBorderBottom {
+    bottom: 0;
+}
+
+.pageBorderTop {
+    top: 0;
+}
+
+.pageBorderLeft, .pageBorderRight {
+    background: #1D1F20;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 12px;
+    z-index: 10;
+
+    @media (prefers-color-scheme: dark) {
+        background: $color-dark-mode-accent-1;
+    }
+}
+
+.pageBorderLeft {
+    left: 0;
+}
+
+.pageBorderRight {
+    right: 0;
+}
+
+.pageContainer {
+    padding: 88px 32px 32px;
+
+    @include breakpoint-medium() {
+        padding: 96px 40px 40px;
+    }
+}
+
+.pageTitle {
+    font-size: 40px;
+    margin: 24px 0 42px;
+    
+    @include breakpoint-medium() {
+        font-size: 52px;
+        margin: 20px 0 50px;
+    }
+
+    @include breakpoint-large() {
+        font-size: 64px;
+        margin: 36px 0 60px;
+    }
+}
+
+/* --- Enter styles --- */
+
+.pageTransitionAppearActive, .pageTransitionEnterActive {
+    pointer-events: none;
+
+    .pageBorderBottom {
+        left: 100%;
+    }
+    
+    .pageBorderTop {
+        left: -100%;
+    }
+    
+    .pageBorderLeft {
+        top: 100%;
+    }
+    
+    .pageBorderRight {
+        top: -100%;
+    }
+
+    .pageContent {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+}
+
+.pageTransitionAppear, .pageTransitionEnter {
+    .pageBorderBottom, .pageBorderTop {
+        left: 0;
+        transition: left 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    }
+    
+    .pageBorderLeft, .pageBorderRight {
+        top: 0;
+        transition: top 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    }
+    
+    .pageContent {
+        animation-fill-mode: both;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: opacity 0.6s ease-in, transform 0.6s ease;
+        transition-delay: 0.2s;
+    }
+}
+
+/* --- Exit styles --- */
+
+.pageTransitionExit {
+    pointer-events: none;
+    
+    .pageBorderBottom, .pageBorderTop {
+        left: 0;
+    }
+    
+    .pageBorderLeft, .pageBorderRight {
+        top: 0;
+    }
+
+    .pageContent {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.pageTransitionExitActive {
+    .pageBorderBottom {
+        left: 100%;
+        transition: left 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    }
+
+    .pageBorderTop {
+        left: -100%;
+        transition: left 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    }
+
+    .pageBorderLeft {
+        top: 100%;
+        transition: top 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    }
+
+    .pageBorderRight {
+        top: -100%;
+        transition: top 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    }
+
+    .pageContent {
+        animation-fill-mode: both;
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+        transition: opacity 0.6s ease-in, transform 0.6s ease;
+    }
+}

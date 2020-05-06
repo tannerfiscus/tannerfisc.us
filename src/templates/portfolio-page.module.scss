@@ -1,0 +1,139 @@
+@import "../constants/styles/breakpoints.scss";
+@import "../constants/styles/colors.scss";
+
+.portfolioCover {
+    border-bottom: 6px solid $color-black;
+    border-top: 6px solid $color-black;
+    width: 100%;
+
+    @media (prefers-color-scheme: dark) {
+        border-bottom: 6px solid $color-dark-mode-accent-1;
+        border-top: 6px solid $color-dark-mode-accent-1;
+    } 
+}
+
+.portfolioDate {
+    color: $color-gray;
+    font-size: 14px;
+}
+
+.portfolioDateBottom {
+    display: block;
+
+    @include breakpoint-medium() {
+        display: none;
+    }
+ }
+
+.portfolioDateTop {
+   display: none;
+
+   @include breakpoint-medium() {
+       display: block;
+   }
+}
+
+
+.portfolioDescription {
+    padding: 18px 0;
+
+    h2 {
+        font-size: 24px;
+
+        @include breakpoint-medium() {
+            font-size: 34px;
+        }
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 2;
+    }
+
+    img {
+        border: 12px solid $color-black;
+    }
+}
+
+.portfolioContent {
+    display: block;
+
+    @include breakpoint-large() {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+
+        .portfolioContentLeft {
+            flex: 1 auto;
+            padding: 0 36px 0 0;
+        }
+
+        .portfolioContentRight {
+            flex: 0 0 300px;
+            padding: 81px 0 0;
+            position: sticky;
+            top: 0;
+
+            @include breakpoint-extra-large() {
+                flex: 0 0 400px;
+            }
+        }
+    }
+}
+
+.portfolioPills {
+    position: relative;
+    left: -6px;
+}
+
+.portfolioPill {
+    border: 6px solid $color-black;
+    display: inline-block;
+    padding: 9px 12px;
+    line-height: 1;
+    font-size: 17px;
+    margin: 0 6px 12px;
+
+    @media (prefers-color-scheme: dark) {
+        background: $color-dark-mode-accent-1;
+        border: 6px solid $color-dark-mode-accent-1;
+    } 
+}
+
+.portfolioTimeline {
+    .portfolioPill {
+        display: block;
+        position: relative;
+        text-align: center;
+
+        & + .portfolioPill {
+            margin-top: 36px;
+
+            &::before {
+                content: '';
+                width: 6px;
+                height: 20px;
+                border-right: 6px dotted $color-black;
+                position: absolute;
+                top: -34px;
+                left: 50%;
+                margin-left: -3px;
+
+                @media (prefers-color-scheme: dark) {
+                    border-right: 6px dotted $color-dark-mode-accent-1;
+                } 
+            }
+        }
+    }
+
+    .portfolioTimelineTime {
+        color: $color-gray;
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin: 0 0 6px;
+
+        @media (prefers-color-scheme: dark) {
+            color: $color-dark-mode-accent-3;
+        } 
+    }
+}
