@@ -20,8 +20,8 @@ experiences:
       timeline: JUNE 2017 - FEBRUARY 2020
       name: Yelp
       title: Software Engineer (JavaScript)
-      description: Helped form and build the ad customization for business owners, one
-        of the first React apps to be shipped publicly at Yelp.
+      description: Helped form and build ad customization tools for business owners,
+        one of the first React apps to be shipped publicly at Yelp.
   - experience:
       timeline: AUGUST 2015 - MAY 2017
       name: Niche.com, Inc.
