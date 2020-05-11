@@ -11,11 +11,17 @@ sections:
 tagline: I'm passionate about building a better web.
 experiences:
   - experience:
-      timeline: JUNE 2017 - PRESENT
+      timeline: MARCH 2020 - PRESENT
+      name: Yelp
+      title: Software Engineer - Design Systems (JavaScript)
+      description: Helping engineers to build fast-paced solutions by architecting
+        modular components as part of our new design system.
+  - experience:
+      timeline: JUNE 2017 - FEBRUARY 2020
       name: Yelp
       title: Software Engineer (JavaScript)
-      description: Helping connect people with great local businesses by building
-        front-end tools with React.
+      description: Helped form and build the ad customization for business owners, one
+        of the first React apps to be shipped publicly at Yelp.
   - experience:
       timeline: AUGUST 2015 - MAY 2017
       name: Niche.com, Inc.
