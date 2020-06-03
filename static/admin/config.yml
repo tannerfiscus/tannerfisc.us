@@ -16,12 +16,13 @@ collections:
     label: "Portfolio"
     folder: "src/pages/portfolio"
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.urlSlug}}"
     sortableFields: ["sortOrder"]
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "portfolio-page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Sort Order", name: "sortOrder", widget: "number"}
+      - {label: "URL Slug", name: "urlSlug", widget: "string"}
       - {label: "Tagline (Index Page)", name: "tagline", widget: "string"}
       - {label: "Featured Image (Index Page)", name: "featuredIndexImage", widget: image}
       - {label: "Featured Header Image", name: "featuredHeaderImage", widget: image}
