@@ -2,6 +2,7 @@
 templateKey: portfolio-page
 title: tannerfisc.us
 sortOrder: 1
+urlSlug: website
 tagline: WEB DESIGN & DEVELOPMENT
 featuredIndexImage: /img/20170129-39-tannerfiscus-display.jpg
 featuredHeaderImage: /img/20170129-39-tannerfiscus-cover.jpg
