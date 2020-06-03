@@ -2,6 +2,7 @@
 templateKey: portfolio-page
 title: Responsive Retrofit
 sortOrder: 9
+urlSlug: responsive-retrofit
 tagline: WEB DEVELOPMENT
 featuredIndexImage: /img/20150622-37-rmu-retrofit-detail.jpg
 featuredHeaderImage: /img/20151024-37-rm-responsive-retro.jpg

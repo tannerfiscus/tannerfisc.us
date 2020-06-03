@@ -2,6 +2,7 @@
 templateKey: portfolio-page
 title: TNT Cuts
 sortOrder: 3
+urlSlug: tnt-cuts
 tagline: WEB DESIGN & DEVELOPMENT
 featuredIndexImage: /img/20151022-25-tnt-cuts-intro.jpg
 featuredHeaderImage: /img/20151024-25-tntcuts-intro.jpg

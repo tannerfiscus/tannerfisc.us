@@ -2,6 +2,7 @@
 templateKey: portfolio-page
 title: Fox's Pizza Den
 sortOrder: 5
+urlSlug: foxs-pizza-den
 tagline: WEB DESIGN & WORDPRESS DEVELOPMENT
 featuredIndexImage: /img/20151024-22-fprv-red-bg-1-.png
 featuredHeaderImage: /img/20151024-22-foxs-pizza-rv-cover-1-.jpg

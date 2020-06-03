@@ -2,6 +2,7 @@
 templateKey: portfolio-page
 title: Apply to RMU
 sortOrder: 6
+urlSlug: apply-to-rmu
 tagline: RESPONSIVE WEB DESIGN
 featuredIndexImage: /img/20170130-40-apply-to-rmu-display.jpg
 featuredHeaderImage: /img/20170129-40-apply-rmu-cover.jpg

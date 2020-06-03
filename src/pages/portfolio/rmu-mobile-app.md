@@ -2,6 +2,7 @@
 templateKey: portfolio-page
 title: RMU Mobile App
 sortOrder: 7
+urlSlug: rmu-mobile-app
 tagline: MOBILE APP DEVELOPMENT
 featuredIndexImage: /img/20140824-31-android-iphone-500px.jpg
 featuredHeaderImage: /img/20151022-31-rmu-mobile-banner.jpg

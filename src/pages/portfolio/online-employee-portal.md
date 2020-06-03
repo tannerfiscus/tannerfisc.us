@@ -2,6 +2,7 @@
 templateKey: portfolio-page
 title: Online Employee Portal
 sortOrder: 4
+urlSlug: online-employee-portal
 tagline: WEB DEVELOPMENT
 featuredIndexImage: /img/20141208-23-fprv-employee-portal-intro.jpg
 featuredHeaderImage: /img/20151024-23-fprv-emp.jpg

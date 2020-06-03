@@ -2,6 +2,7 @@
 templateKey: portfolio-page
 title: Niche
 sortOrder: 2
+urlSlug: niche
 tagline: FRONT END DEVELOPMENT
 featuredIndexImage: /img/20170128-38-niche-display.jpg
 featuredHeaderImage: /img/20170128-38-niche-cover.jpg
